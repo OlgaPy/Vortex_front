@@ -1,20 +1,28 @@
 import {defineStore} from "pinia";
 import {ref} from "vue";
 
+const LC_THEME_KEY = 'current-theme';
+
 export enum ThemesList {
     WHITE = 'white',
     DARK = 'dark',
 }
 
 export const useThemeStore = defineStore('themeStore', () => {
-    const theme = ref(ThemesList.WHITE);
+    const savedTheme = localStorage.getItem(LC_THEME_KEY);
+    const theme = ref(savedTheme || ThemesList.WHITE);
+
+    function setTheme(newTheme: ThemesList) {
+        theme.value = newTheme;
+        localStorage.setItem(LC_THEME_KEY, theme.value);
+    }
 
     function setWhite() {
-        theme.value = ThemesList.WHITE;
+        setTheme(ThemesList.WHITE);
     }
 
     function setDark() {
-        theme.value = ThemesList.DARK;
+        setTheme(ThemesList.DARK);
     }
 
     return { theme, setWhite, setDark };
