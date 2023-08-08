@@ -61,6 +61,10 @@ const {theme} = useThemeStore();
   align-items: center;
   height: 40px;
   width: 284px;
+  color: var(--ui-primary-color);
+}
+.activeLink {
+  font-weight: bold;
 }
 .menuSection > *:hover, .activeLink {
   background: var(--ui-main-color);

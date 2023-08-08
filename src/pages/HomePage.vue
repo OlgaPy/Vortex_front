@@ -1,6 +1,6 @@
 <script setup>
 import ProfilePanelWidget from '@/widgets/ProfilePanelWidget.vue';
-import SiteNavigationPanelWidget from '@/widgets/SiteNavigationPanelWidget/SiteNavigationPanelWidget.vue';
+import {SiteNavigationPanelWidget} from '@/widgets/SiteNavigationPanelWidget';
 import TrendsFeedWidget from '@/widgets/TrendsFeedWidget.vue';
 import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
 import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
