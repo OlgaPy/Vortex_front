@@ -2,7 +2,7 @@
   <div :class="$style.container">
     <slot></slot>
     <div :class="$style.actions">
-      <img :class="$style.searchIcon" src="./icon-search.svg" alt="Лупа" />
+      <img :class="$style.searchIcon" src="../icons/icon-search.svg" alt="Лупа" />
     </div>
   </div>
 </template>

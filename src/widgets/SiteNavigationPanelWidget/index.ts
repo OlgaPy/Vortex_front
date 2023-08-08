@@ -1,3 +1,3 @@
-import SiteNavigationPanelWidget from './SiteNavigationPanelWidget.vue';
+import SiteNavigationPanelWidget from './ui/SiteNavigationPanelWidget.vue';
 
 export {SiteNavigationPanelWidget};
