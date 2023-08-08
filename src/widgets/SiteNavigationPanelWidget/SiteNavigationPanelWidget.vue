@@ -1,7 +1,5 @@
 <script setup>
 import {InputUI} from "@/shared/ui/InputUI";
-
-console.log(window.location.pathname);
 </script>
 
 <template>
@@ -10,12 +8,12 @@ console.log(window.location.pathname);
       <img src="./logo.svg" alt="Капибара лого">
     </section>
     <section :class="`${$style.section} ${$style.menuSection}`">
-      <router-link to="/">Тренды</router-link>
-      <router-link to="/">Новое</router-link>
-      <router-link to="/">Топ</router-link>
-      <router-link to="/">Обсуждаемое</router-link>
-      <router-link to="/">Подписки</router-link>
-      <router-link to="/">Группы</router-link>
+      <router-link to="/" :active-class="$style.activeClass">Тренды</router-link>
+      <router-link to="/all" :active-class="$style.activeClass">Новое</router-link>
+      <router-link to="/all" :active-class="$style.activeClass">ТОП</router-link>
+      <router-link to="/all" :active-class="$style.activeClass">Обсуждаемое</router-link>
+      <router-link to="/all" :active-class="$style.activeClass">Подписки</router-link>
+      <router-link to="/all" :active-class="$style.activeClass">Группы</router-link>
     </section>
     <section :class="`${$style.section} ${$style.searchSection}`">
       <InputUI>
@@ -44,16 +42,33 @@ console.log(window.location.pathname);
   margin-bottom: 32px;
 }
 .logoSection {
-  width: 236px;
+  width: 100%;
   height: 54px;
 }
 .menuSection {
+  position: relative;
   display: flex;
   justify-content: start;
   align-items: start;
   flex-direction: column;
   gap: 16px;
-  width: 236px;
+  width: 100%;
+}
+.activeClass {
+  position: relative;
+  font-weight: bold;
+  z-index: 1;
+}
+.activeClass::after {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: -16px;
+  height: 40px;
+  width: 284px;
+  background: var(--ui-main-color);
+  border-radius: var(--border-radius-sub-base) 0 0 var(--border-radius-sub-base);
+  z-index: -1;
 }
 .searchSection {
   width: 236px;

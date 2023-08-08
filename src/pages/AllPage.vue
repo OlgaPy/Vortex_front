@@ -3,7 +3,7 @@ import ToggleGlobalTheme from "@/features/ToggleGlobalThemeFeature.vue";
 </script>
 
 <template>
-  <div class="page">
+  <div :class="$style.page">
     <ToggleGlobalTheme/>
   </div>
 </template>

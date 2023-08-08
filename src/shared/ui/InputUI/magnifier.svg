@@ -3,15 +3,15 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4996 1.89998C8.40681 1.89998 5.89961 4.40718 5.89961 7.49998C5.89961 10.5928 8.40681 13.1 11.4996 13.1C13.0463 13.1 14.445 12.4742 15.4594 11.4598C16.4738 10.4454 17.0996 9.04662 17.0996 7.49998C17.0996 4.40718 14.5924 1.89998 11.4996 1.89998ZM4.09961 7.49998C4.09961 3.41307 7.4127 0.0999756 11.4996 0.0999756C15.5865 0.0999756 18.8996 3.41307 18.8996 7.49998C18.8996 9.21871 18.3128 10.8016 17.3299 12.0575L21.636 16.3636C21.9875 16.715 21.9875 17.2849 21.636 17.6364C21.2845 17.9878 20.7147 17.9878 20.3632 17.6364L16.0571 13.3303C14.8012 14.3132 13.2183 14.9 11.4996 14.9C7.4127 14.9 4.09961 11.5869 4.09961 7.49998Z" fill="#888888"/>
 </g>
 <defs>
-<filter id="filter0_d_254_1168" x="0.0996094" y="0.0999756" width="25.7998" height="25.8" color-interpolation-filters="sRGB">
+<filter id="filter0_d_254_1168" x="0.0996094" y="0.0999756" width="25.7998" height="25.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
 <feGaussianBlur stdDeviation="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend in2="BackgroundImageFix" result="effect1_dropShadow_254_1168"/>
-<feBlend in="SourceGraphic" in2="effect1_dropShadow_254_1168" result="shape"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_254_1168"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_254_1168" result="shape"/>
 </filter>
 </defs>
 </svg>
