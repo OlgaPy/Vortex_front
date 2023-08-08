@@ -2,7 +2,7 @@
   <div :class="$style.container">
     <slot></slot>
     <div :class="$style.actions">
-      <img :class="$style.magnifierImg" src="./magnifier.svg" alt="Лупа" />
+      <img :class="$style.searchIcon" src="./icon-search.svg" alt="Лупа" />
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-.magnifierImg {
+.searchIcon {
   height: 18px;
   width: 18px;
   fill: white;
