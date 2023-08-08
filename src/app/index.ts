@@ -13,7 +13,7 @@ import App from './App.vue'
 import router from './providers/router'
 import { createPinia } from 'pinia'
 
-import {useThemeStore} from "./providers/stores/ThemeStore";
+import {useThemeStore} from "@/shared/stores/ThemeStore";
 
 export {App}
 export const registerPlugins = (app: App<Element>): void => {
