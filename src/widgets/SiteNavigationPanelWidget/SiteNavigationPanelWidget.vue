@@ -1,34 +1,37 @@
 <script setup>
 import {InputUI} from "@/shared/ui/InputUI";
+import {ThemesList, useThemeStore} from "@/shared/stores/ThemeStore";
+const {theme} = useThemeStore();
 </script>
 
 <template>
   <div :class="$style.container">
     <section :class="`${$style.section} ${$style.logoSection}`">
-      <img src="./logo.svg" alt="Капибара лого">
+      <img v-if="theme === ThemesList.WHITE" src="./dark-color-logo.svg" alt="Капибара лого" />
+      <img v-if="theme === ThemesList.DARK" src="./white-color-logo.svg" alt="Капибара лого" />
     </section>
     <section :class="`${$style.section} ${$style.menuSection}`">
-      <router-link to="/" :active-class="$style.activeClass">Тренды</router-link>
-      <router-link to="/all" :active-class="$style.activeClass">Новое</router-link>
-      <router-link to="/all" :active-class="$style.activeClass">ТОП</router-link>
-      <router-link to="/all" :active-class="$style.activeClass">Обсуждаемое</router-link>
-      <router-link to="/all" :active-class="$style.activeClass">Подписки</router-link>
-      <router-link to="/all" :active-class="$style.activeClass">Группы</router-link>
+      <router-link to="/" :active-class="$style.activeLink">Тренды</router-link>
+      <router-link to="/all" :active-class="$style.activeLink">Новое</router-link>
+      <router-link to="/all" :active-class="$style.activeLink">ТОП</router-link>
+      <router-link to="/all" :active-class="$style.activeLink">Обсуждаемое</router-link>
+      <router-link to="/all" :active-class="$style.activeLink">Подписки</router-link>
+      <router-link to="/all" :active-class="$style.activeLink">Группы</router-link>
     </section>
     <section :class="`${$style.section} ${$style.searchSection}`">
       <InputUI>
-        <input placeholder="Найти пост..." />
+        <input placeholder="Найти пост..." :class="$style.findPosts"/>
       </InputUI>
     </section>
   </div>
 </template>
 
-<style module>
+<style lang="scss" module>
 .container {
-  padding: 32px;
+  padding-top: 32px;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background: var(--ui-sub-main-color);
   border-radius: 10px;
@@ -42,36 +45,32 @@ import {InputUI} from "@/shared/ui/InputUI";
   margin-bottom: 32px;
 }
 .logoSection {
-  width: 100%;
+  width: 268px;
   height: 54px;
 }
 .menuSection {
-  position: relative;
-  display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: end;
   flex-direction: column;
-  gap: 16px;
   width: 100%;
 }
-.activeClass {
-  position: relative;
-  font-weight: bold;
-  z-index: 1;
-}
-.activeClass::after {
-  content: "";
-  position: absolute;
-  top: -0.5rem;
-  left: -16px;
+.menuSection > * {
+  padding-left: 16px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
   height: 40px;
   width: 284px;
+}
+.menuSection > *:hover, .activeLink {
   background: var(--ui-main-color);
   border-radius: var(--border-radius-sub-base) 0 0 var(--border-radius-sub-base);
-  z-index: -1;
 }
 .searchSection {
   width: 236px;
   height: 40px;
+}
+.findPosts::placeholder {
+  color: var(--ui-secondary-color);
 }
 </style>>
