@@ -1,0 +1,14 @@
+@import 'normalize';
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

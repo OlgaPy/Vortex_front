@@ -1,0 +1,15 @@
+:root {
+  --border-radius-base: 10px;
+}
+
+[data-theme="white"] {
+  --ui-bg-color: #F2F2F2;
+  --ui-block-bg-color: #FBFBFB;
+  --ui-primary-color: #000000;
+}
+
+[data-theme="dark"] {
+  --ui-bg-color: #1E1E1E;
+  --ui-block-bg-color: #211F26;
+  --ui-primary-color: #000000;
+}
