@@ -1,8 +1,13 @@
 @import 'normalize';
 @import "variables";
+@import 'fonts.css';
 
 * {
   box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Roboto", "-apple-system", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -11,4 +16,10 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+input {
+  background: inherit;
+  border: unset;
+  outline: none;
 }
