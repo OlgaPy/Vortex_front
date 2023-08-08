@@ -1,15 +1,15 @@
-<script setup lang="ts">
+<script setup>
 import {useThemeStore} from "@/shared/stores/ThemeStore";
 const themeStore = useThemeStore();
 </script>
 
 <template>
-  <div class="container" :data-theme="themeStore.theme">
+  <div :class="$style.container" :data-theme="themeStore.theme">
     <RouterView/>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style module>
 .container {
   display: block;
   position: relative;

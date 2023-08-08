@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import ToggleGlobalTheme from "@/features/ToggleGlobalThemeFeature.vue";
 </script>
 
@@ -8,7 +8,7 @@ import ToggleGlobalTheme from "@/features/ToggleGlobalThemeFeature.vue";
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style module>
 .page {
   padding-top: 32px;
   display: flex;
@@ -17,7 +17,7 @@ import ToggleGlobalTheme from "@/features/ToggleGlobalThemeFeature.vue";
   width: 100%;
   height: 100%;
   gap: 32px;
-  background: var(--ui-bg-color);
+  background: var(--ui-main-color);
   color: var(--ui-primary-color);
 }
 </style>

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import {useThemeStore} from "@/shared/stores/ThemeStore";
 const themeStore = useThemeStore();
 </script>

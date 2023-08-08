@@ -1,28 +1,28 @@
-<script setup lang="ts">
+<script setup>
 import ProfilePanelWidget from '@/widgets/ProfilePanelWidget.vue';
-import SiteNavigationPanelWidget from '@/widgets/SiteNavigationPanelWidget.vue';
+import SiteNavigationPanelWidget from '@/widgets/SiteNavigationPanelWidget/SiteNavigationPanelWidget.vue';
 import TrendsFeedWidget from '@/widgets/TrendsFeedWidget.vue';
 import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
 import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
 </script>
 
 <template>
-  <div class="page">
-    <aside class="sidebar left-sidebar">
-      <SiteNavigationPanelWidget class="site-navigation-panel"/>
-      <AdInfoPanelWidget class="ad-info-panel"/>
+  <div :class="$style.page">
+    <aside :class="$style.sidebar">
+      <SiteNavigationPanelWidget :class="$style.siteNavigationPanel"/>
+      <AdInfoPanelWidget :class="$style.adInfoPanel"/>
     </aside>
-    <main class="main">
+    <main :class="$style.main">
       <TrendsFeedWidget/>
     </main>
-    <aside class="sidebar right-sidebar">
-      <ProfilePanelWidget class="profile-panel-widget"/>
-      <SiteInfoPanel class="site-info-panel"/>
+    <aside :class="$style.sidebar">
+      <ProfilePanelWidget :class="$style.profilePanelWidget"/>
+      <SiteInfoPanel :class="$style.siteInfoPanel"/>
     </aside>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style module>
 .page {
   padding-top: 32px;
   display: flex;
@@ -31,7 +31,7 @@ import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
   width: 100%;
   height: 100%;
   gap: 32px;
-  background: var(--ui-bg-color);
+  background: var(--ui-main-color);
   color: var(--ui-primary-color);
 }
 .sidebar, .main {
@@ -45,8 +45,8 @@ import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
   width: 700px;
 }
 
-.site-navigation-panel, .ad-info-panel,
-.profile-panel-widget, .profile-panel-widget {
+.siteNavigationPanel, .adInfoPanel,
+.profilePanelWidget, .siteInfoPanel {
   margin-bottom: 32px;
 }
 </style>

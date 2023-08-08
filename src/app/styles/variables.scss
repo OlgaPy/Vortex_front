@@ -1,19 +1,20 @@
 :root {
   --border-radius-base: 10px;
-  --input-border-radius-base: 5px;
+  --field-border-radius-base: 5px;
+
+  --ui-secondary-color: #888888;
+  --ui-accent-color: #28AFB0;
+  --ui-accent-2-color: #19647E;
 }
 
 [data-theme="white"] {
-  --ui-bg-color: #F2F2F2;
-  --ui-block-bg-color: #FBFBFB;
+  --ui-main-color: #F2F2F2;
+  --ui-sub-main-color: #FBFBFB;
   --ui-primary-color: #000000;
-  --ui-input-element: #F2F2F2;
-  --ui-secondary-color: #888888;
 }
 
 [data-theme="dark"] {
-  --ui-bg-color: #1E1E1E;
-  --ui-block-bg-color: #211F26;
-  --ui-primary-color: #000000;
-  --ui-secondary-color: #888888;
+  --ui-main-color: #141218;
+  --ui-sub-main-color: #211F26;
+  --ui-primary-color: #F6F6F6;
 }

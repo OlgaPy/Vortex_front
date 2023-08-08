@@ -1,19 +1,19 @@
-<script setup lang="ts"></script>
+<script setup></script>
 
 <template>
-  <div class="container">
+  <div :class="$style.container">
 
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style module>
 .container {
   padding: 32px;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  background: var(--ui-block-bg-color);
+  background: var(--ui-sub-main-color);
   border-radius: 10px;
   width: 100%;
   min-height: 241px;
