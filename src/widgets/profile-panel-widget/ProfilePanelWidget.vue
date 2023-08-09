@@ -1,8 +1,6 @@
 <script setup>
-import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
-import IconTextUI from "@/shared/ui/icon-text-ui/IconTextUI.vue";
-import NotificationCounter from "@/shared/ui/notification-text-ui/NotificationTextUI.vue";
-import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
+import {ProfilePreviewUI} from "@/entities";
+import {IconTextUI, NotificationTextUI, ButtonUI} from "@/shared";
 import IconConfiguration from "./icons/IconConfiguration.vue";
 import IconRespond from "./icons/IconRespond.vue";
 import IconComment from "./icons/IconComment.vue";
@@ -38,7 +36,7 @@ import ExitFromProfile from "@/features/exit-from-profile-feature/ExitFromProfil
           </template>
           <template #text>Ответы</template>
         </IconTextUI>
-        <NotificationCounter :count="10" :attract="true"/>
+        <NotificationTextUI :count="10" :attract="true"/>
       </div>
       <div :class="$style.menuItem">
         <IconTextUI>
@@ -55,7 +53,7 @@ import ExitFromProfile from "@/features/exit-from-profile-feature/ExitFromProfil
           </template>
           <template #text>Сохранённое</template>
         </IconTextUI>
-        <NotificationCounter :count="10"/>
+        <NotificationTextUI :count="10"/>
       </div>
       <div :class="$style.menuItem">
         <IconTextUI>

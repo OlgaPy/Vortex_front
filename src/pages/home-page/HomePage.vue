@@ -1,9 +1,5 @@
 <script setup>
-import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
-import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
-import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue';
-import AdInfoPanelWidget from '@/widgets/ad-info-panel-widget/AdInfoPanelWidget.vue';
-import SiteInfoPanel from '@/widgets/site-info-panel-widget/SiteInfoPanel.vue';
+import {ProfilePanelWidget, SiteNavigationPanelWidget, TrendsFeedWidget, AdInfoPanelWidget, SiteInfoPanel} from '@/widgets';
 </script>
 
 <template>
