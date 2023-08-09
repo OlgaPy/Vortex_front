@@ -1,5 +1,5 @@
-import * as Profile from './profile';
+import {ProfilePreviewUI} from './profile';
 
 export {
-    Profile,
+    ProfilePreviewUI,
 }

@@ -1,5 +1,5 @@
 <script setup>
-import {useThemeStore} from "@/shared/stores/ThemeStore";
+import {useThemeStore} from "@/shared";
 const themeStore = useThemeStore();
 </script>
 

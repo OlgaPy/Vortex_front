@@ -1,6 +1,5 @@
 <script setup>
-import SearchInputUI from "@/shared/ui/search-input-ui/SearchInputUI.vue";
-import {ThemesList, useThemeStore} from "@/shared/stores/ThemeStore";
+import {SearchInputUI, useThemeStore, ThemesList} from "@/shared";
 const {theme} = useThemeStore();
 </script>
 
