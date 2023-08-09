@@ -1,5 +1,5 @@
 <script setup>
-import ToggleGlobalTheme from "@/features/ToggleGlobalThemeFeature.vue";
+import ToggleGlobalTheme from "@/features/toggle-global-theme-feature/ToggleGlobalThemeFeature.vue";
 </script>
 
 <template>

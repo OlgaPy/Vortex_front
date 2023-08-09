@@ -1,5 +1,5 @@
 <script setup>
-import {SearchInputUI} from "@/shared/ui/SearchInputUI";
+import SearchInputUI from "@/shared/ui/search-input-ui/SearchInputUI.vue";
 import {ThemesList, useThemeStore} from "@/shared/stores/ThemeStore";
 const {theme} = useThemeStore();
 </script>
@@ -7,8 +7,8 @@ const {theme} = useThemeStore();
 <template>
   <div :class="$style.container">
     <section :class="`${$style.section} ${$style.logoSection}`">
-      <img v-if="theme === ThemesList.WHITE" src="../img/dark-color-logo.svg" alt="Капибара лого" />
-      <img v-if="theme === ThemesList.DARK" src="../img/white-color-logo.svg" alt="Капибара лого" />
+      <img v-if="theme === ThemesList.WHITE" src="./img/dark-color-logo.svg" alt="Капибара лого" />
+      <img v-if="theme === ThemesList.DARK" src="./img/white-color-logo.svg" alt="Капибара лого" />
     </section>
     <section :class="`${$style.section} ${$style.menuSection}`">
       <router-link to="/" :active-class="$style.activeLink">Тренды</router-link>
