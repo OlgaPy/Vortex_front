@@ -8,7 +8,7 @@ import IconSave from "./icons/IconSave.vue";
 import IconIgnore from "./icons/IconIgnore.vue";
 import IconPLus from "./icons/IconPLus.vue";
 import IconEye from "./icons/IconEye.vue";
-import ExitFromProfile from "@/features/exit-from-profile-feature/ExitFromProfileFeature.vue";
+import {ExitFromProfileFeature} from "@/features";
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import ExitFromProfile from "@/features/exit-from-profile-feature/ExitFromProfil
     <section :class="$style.section">
       <ProfilePreviewUI>
         <template v-slot:action>
-          <ExitFromProfile/>
+          <ExitFromProfileFeature/>
         </template>
       </ProfilePreviewUI>
     </section>

@@ -1,10 +1,10 @@
 <script setup>
-import ToggleGlobalTheme from "@/features/toggle-global-theme-feature/ToggleGlobalThemeFeature.vue";
+import {ToggleGlobalThemeFeature} from "@/features";
 </script>
 
 <template>
   <div :class="$style.page">
-    <ToggleGlobalTheme/>
+    <ToggleGlobalThemeFeature/>
   </div>
 </template>
 
