@@ -1,8 +1,8 @@
 <script setup>
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
-import IconTextUI from "@/shared/ui/IconTextUI.vue";
-import NotificationCounter from "@/shared/ui/NotificationCounterUI.vue";
-import ButtonUI from "@/shared/ui/ButtonUI.vue";
+import IconTextUI from "@/shared/ui/icon-text-ui/IconTextUI.vue";
+import NotificationCounter from "@/shared/ui/notification-text-ui/NotificationTextUI.vue";
+import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
 import IconConfiguration from "./icons/IconConfiguration.vue";
 import IconRespond from "./icons/IconRespond.vue";
 import IconComment from "./icons/IconComment.vue";
@@ -10,7 +10,7 @@ import IconSave from "./icons/IconSave.vue";
 import IconIgnore from "./icons/IconIgnore.vue";
 import IconPLus from "./icons/IconPLus.vue";
 import IconEye from "./icons/IconEye.vue";
-import ExitFromProfile from "@/features/ExitFromProfile.vue";
+import ExitFromProfile from "@/features/exit-from-profile-feature/ExitFromProfileFeature.vue";
 </script>
 
 <template>

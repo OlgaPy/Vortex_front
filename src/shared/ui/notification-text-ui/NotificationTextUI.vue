@@ -1,6 +1,4 @@
 <script setup>
-import {defineProps} from "vue";
-
 const {count, attract} = defineProps({
   count: Number,
   attract: Boolean
