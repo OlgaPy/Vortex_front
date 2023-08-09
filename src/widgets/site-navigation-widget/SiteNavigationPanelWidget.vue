@@ -74,6 +74,7 @@ const {theme} = useThemeStore();
   height: 40px;
 }
 .findPosts::placeholder {
+  font-family: 'Roboto', sans-serif;
   color: var(--ui-secondary-color);
 }
 </style>>

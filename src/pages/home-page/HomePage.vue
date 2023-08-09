@@ -1,5 +1,11 @@
 <script setup>
-import {ProfilePanelWidget, SiteNavigationPanelWidget, TrendsFeedWidget, AdInfoPanelWidget, SiteInfoPanel} from '@/widgets';
+import {
+  ProfilePanelWidget,
+  SiteNavigationPanelWidget,
+  TrendsFeedWidget,
+  AdInfoPanelWidget,
+  SiteInfoPanel
+} from '@/widgets';
 </script>
 
 <template>

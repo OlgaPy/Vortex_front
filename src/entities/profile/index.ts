@@ -1,4 +1,4 @@
-import ProfilePreviewUI from './ui/ProfilePreviewUI';
+import ProfilePreviewUI from './ui/ProfilePreviewUI.vue';
 
 export {
     ProfilePreviewUI
