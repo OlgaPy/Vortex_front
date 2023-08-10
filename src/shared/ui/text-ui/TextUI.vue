@@ -12,11 +12,15 @@ const {size} = defineProps<Props>();
 .container {
   font-weight: normal;
   line-height: 16px;
-}
-.medium {
-  font-size: 15px;
+  letter-spacing: 0.5px;
 }
 .small {
-  font-size: 13px;
+  font-size: 12px;
+}
+.medium {
+  font-size: 14px;
+}
+.large {
+  font-size: 15px;
 }
 </style>

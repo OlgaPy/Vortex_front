@@ -1,52 +1,34 @@
 <script setup lang="ts">
-import SiteNavigationPanelWidget from "@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue";
-import AdInfoPanelWidget from "@/widgets/AdInfoPanelWidget.vue";
 import TrendsFeedWidget from "@/widgets/TrendsFeedWidget.vue";
-import ProfilePanelWidget from "@/widgets/profile-panel-widget/ProfilePanelWidget.vue";
-import SiteInfoPanel from "@/widgets/SiteInfoPanel.vue";
+import TapeMenu from "@/widgets/TapeLinksWidget.vue";
+import Header from "@/widgets/HeaderWidget.vue";
 </script>
 
 <template>
   <div :class="$style.page">
-    <aside :class="$style.sidebar">
-      <SiteNavigationPanelWidget :class="$style.siteNavigationPanel"/>
-      <AdInfoPanelWidget :class="$style.adInfoPanel"/>
-    </aside>
-    <main :class="$style.main">
-      <TrendsFeedWidget/>
-    </main>
-    <aside :class="$style.sidebar">
-      <ProfilePanelWidget :class="$style.profilePanelWidget"/>
-      <SiteInfoPanel :class="$style.siteInfoPanel"/>
-    </aside>
+    <header :class="$style.headerContainer">
+      <Header/>
+      <TapeMenu/>
+    </header>
+    <TrendsFeedWidget/>
   </div>
 </template>
 
 <style module>
 .page {
-  padding-top: 32px;
   display: flex;
   justify-content: center;
   align-items: start;
-  width: 100%;
   height: 100%;
-  gap: 32px;
+  width: 100%;
   background: var(--ui-main-color);
   color: var(--ui-primary-color);
 }
-.sidebar, .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 300px;
-}
-.main {
-  width: 700px;
-}
 
-.siteNavigationPanel, .adInfoPanel,
-.profilePanelWidget, .siteInfoPanel {
-  margin-bottom: 32px;
+.headerContainer {
+  width: 100%;
+  -webkit-box-shadow: 0px 1px 3px 0px var(--ui-box-shadow-color);
+  -moz-box-shadow: 0px 1px 3px 0px var(--ui-box-shadow-color);
+  box-shadow: 0px 1px 3px 0px var(--ui-box-shadow-color);
 }
 </style>
