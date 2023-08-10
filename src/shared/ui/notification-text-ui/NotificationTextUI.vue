@@ -1,13 +1,12 @@
-<script setup>
-const {count, attract} = defineProps({
-  count: Number,
-  attract: Boolean
-});
+<script setup lang="ts">
+import type {Props} from "./types";
+
+const {attract} = defineProps<Props>();
 </script>
 
 <template>
   <div :class="{[$style.container]: true, [$style.attract]: attract}">
-    {{count}}
+    <slot></slot>
   </div>
 </template>
 

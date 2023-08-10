@@ -1,5 +1,6 @@
 <script setup>
 import {useThemeStore} from "@/shared";
+
 const themeStore = useThemeStore();
 </script>
 

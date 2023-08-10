@@ -1,5 +1,5 @@
-<script setup>
-import {ToggleGlobalThemeFeature} from "@/features";
+<script setup lang="ts">
+import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
 </script>
 
 <template>

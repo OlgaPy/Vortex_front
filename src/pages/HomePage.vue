@@ -1,11 +1,9 @@
-<script setup>
-import {
-  ProfilePanelWidget,
-  SiteNavigationPanelWidget,
-  TrendsFeedWidget,
-  AdInfoPanelWidget,
-  SiteInfoPanel
-} from '@/widgets';
+<script setup lang="ts">
+import SiteNavigationPanelWidget from "@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue";
+import AdInfoPanelWidget from "@/widgets/AdInfoPanelWidget.vue";
+import TrendsFeedWidget from "@/widgets/TrendsFeedWidget.vue";
+import ProfilePanelWidget from "@/widgets/profile-panel-widget/ProfilePanelWidget.vue";
+import SiteInfoPanel from "@/widgets/SiteInfoPanel.vue";
 </script>
 
 <template>

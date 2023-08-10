@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <div :class="$style.container">
     <slot></slot>
@@ -16,6 +13,8 @@
   height: 100%;
   background-color: var(--ui-accent-color);
   border-radius: var(--border-radius-sub-base);
+  font-size: 14px;
+  line-height: 16px;
 }
 .container:hover {
   cursor: pointer;

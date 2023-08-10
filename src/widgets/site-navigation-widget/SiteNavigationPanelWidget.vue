@@ -1,5 +1,7 @@
-<script setup>
-import {SearchInputUI, useThemeStore, ThemesList} from "@/shared";
+<script setup lang="ts">
+import {ThemesList, useThemeStore} from "@/shared";
+import SearchInputUI from "@/shared/ui/search-input-ui/SearchInputUI.vue";
+
 const {theme} = useThemeStore();
 </script>
 
@@ -29,7 +31,7 @@ const {theme} = useThemeStore();
 .container {
   padding-top: 32px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   background: var(--ui-sub-main-color);
@@ -41,7 +43,7 @@ const {theme} = useThemeStore();
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 .logoSection {
   width: 268px;
@@ -74,7 +76,7 @@ const {theme} = useThemeStore();
   height: 40px;
 }
 .findPosts::placeholder {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   color: var(--ui-secondary-color);
 }
 </style>>

@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div :class="$style.container">
     <router-link to="/">Реклама / инструменты модератора</router-link>

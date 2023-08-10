@@ -1,6 +1,4 @@
-<script setup>
-import {ProfilePreviewUI} from "@/entities";
-import {IconTextUI, NotificationTextUI, ButtonUI} from "@/shared";
+<script setup lang="ts">
 import IconConfiguration from "./icons/IconConfiguration.vue";
 import IconRespond from "./icons/IconRespond.vue";
 import IconComment from "./icons/IconComment.vue";
@@ -8,7 +6,11 @@ import IconSave from "./icons/IconSave.vue";
 import IconIgnore from "./icons/IconIgnore.vue";
 import IconPLus from "./icons/IconPLus.vue";
 import IconEye from "./icons/IconEye.vue";
-import {ExitFromProfileFeature} from "@/features";
+import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
+import ExitFromProfileFeature from "@/features/ExitFromProfileFeature.vue";
+import IconTextUI from "@/shared/ui/icon-text-ui/IconTextUI.vue";
+import NotificationTextUI from "@/shared/ui/notification-text-ui/NotificationTextUI.vue";
+import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
 </script>
 
 <template>
@@ -36,7 +38,7 @@ import {ExitFromProfileFeature} from "@/features";
           </template>
           <template #text>Ответы</template>
         </IconTextUI>
-        <NotificationTextUI :count="10" :attract="true"/>
+        <NotificationTextUI :attract="true">10</NotificationTextUI>
       </div>
       <div :class="$style.menuItem">
         <IconTextUI>
@@ -53,7 +55,7 @@ import {ExitFromProfileFeature} from "@/features";
           </template>
           <template #text>Сохранённое</template>
         </IconTextUI>
-        <NotificationTextUI :count="10"/>
+        <NotificationTextUI>20</NotificationTextUI>
       </div>
       <div :class="$style.menuItem">
         <IconTextUI>
