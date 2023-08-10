@@ -1,8 +1,8 @@
-export enum TitleUI {
+export enum TitleSizes {
     SMALL = 'small',
-    LARGE = 'medium'
+    LARGE = 'large'
 }
 
 export type Props = {
-    size: TitleUI
+    size: TitleSizes
 }

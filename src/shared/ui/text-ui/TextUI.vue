@@ -5,7 +5,7 @@ const {size} = defineProps<Props>();
 </script>
 
 <template>
-  <span :class="[$style.container, $style[size]]"><slot></slot></span>
+  <div :class="[$style.container, $style[size]]"><slot></slot></div>
 </template>
 
 <style module>
@@ -14,8 +14,11 @@ const {size} = defineProps<Props>();
   line-height: 16px;
   letter-spacing: 0.5px;
 }
-.small {
+.micro {
   font-size: 12px;
+}
+.small {
+  font-size: 13px;
 }
 .medium {
   font-size: 14px;

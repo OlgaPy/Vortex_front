@@ -19,5 +19,6 @@ const {size} = defineProps<Props>();
 .large {
   font-size: 17px;
   line-height: 20px;
+  font-weight: 500;
 }
 </style>

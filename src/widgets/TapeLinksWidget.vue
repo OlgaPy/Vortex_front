@@ -1,26 +1,27 @@
 <script setup lang="ts">
 import TextUI from "@/shared/ui/text-ui/TextUI.vue";
+import {TextSizes} from "@/shared/ui/text-ui/types";
 </script>
 
 <template>
   <div :class="$style.container">
     <router-link :class="$style.trends" :active-class="$style.activeItem" to="/">
-      <TextUI size="large">Тренды</TextUI>
+      <TextUI :size="TextSizes.LARGE">Тренды</TextUI>
     </router-link>
     <router-link :class="$style.new" :active-class="$style.activeItem" to="/all">
-      <TextUI size="large">Новое</TextUI>
+      <TextUI :size="TextSizes.LARGE">Новое</TextUI>
     </router-link>
     <router-link :class="$style.top" :active-class="$style.activeItem" to="/all">
-      <TextUI size="large">Топ</TextUI>
+      <TextUI :size="TextSizes.LARGE">Топ</TextUI>
     </router-link>
     <router-link :class="$style.discussed" :active-class="$style.activeItem" to="/all">
-      <TextUI size="large">Обсуждаемое</TextUI>
+      <TextUI :size="TextSizes.LARGE">Обсуждаемое</TextUI>
     </router-link>
     <router-link :class="$style.subscriptions" :active-class="$style.activeItem" to="/all">
-      <TextUI size="large">Подписки</TextUI>
+      <TextUI :size="TextSizes.LARGE">Подписки</TextUI>
     </router-link>
     <router-link :class="$style.groups" :active-class="$style.activeItem" to="/all">
-      <TextUI size="large">Группы</TextUI>
+      <TextUI :size="TextSizes.LARGE">Группы</TextUI>
     </router-link>
   </div>
 </template>
@@ -66,6 +67,5 @@ import TextUI from "@/shared/ui/text-ui/TextUI.vue";
 
 .activeItem > * {
   font-weight: 500;
-  font-size: 14px;
 }
 </style>

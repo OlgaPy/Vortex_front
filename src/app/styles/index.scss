@@ -4,12 +4,13 @@
 
 * {
   box-sizing: border-box;
+  padding: unset;
+  margin: unset;
 }
 
 html, body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  line-height: 24px;
 }
 
 a {
@@ -21,4 +22,9 @@ input {
   background: inherit;
   border: unset;
   outline: none;
+}
+
+button {
+  border: unset;
+  background: unset;
 }
