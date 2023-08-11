@@ -1,26 +1,22 @@
 <script setup lang="ts">
-import IconTextUI from "@/shared/ui/IconTextUI.vue";
 import ArrowIcon from "@/shared/ui/icons/ArrowIcon.vue";
 import TextUI from "@/shared/ui/text-ui/TextUI.vue";
 import {TextSizes} from "@/shared/ui/text-ui/types";
+import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
+import {ButtonActivity, ButtonType} from "@/shared/ui/button-ui/types";
 </script>
 
 <template>
-  <IconTextUI :class="$style.container">
-    <template #text>
-      <TextUI :size=TextSizes.LARGE :class="$style.text">158 постов прочитано</TextUI>
-    </template>
-    <template #right-icon>
-      <ArrowIcon/>
-    </template>
-  </IconTextUI>
+  <ButtonUI :activity="ButtonActivity.ACTIVE" :type="ButtonType.TEXT" :class="$style.container">
+    <TextUI :size="TextSizes.LARGE">158 постов прочитано</TextUI>
+    <ArrowIcon/>
+  </ButtonUI>
 </template>
 
 <style module>
 .container {
+  width: 207px;
   padding: 4px 12px;
-}
-.text {
-  color: var(--ui-accent-color);
+  gap: 4px;
 }
 </style>
