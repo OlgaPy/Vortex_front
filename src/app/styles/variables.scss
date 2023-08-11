@@ -7,7 +7,18 @@
   --ui-accent-color: #28AFB0;
   --ui-accent-contrast-color: #FFFFFF;
   --ui-accent-2-color: #19647E;
+  --ui-error-bg-color: #FFFFFF;
+  --ui-error-border-color: #FD7068;
+  --ui-error-color: #FD9C97;
   --ui-box-shadow-color: rgba(0, 0, 0, 0.3);
+
+  --text-font-size-micro: 12px;
+  --text-font-size-small: 13px;
+  --text-font-size-medium: 14px;
+  --text-font-size-large: 15px;
+
+  --title-font-size-small: 15px;
+  --title-font-size-large: 17px;
 }
 
 [data-theme="white"] {

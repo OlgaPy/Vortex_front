@@ -15,15 +15,15 @@ const {size} = defineProps<Props>();
   letter-spacing: 0.5px;
 }
 .micro {
-  font-size: 12px;
+  font-size: var(--text-font-size-micro);
 }
 .small {
-  font-size: 13px;
+  font-size: var(--text-font-size-small);
 }
 .medium {
-  font-size: 14px;
+  font-size: var(--text-font-size-medium);
 }
 .large {
-  font-size: 15px;
+  font-size: var(--text-font-size-large);
 }
 </style>

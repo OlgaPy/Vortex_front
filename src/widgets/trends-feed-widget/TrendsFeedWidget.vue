@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import ShowViewedPosts from "@/features/ShowViewedPosts.vue";
 import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue";
+import InputUI from "@/shared/ui/input-ui/InputUI.vue";
+import {InputType} from "@/shared/ui/input-ui/types";
 </script>
 
 <template>

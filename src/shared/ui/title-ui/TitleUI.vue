@@ -14,10 +14,10 @@ const {size} = defineProps<Props>();
   line-height: 16px;
 }
 .small {
-  font-size: 15px;
+  font-size: var(--title-font-size-small);
 }
 .large {
-  font-size: 17px;
+  font-size: var(--title-font-size-large);
   line-height: 20px;
   font-weight: 500;
 }

@@ -45,3 +45,7 @@ html {
         background-color: #ffffff;
     }
 }
+
+input, input::placeholder {
+    color: inherit;
+}
