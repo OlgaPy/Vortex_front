@@ -9,7 +9,9 @@ const themeStore = useThemeStore();
   </div>
 </template>
 
-<style module>
+<style lang="scss" module>
+@use '~/app/themes/fonts';
+
 .container {
   display: block;
   position: relative;
