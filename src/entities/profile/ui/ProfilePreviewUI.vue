@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <router-link :class="$style.container" to="/all">
     <img src="./icons/userpic.svg" alt="Аватар">

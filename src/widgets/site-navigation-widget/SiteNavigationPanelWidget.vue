@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import {SearchInputUI, useThemeStore, ThemesList} from "@/shared";
 const {theme} = useThemeStore();
 </script>

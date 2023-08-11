@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import {ProfilePreviewUI} from "@/entities";
 import {IconTextUI, NotificationTextUI, ButtonUI} from "@/shared";
 import IconConfiguration from "./icons/IconConfiguration.vue";

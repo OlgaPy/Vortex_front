@@ -2,6 +2,6 @@
 
 </template>
 
-<style module>
+<style lang="ts" module>
 
 </style>

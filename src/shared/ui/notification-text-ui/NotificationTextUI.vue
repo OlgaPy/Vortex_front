@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 const {count, attract} = defineProps({
   count: Number,
   attract: Boolean
