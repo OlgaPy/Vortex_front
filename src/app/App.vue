@@ -1,5 +1,6 @@
-<script lang="ts" setup>
-import {useThemeStore} from "@/shared";
+<script setup lang="ts">
+import {useThemeStore} from "@/shared/stores/ThemeStore";
+
 const themeStore = useThemeStore();
 </script>
 

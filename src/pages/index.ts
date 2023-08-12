@@ -2,11 +2,11 @@ export const routes =  [
     {
         path: '/',
         name: 'Home',
-        component: () => import('@/pages/home-page/HomePage.vue')
+        component: () => import('./HomePage.vue')
     },
     {
         path: '/all',
         name: 'all',
-        component: () => import('@/pages/all-page/AllPage.vue')
+        component: () => import('./AllPage.vue')
     }
 ]

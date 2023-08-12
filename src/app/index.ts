@@ -4,7 +4,7 @@ import './styles/index.scss'
 import {type CreateAppFunction} from 'vue';
 import App from './App.vue'
 import router from './providers/router'
-import { createPinia } from 'pinia'
+import {createPinia} from 'pinia'
 
 export {App}
 
