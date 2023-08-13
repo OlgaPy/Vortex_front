@@ -2,13 +2,13 @@
 import './styles/index.scss'
 import './themes/index.scss';
 
-import {type CreateAppFunction} from 'vue';
-import App from './App.vue'
 import router from './providers/router'
 import {createPinia} from 'pinia'
+import type {App} from "vue";
 
-export {App}
 
 export const registerPlugins = (app: ReturnType<CreateAppFunction<Element>>): void => {
     app.use(createPinia()).use(router);
 }
+
+export * as AppRoot from './App.vue';
