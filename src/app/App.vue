@@ -11,7 +11,6 @@ const themeStore = useThemeStore();
 </template>
 
 <style lang="scss" module>
-@use '~/app/themes/fonts';
 
 .container {
   display: block;

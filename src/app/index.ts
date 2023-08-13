@@ -1,5 +1,7 @@
 // Import App scss
 import './styles/index.scss'
+import './themes/fonts/index.scss';
+import './themes/colors/index.scss';
 
 import {type CreateAppFunction} from 'vue';
 import App from './App.vue'
