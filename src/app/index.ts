@@ -4,7 +4,7 @@ import './themes/index.scss';
 
 import router from './providers/router'
 import {createPinia} from 'pinia'
-import type {App} from "vue";
+import type {App, CreateAppFunction} from "vue";
 
 
 export const registerPlugins = (app: ReturnType<CreateAppFunction<Element>>): void => {
