@@ -7,11 +7,11 @@ html {
 	// Expressing the size as a percentage makes it adaptable to users who adjust the font size in their browser settings,
 	// and also allows for changes from the server or JavaScript, as the size is set through a css variable.
 	// @see https://css-tricks.com/accessible-font-sizing-explained
-	--font-base: 62.5%;
+	--font-size-base: 62.5%;
 	// For rem in iOS
 	font: -apple-system-body;
 	// Set base font-size
-	font-size: var(--font-base);
+	font-size: var(--font-size-base);
 	// Preventing font zoom in iOS
 	-webkit-text-size-adjust: 100%;
 }
