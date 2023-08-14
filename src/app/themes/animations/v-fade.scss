@@ -1,0 +1,10 @@
+// Vue animation "v-fade"
+.animation-v-fade-enter-active,
+.animation-v-fade-leave-active {
+	transition: opacity var(--transition-default);
+}
+
+.animation-v-fade-enter-from,
+.animation-v-fade-leave-to {
+	opacity: 0;
+}

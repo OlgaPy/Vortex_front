@@ -1,0 +1,10 @@
+// Contains scroll-behavior, transition, animation and everything related to animation
+:root {
+	--transition-default: 200ms ease;
+	--transition-scroll: smooth;
+
+	@media (prefers-reduced-motion: reduce) {
+		--transition-default: 0s linear;
+		--transition-scroll: auto;
+	}
+}

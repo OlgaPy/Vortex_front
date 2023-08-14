@@ -1,0 +1,42 @@
+// Create css variables and utility classes for colors
+@mixin create-vars($schema, $theme-name) {
+	$is-theme-default: $theme-name == 'default';
+	$data-theme: '[data-theme="#{$theme-name}"]';
+
+	@each $name, $light, $dark in $schema {
+		// Theme is not selected or selected device light mode or selected light mode on the site
+		// Light
+		@media (prefers-color-scheme: light) {
+			html[data-color-schema='auto']#{$data-theme} {
+				--color-#{$name}: #{$light};
+			}
+		}
+
+		html[data-color-schema='light']#{$data-theme} {
+			--color-#{$name}: #{$light};
+		}
+
+		// Selected device dark mode or selected light mode on the site
+		// Dark
+		@media (prefers-color-scheme: dark) {
+			html[data-color-schema='auto']#{$data-theme} {
+				--color-#{$name}: #{$dark};
+			}
+		}
+
+		html[data-color-schema='dark']#{$data-theme} {
+			--color-#{$name}: #{$dark};
+		}
+
+		// Create utility classes
+		@if $is-theme-default {
+			.color-#{$name} {
+				color: var(--color-#{$name});
+			}
+
+			.color-bg-#{$name} {
+				background-color: var(--color-#{$name});
+			}
+		}
+	}
+}

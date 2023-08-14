@@ -1,0 +1,30 @@
+/* Normalization */
+html {
+	// The base font size for html, which serves as the basis for calculating rem units.
+	// In most browsers, the default font size is 16px.
+	// To facilitate working with rem units in web development while using px units in design, the size is calculated as (62.5 / 100) * 16px = 10px.
+	// This means that for a browser with a default font size of 16px, the base font size for html will be 10px.
+	// Expressing the size as a percentage makes it adaptable to users who adjust the font size in their browser settings,
+	// and also allows for changes from the server or JavaScript, as the size is set through a css variable.
+	// @see https://css-tricks.com/accessible-font-sizing-explained
+	--font-size-base: 62.5%;
+	// For rem in iOS
+	font: -apple-system-body;
+	// Set base font-size
+	font-size: var(--font-size-base);
+	// Preventing font zoom in iOS
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	// Preventing possible spaces between elements
+	font-size: 0;
+	line-height: 1;
+	// Basic family
+	font-family: sans-serif;
+	// Add readability
+	text-rendering: optimizeLegibility;
+	// Font smoothing
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: auto;
+}

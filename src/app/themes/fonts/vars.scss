@@ -1,0 +1,76 @@
+/* Set font variables */
+$-default-family: var(--font-family-default);
+
+:root {
+	// Basic font
+	--font-base: normal 400 1.5rem/1.6rem #{$-default-family};
+	--font-base-b: normal 600 1.5rem/1.6rem #{$-default-family};
+	// Buttons
+	--font-btn: normal 400 1.4rem/1.6rem #{$-default-family};
+	--font-btn-big: #{$-default-family};// TODO
+	--font-btn-small: #{$-default-family};// TODO
+	// Headings
+	--font-h1: #{$-default-family};// TODO
+	--font-h2: #{$-default-family};// TODO
+	--font-h3: #{$-default-family};// TODO
+	// TODO: sort and change
+	--font-post-title: normal 600 1.7rem/2rem #{$-default-family};
+	--font-text-small: normal 400 1.3rem/1.6rem #{$-default-family};
+	--font-tags: normal 400 1.2rem/1.6rem #{$-default-family};
+}
+
+// TODO
+// mixin on-desktop {
+// 	:root {
+// 		// copy-paste and change vars if difference
+// 	}
+// }
+
+/* Classes */
+// Basic font
+.font-base {
+	font: var(--font-base);
+}
+
+.font-base-b {
+	font: var(--font-base-b);
+}
+
+// Buttons
+.font-btn {
+	font: var(--font-btn);
+}
+
+.font-btn-big {
+	font: var(--font-btn-big);
+}
+
+.font-btn-small {
+	font: var(--font-btn-small);
+}
+
+// Headings
+.font-h1 {
+	font: var(--font-h1);
+}
+
+.font-h2 {
+	font: var(--font-h2);
+}
+
+.font-h3 {
+	font: var(--font-h3);
+}
+
+// TODO: sort and change
+.font-post-title {
+	font: var(--font-post-title);
+}
+
+.font-text-small {
+	font: var(--font-text-small);
+}
+
+.font-tags {
+	font: var(--font-tags);
+}

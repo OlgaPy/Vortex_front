@@ -10,7 +10,8 @@ const themeStore = useThemeStore();
   </div>
 </template>
 
-<style module>
+<style lang="scss" module>
+
 .container {
   display: block;
   position: relative;
