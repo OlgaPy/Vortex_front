@@ -1,7 +1,7 @@
-import {AppRoot, registerPlugins} from "@/app";
+import {App, registerPlugins} from "@/app";
 import {createApp} from "vue";
 
-const app = createApp(AppRoot);
+const app = createApp(App);
 
 registerPlugins(app);
 

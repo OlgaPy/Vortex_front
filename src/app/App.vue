@@ -11,7 +11,6 @@ const themeStore = useThemeStore();
 </template>
 
 <style lang="scss" module>
-
 .container {
   display: block;
   position: relative;
