@@ -21,7 +21,7 @@ import TitleUI from "@/shared/ui/title-ui/TitleUI.vue";
 .container {
   display: flex;
   justify-items: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   gap: 20px;

@@ -8,8 +8,10 @@ import SavePostToFavorites from "@/features/SavePostToFavorites.vue";
 
 <template>
   <div :class="$style.container">
-    <ChangePostRating :class="$style.ratingChanger"/>
-    <CommentsLinkUI/>
+		<div :class="$style.leftSection">
+			<ChangePostRating :class="$style.ratingChanger"/>
+			<CommentsLinkUI/>
+		</div>
     <div :class="$style.rightSection">
       <SavePostToFavorites/>
       <SharePost/>
@@ -29,6 +31,7 @@ import SavePostToFavorites from "@/features/SavePostToFavorites.vue";
   width: 111px;
 }
 
+.leftSection,
 .rightSection {
   display: flex;
   align-items: center;

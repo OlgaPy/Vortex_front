@@ -6,7 +6,7 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
 <template>
   <div :class="$style.container">
     <header :class="$style.header">
-      <ShowViewedPosts/>
+      <ShowViewedPosts :class="$style.showViewedPosts"/>
     </header>
     <main :class="$style.feed">
       <TestPreviewPost/>
@@ -20,21 +20,29 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
 .container {
   display: flex;
   justify-items: start;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   width: 100%;
 }
 
 .header {
+	display: flex;
+	justify-content: start;
+	width: 100%;
+	max-width: 720px;
   padding: 16px 0;
+}
+.showViewedPosts {
+	padding: 4px 12px;
 }
 
 .feed {
   display: flex;
   justify-items: start;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   width: 100%;
+	max-width: 720px;
   gap: 10px;
   background-color: var(--ui-main-color);
 }
