@@ -10,7 +10,7 @@ import Header from "@/widgets/HeaderWidget.vue";
       <Header/>
       <TapeMenu/>
     </header>
-    <TrendsFeedWidget :class="$style.trendsFeedWidget"/>
+    <TrendsFeedWidget/>
   </div>
 </template>
 
@@ -20,25 +20,17 @@ import Header from "@/widgets/HeaderWidget.vue";
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
   background: var(--ui-main-color);
   color: var(--ui-primary-color);
 }
 
 .headerContainer {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   background: var(--ui-sub-main-color);
-  -webkit-box-shadow: 0px 1px 3px 0px var(--ui-box-shadow-color);
-  -moz-box-shadow: 0px 1px 3px 0px var(--ui-box-shadow-color);
   box-shadow: 0px 1px 3px 0px var(--ui-box-shadow-color);
   z-index: 1;
-}
-
-.trendsFeedWidget {
-  margin-top: 100px;
 }
 </style>

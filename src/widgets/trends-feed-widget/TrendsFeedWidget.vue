@@ -23,6 +23,7 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
   align-items: center;
   flex-direction: column;
   width: 100%;
+	padding: 0 12px;
 }
 
 .header {
