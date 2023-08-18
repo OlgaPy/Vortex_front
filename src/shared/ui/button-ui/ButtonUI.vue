@@ -15,7 +15,6 @@ const {activity, type} = defineProps<Props>();
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 296px;
   font-size: var(--text-font-size-medium);
   font-weight: normal;
   line-height: 16px;

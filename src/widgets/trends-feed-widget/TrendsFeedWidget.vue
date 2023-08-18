@@ -33,7 +33,7 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
   padding: 16px 0;
 }
 .showViewedPosts {
-	padding: 4px 12px;
+	padding: 4px 0;
 }
 
 .feed {
