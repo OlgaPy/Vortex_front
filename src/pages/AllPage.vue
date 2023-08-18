@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
+import TogglePostActionsDirection from '@/features/TogglePostActionsDirection.vue';
 </script>
 
 <template>
   <div :class="$style.page">
     <ToggleGlobalThemeFeature/>
+		<TogglePostActionsDirection/>
   </div>
 </template>
 
@@ -12,8 +14,9 @@ import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
 .page {
   padding-top: 32px;
   display: flex;
-  justify-content: center;
-  align-items: start;
+	flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: 100%;
   gap: 32px;
