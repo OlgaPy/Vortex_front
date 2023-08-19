@@ -15,14 +15,13 @@
   align-items: center;
   letter-spacing: 0.5px;
   border-radius: var(--style-radius-5);
-	background-color: var(--color-primary-1);
-	color: var(--color-base-bg);
+  border: unset;
+  background: unset;
+	color: var(--color-primary-1);
 }
 
 .container[disabled] {
-	color: var(--color-gray-53);
-	background-color: var(--color-gray-73);
-	border-color: var(--color-gray-73);
+	color: var(--color-gray-73);
 	cursor: default;
 }
 </style>

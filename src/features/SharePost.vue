@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import ShareIcon from "@/shared/ui/icons/ShareIcon.vue";
-import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
-import {ButtonType} from "@/shared/ui/button-ui/types";
+import IconButtonUI from "@/shared/ui/icon-button-ui/IconButtonUI.vue";
 </script>
 
 <template>
-  <ButtonUI :type="ButtonType.TEXT">
-    <ShareIcon/>
-  </ButtonUI>
+	<IconButtonUI>
+		<template #left-icon>
+			<ShareIcon/>
+		</template>
+	</IconButtonUI>
 </template>
 
 <style scoped>

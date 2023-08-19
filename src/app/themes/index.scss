@@ -14,3 +14,10 @@ a {
   color: unset;
   text-decoration: none;
 }
+
+textarea, button {
+	border: unset;
+	background: inherit;
+	outline: none;
+	cursor: pointer;
+}

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {EPostActionsDirection, useUserSettingsStore} from '@/shared/stores/UserSettingsStore';
 import {storeToRefs} from 'pinia';
+import FilledButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
 
 const settingsStore = useUserSettingsStore();
 const { settings } = storeToRefs(settingsStore);
@@ -9,7 +10,7 @@ const { setPostActionsDirection } = settingsStore;
 
 <template>
 	<div :class="$style.container">
-		<button
+		<FilledButtonUI
 			v-for="direction in Object.keys(EPostActionsDirection)"
 			:key="direction"
 			:class="[$style.button, {
@@ -18,7 +19,7 @@ const { setPostActionsDirection } = settingsStore;
 			@click="setPostActionsDirection(EPostActionsDirection[direction])"
 		>
 			Direction: {{ direction.toLowerCase() }}
-		</button>
+		</FilledButtonUI>
 	</div>
 </template>
 
