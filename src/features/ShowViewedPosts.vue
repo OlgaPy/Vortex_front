@@ -1,17 +1,11 @@
 <script setup lang="ts">
 import ArrowIcon from "@/shared/ui/icons/ArrowIcon.vue";
-import TextButtonUI from "@/shared/ui/button-ui/TextButtonUI.vue";
+import IconButtonUI from "@/shared/ui/icon-button-ui/IconButtonUI.vue";
 </script>
 
 <template>
-  <TextButtonUI :class="$style.container">
-		<span class="font-text-large">158 постов прочитано</span>
-    <ArrowIcon/>
-	</TextButtonUI>
+  <IconButtonUI>
+		<template #text><span class="font-text-large">158 постов прочитано</span></template>
+		<template #right-icon><ArrowIcon/></template>
+	</IconButtonUI>
 </template>
-
-<style module>
-.container {
-  gap: 4px;
-}
-</style>

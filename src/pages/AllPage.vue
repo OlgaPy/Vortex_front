@@ -8,6 +8,11 @@ import {InputType} from "@/shared/ui/input-ui/types";
 import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
 import EmptyButtonUI from "@/shared/ui/button-ui/EmptyButtonUI.vue";
 import TextButtonUI from "@/shared/ui/button-ui/TextButtonUI.vue";
+import IconButtonUI from "@/shared/ui/icon-button-ui/IconButtonUI.vue";
+import RateDownIcon from "@/shared/ui/icons/RateDownIcon.vue";
+import RateUpIcon from "@/shared/ui/icons/RateUpIcon.vue";
+import SaveIcon from "@/shared/ui/icons/SaveIcon.vue";
+import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
 </script>
 
 <template>
@@ -39,6 +44,18 @@ import TextButtonUI from "@/shared/ui/button-ui/TextButtonUI.vue";
 		<ButtonUI disabled>Button</ButtonUI>
 		<TextButtonUI>Button</TextButtonUI>
 		<TextButtonUI disabled>Button</TextButtonUI>
+
+		<IconButtonUI>
+			<template #left-icon><SaveIcon/></template>
+		</IconButtonUI>
+		<IconButtonUI>
+			<template #left-icon><RateDownIcon/></template>
+			<template #text>RATE</template>
+			<template #right-icon><RateUpIcon/></template>
+		</IconButtonUI>
+		<IconButtonUI>
+			<template #right-icon><TrashIcon/></template>
+		</IconButtonUI>
 	</PageUI>
 </template>
 

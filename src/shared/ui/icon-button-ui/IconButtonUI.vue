@@ -2,7 +2,7 @@
 </script>
 
 <template>
-	<button :class="$style.container">
+	<button :class="[$style.container, 'font-btn']">
 		<slot name="left-icon"></slot>
 		<slot name="text"></slot>
 		<slot name="right-icon"></slot>
@@ -19,5 +19,11 @@
 	border: unset;
 	background: unset;
 	gap: 4px;
+	color: var(--color-primary-1);
+}
+
+.container[disabled] {
+	color: var(--color-gray-73);
+	cursor: default;
 }
 </style>
