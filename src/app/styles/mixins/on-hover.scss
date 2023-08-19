@@ -1,0 +1,8 @@
+// Apply styles only if we can hover, disable on taps
+@mixin on-hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}

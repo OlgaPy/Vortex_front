@@ -2,22 +2,3 @@
 @use './colors';
 @use './cosmetic';
 @use './animations';
-
-//TODO Move to right place
-* {
-  box-sizing: border-box;
-  padding: unset;
-  margin: unset;
-}
-
-a {
-  color: unset;
-  text-decoration: none;
-}
-
-textarea, button {
-	border: unset;
-	background: inherit;
-	outline: none;
-	cursor: pointer;
-}

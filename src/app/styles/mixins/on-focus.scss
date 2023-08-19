@@ -1,0 +1,12 @@
+// Apply focus only if it was from keyboard
+@mixin on-focus {
+	&:focus-visible {
+		@content;
+	}
+
+	@supports not selector(*:focus-visible) {
+		&:focus {
+			@content;
+		}
+	}
+}
