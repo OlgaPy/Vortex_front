@@ -15,7 +15,6 @@ import {ButtonActivity, ButtonType} from "@/shared/ui/button-ui/types";
 
 <style module>
 .container {
-  width: 207px;
   gap: 4px;
 }
 </style>

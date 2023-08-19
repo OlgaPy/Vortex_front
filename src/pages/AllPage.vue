@@ -14,8 +14,6 @@ import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
   display: flex;
   justify-content: center;
   align-items: start;
-  width: 100%;
-  height: 100%;
   gap: 32px;
   background: var(--ui-main-color);
   color: var(--ui-primary-color);
