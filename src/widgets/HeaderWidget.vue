@@ -18,6 +18,7 @@ import AuthWidget from "@/widgets/AuthWidget.vue";
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 56px;
   padding: 10px 12px;
 }
 </style>
