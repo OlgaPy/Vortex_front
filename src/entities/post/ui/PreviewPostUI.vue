@@ -45,6 +45,8 @@
   align-items: start;
   flex-direction: column;
   gap: 12px;
+	color: var(--color-gray-14);
+	font: var(--font-text);
 }
 .main > * {
   padding: 0 12px;
@@ -65,6 +67,7 @@
   flex-direction: column;
   width: 100%;
   border-top: 1px solid var(--color-base-bg);
+	color: var(--color-gray-53);
 }
 .footer > * {
   padding: 16px 12px;

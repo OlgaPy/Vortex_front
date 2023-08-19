@@ -1,7 +1,13 @@
 <template>
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 16H27" stroke="#36343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M5 8H27" stroke="#36343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M5 24H27" stroke="#36343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
+	<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M5 16H27" :class="$style.stroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M5 8H27" :class="$style.stroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M5 24H27" :class="$style.stroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
 </template>
+
+<style module>
+.stroke {
+	stroke: var(--color-gray-22);
+}
+</style>
