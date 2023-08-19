@@ -9,6 +9,6 @@ export enum ButtonType {
 }
 
 export type Props = {
-    activity: ButtonActivity
+    activity?: ButtonActivity
     type: ButtonType
 }
