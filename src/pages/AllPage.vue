@@ -13,6 +13,9 @@ import RateDownIcon from "@/shared/ui/icons/RateDownIcon.vue";
 import RateUpIcon from "@/shared/ui/icons/RateUpIcon.vue";
 import SaveIcon from "@/shared/ui/icons/SaveIcon.vue";
 import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
+import { SearchInputUI } from '@/shared/ui/search-input-ui';
+
+const searchText = '';
 </script>
 
 <template>
@@ -37,6 +40,8 @@ import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
 		<InputUI :type="InputType.ERROR">
 			<input placeholder="Placeholder"/>
 		</InputUI>
+
+		<SearchInputUI v-model="searchText" placeholder="Найти пост"/>
 
 		<EmptyButtonUI>Button</EmptyButtonUI>
 		<EmptyButtonUI disabled>Button</EmptyButtonUI>
