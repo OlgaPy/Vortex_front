@@ -6,6 +6,9 @@ import PostPreviewFooterUI from "@/widgets/trends-feed-widget/ui/PostPreviewFoot
 
 <template>
   <PreviewPostUI>
+    <template #header>
+      <div :class="$style.postProfile">TODO Здесь будет профиль</div>
+    </template>
     <template #title>
       Сытно и просто - картофель по-деревенски! 🥔✨
     </template>
@@ -13,14 +16,12 @@ import PostPreviewFooterUI from "@/widgets/trends-feed-widget/ui/PostPreviewFoot
       <TagsList :tags="['Меню', 'Баян', 'Без рейтинга']"/>
     </template>
     <template #body>
-      <div :class="$style.postBody">
-        <img src="@/widgets/trends-feed-widget/img/Pictures.png" alt="Post Image">
-        <span class="font-text color-gray-22">
-          Нарежьте картошку кубиками, посыпьте розмарином, солью и перцем, добавьте немного растительного масла.
-          Выпекайте в разогретой духовке до золотистой корки. Этот домашний деликатес прекрасно подходит к мясным
-          блюдам или просто с огоньком кетчупа! 🍅🔥
-        </span>
-      </div>
+      <img src="@/widgets/trends-feed-widget/img/Pictures.png" alt="Post Image">
+      <span class="font-text color-gray-22">
+        Нарежьте картошку кубиками, посыпьте розмарином, солью и перцем, добавьте немного растительного масла.
+        Выпекайте в разогретой духовке до золотистой корки. Этот домашний деликатес прекрасно подходит к мясным
+        блюдам или просто с огоньком кетчупа! 🍅🔥
+      </span>
     </template>
     <template #footer>
       <PostPreviewFooterUI/>
@@ -29,11 +30,15 @@ import PostPreviewFooterUI from "@/widgets/trends-feed-widget/ui/PostPreviewFoot
 </template>
 
 <style module>
-.postBody {
+.postProfile {
   display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  width: 100%;
+  border: 1px solid var(--color-gray-22);
+  color: var(--color-gray-22);
+  font: var(--font-text);
 }
 </style>

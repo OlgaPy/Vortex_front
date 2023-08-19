@@ -21,7 +21,6 @@ import PageUI from "@/shared/ui/PageUI.vue";
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: 0 1px 3px 0 var(--color-black-0-30);
   z-index: 1;
 }
 </style>
