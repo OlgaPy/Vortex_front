@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useUserSettingsStore, EPostActionsDirection } from '@/shared/stores/UserSettingsStore';
-import { storeToRefs } from 'pinia';
+import {EPostActionsDirection, useUserSettingsStore} from '@/shared/stores/UserSettingsStore';
+import {storeToRefs} from 'pinia';
 
 const settingsStore = useUserSettingsStore();
 const { settings } = storeToRefs(settingsStore);

@@ -5,7 +5,7 @@ const {activity, type} = defineProps<Props>();
 </script>
 
 <template>
-  <button :class="$style.container" :data-activity="activity" :data-type="type">
+  <button :class="[$style.container, 'font-btn']" :data-activity="activity" :data-type="type">
     <slot></slot>
   </button>
 </template>
@@ -15,31 +15,30 @@ const {activity, type} = defineProps<Props>();
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--text-font-size-medium);
-  font-weight: normal;
-  line-height: 16px;
   letter-spacing: 0.5px;
-  border-radius: var(--border-radius-sub-base);
+  border-radius: var(--style-radius-5);
+  border: unset;
+  background: unset;
 }
 
 .container[data-activity="active"] {
-  background-color: var(--ui-accent-color);
-  color: var(--ui-accent-color);
-  border: 1px solid var(--ui-accent-color);
+  background-color: var(--color-primary-1);
+  color: var(--color-primary-1);
+  border: 1px solid var(--color-primary-1);
 }
 .container[data-activity="inactive"] {
-  background-color: var(--ui-disabled-color);
-  color: var(--ui-disabled-color);
-  border: 1px solid var(--ui-disabled-color);
+  background-color: var(--color-gray-73);
+  color: var(--color-gray-53);
+  border: 1px solid var(--color-gray-73);
 }
 
 .container[data-type="filled"] {
-  background-color: var(--ui-accent-color);
-  color: var(--ui-accent-contrast-color);
+  background-color: var(--color-primary-1);
+  color: var(--color-base-bg);
 }
 .container[data-type="default"] {
-  color: var(--ui-accent-color);
-  border: 1px solid var(--ui-accent-color);
+  color: var(--color-primary-1);
+  border: 1px solid var(--color-primary-1);
   background-color: unset;
 }
 .container[data-type="text"] {

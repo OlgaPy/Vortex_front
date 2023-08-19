@@ -8,7 +8,7 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
     <header :class="$style.header">
       <ShowViewedPosts :class="$style.showViewedPosts"/>
     </header>
-    <main :class="$style.feed">
+    <main :class="[$style.feed, 'color-bg-base-bg']">
       <TestPreviewPost/>
       <TestPreviewPost/>
       <TestPreviewPost/>
@@ -23,18 +23,17 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
   align-items: center;
   flex-direction: column;
   width: 100%;
-	padding: 0 12px;
+  max-width: 786px;
 }
 
 .header {
 	display: flex;
 	justify-content: start;
 	width: 100%;
-	max-width: 720px;
   padding: 16px 0;
 }
 .showViewedPosts {
-	padding: 4px 0;
+	padding: 4px 12px;
 }
 
 .feed {
@@ -43,8 +42,12 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
   align-items: center;
   flex-direction: column;
   width: 100%;
-	max-width: 720px;
   gap: 10px;
-  background-color: var(--ui-main-color);
+}
+
+@media screen and (min-width: 834px) {
+  .showViewedPosts {
+    padding: 4px 0;
+  }
 }
 </style>

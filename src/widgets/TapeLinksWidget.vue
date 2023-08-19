@@ -1,27 +1,24 @@
 <script setup lang="ts">
-import TextUI from "@/shared/ui/text-ui/TextUI.vue";
-import {TextSizes} from "@/shared/ui/text-ui/types";
+import {useCssModule} from "vue";
+
+const style = useCssModule();
+const items = [
+  {name: 'Тренды', path: '/', style: style.trends},
+  {name: 'Новое', path: '/all', style: style.new},
+  {name: 'Топ', path: '/all', style: style.top},
+  {name: 'Обсуждаемое', path: '/all', style: style.discussed},
+  {name: 'Подписки', path: '/all', style: style.subscriptions},
+  {name: 'Группы', path: '/all', style: style.groups},
+];
 </script>
 
 <template>
   <div :class="$style.container">
-    <router-link :class="$style.trends" :active-class="$style.activeItem" to="/">
-      <TextUI :size="TextSizes.LARGE">Тренды</TextUI>
-    </router-link>
-    <router-link :class="$style.new" :active-class="$style.activeItem" to="/all">
-      <TextUI :size="TextSizes.LARGE">Новое</TextUI>
-    </router-link>
-    <router-link :class="$style.top" :active-class="$style.activeItem" to="/all">
-      <TextUI :size="TextSizes.LARGE">Топ</TextUI>
-    </router-link>
-    <router-link :class="$style.discussed" :active-class="$style.activeItem" to="/all">
-      <TextUI :size="TextSizes.LARGE">Обсуждаемое</TextUI>
-    </router-link>
-    <router-link :class="$style.subscriptions" :active-class="$style.activeItem" to="/all">
-      <TextUI :size="TextSizes.LARGE">Подписки</TextUI>
-    </router-link>
-    <router-link :class="$style.groups" :active-class="$style.activeItem" to="/all">
-      <TextUI :size="TextSizes.LARGE">Группы</TextUI>
+    <router-link
+        v-for="(item, index) in items" :key="index"
+        :class="item.style" :active-class="$style.activeItem" :to="item.path"
+    >
+      <span>{{item.name}}</span>
     </router-link>
   </div>
 </template>
@@ -44,6 +41,7 @@ import {TextSizes} from "@/shared/ui/text-ui/types";
   justify-items: center;
   align-items: start;
   padding: 8px 4px;
+  font: var(--font-text);
 }
 
 .trends {
@@ -66,6 +64,6 @@ import {TextSizes} from "@/shared/ui/text-ui/types";
 }
 
 .activeItem > * {
-  font-weight: 500;
+  font: var(--font-btn);
 }
 </style>

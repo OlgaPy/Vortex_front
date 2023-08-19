@@ -1,11 +1,8 @@
-<script setup lang="ts">
-import TextUI from "@/shared/ui/text-ui/TextUI.vue";
-import {TextSizes} from "@/shared/ui/text-ui/types";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <router-link to="/">
-    <TextUI :class="$style.authText" :size="TextSizes.SMALL">Войти</TextUI>
+    <span :class="[$style.authText, 'font-text-small color-gray-22']">Войти</span>
   </router-link>
 </template>
 

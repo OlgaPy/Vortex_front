@@ -1,6 +1,5 @@
-import { defineStore, storeToRefs } from 'pinia';
-import {ref} from "vue";
-import { computed } from 'vue';
+import {defineStore, storeToRefs} from 'pinia';
+import {computed, ref} from "vue";
 
 const TEMP_SETTINGS_KEY = 'user-settings';
 
