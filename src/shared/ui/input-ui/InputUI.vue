@@ -5,7 +5,7 @@ const {type} = defineProps<Props>();
 </script>
 
 <template>
-  <label :class="$style.container" :data-type="type">
+  <label :class="[$style.container, 'font-text-micro']" :data-type="type">
     <slot></slot>
   </label>
 </template>
@@ -17,43 +17,45 @@ const {type} = defineProps<Props>();
   justify-content: start;
   align-items: center;
   width: 296px;
-  font-size: var(--text-font-size-micro);
-  font-weight: normal;
-  line-height: 16px;
-  border-radius: var(--border-radius-sub-base);
+  border-radius: var(--style-radius-5);
+}
+.container input {
+  background: inherit;
+  border: unset;
+  outline: none;
 }
 
 .container[data-type="outfocus"] {
-  border: 1.5px solid var(--ui-secondary-color);
-  color: var(--ui-secondary-color);
+  border: 1.5px solid var(--color-gray-53);
+  color: var(--color-gray-53);
 }
 .container[data-type="outfocus"] input::placeholder {
-  color: var(--ui-secondary-color);
+  color: var(--color-gray-53);
 }
 
 .container[data-type="focus"] {
-  border: 1.5px solid var(--ui-secondary-color);
-  color: var(--ui-secondary-color);
+  border: 1.5px solid var(--color-gray-53);
+  color: var(--color-gray-53);
 }
 .container[data-type="focus"] input::placeholder {
-  color: var(--ui-secondary-color);
+  color: var(--color-gray-53);
 }
 
 .container[data-type="error"] {
-  background-color: var(--ui-error-bg-color);
-  border: 1.5px solid var(--ui-error-border-color);
-  color: var(--ui-error-color);
+  background-color: var(--color-red-70);
+  border: 1.5px solid var(--color-red-70);
+  color: var(--color-red-79);
 }
 .container[data-type="error"] input::placeholder {
-  color: var(--ui-error-color);
+  color: var(--color-red-79);
 }
 
 .container[data-type="successful"] {
-  background-color: var(--ui-accent-contrast-color);
-  border: 1.5px solid var(--ui-accent-color);
-  color: var(--ui-accent-2-color);
+  background-color: var(--color-base-bg);
+  border: 1.5px solid var(--color-primary-1);
+  color: var(--color-primary-2);
 }
 .container[data-type="successful"] input::placeholder {
-  color: var(--ui-accent-2-color);
+  color: var(--color-primary-2);
 }
 </style>

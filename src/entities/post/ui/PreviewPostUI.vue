@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import TextUI from "@/shared/ui/text-ui/TextUI.vue";
-import {TextSizes} from "@/shared/ui/text-ui/types";
-import {TitleSizes} from "@/shared/ui/title-ui/types";
-import TitleUI from "@/shared/ui/title-ui/TitleUI.vue";
 </script>
 
 <template>
-  <main :class="$style.container">
+  <main :class="[$style.container, 'color-bg-gray-98']">
     <slot name="header"></slot>
     <div :class="$style.postPreview">
-      <TitleUI :size="TitleSizes.LARGE"><slot name="title"></slot></TitleUI>
-      <TextUI :size="TextSizes.SMALL"><slot name="tags"></slot></TextUI>
-      <TextUI :size="TextSizes.LARGE"><slot name="body"></slot></TextUI>
+      <h1 class="font-h1"><slot name="title"></slot></h1>
+      <span class="font-text-small"><slot name="tags"></slot></span>
+      <span class="font-text-large"><slot name="body"></slot></span>
     </div>
     <slot name="footer"></slot>
   </main>
@@ -26,7 +22,6 @@ import TitleUI from "@/shared/ui/title-ui/TitleUI.vue";
   width: 100%;
   gap: 20px;
   padding: 20px 12px;
-  background-color: var(--ui-sub-main-color);
 }
 
 .postPreview {

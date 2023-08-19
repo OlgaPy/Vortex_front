@@ -1,5 +1,4 @@
 // Import App scss
-import './styles/index.scss'
 import './themes/index.scss';
 
 import router from './providers/router'

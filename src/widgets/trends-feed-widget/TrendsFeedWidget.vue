@@ -8,7 +8,7 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
     <header :class="$style.header">
       <ShowViewedPosts :class="$style.showViewedPosts"/>
     </header>
-    <main :class="$style.feed">
+    <main :class="[$style.feed, 'color-bg-base-bg']">
       <TestPreviewPost/>
       <TestPreviewPost/>
       <TestPreviewPost/>
@@ -45,6 +45,5 @@ import TestPreviewPost from "@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
   width: 100%;
 	max-width: 720px;
   gap: 10px;
-  background-color: var(--ui-main-color);
 }
 </style>

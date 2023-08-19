@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import SaveIcon from "@/shared/ui/icons/SaveIcon.vue";
+import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
+import {ButtonType} from "@/shared/ui/button-ui/types";
 </script>
 
 <template>
-  <button>
+  <ButtonUI :type="ButtonType.TEXT">
     <SaveIcon/>
-  </button>
+  </ButtonUI>
 </template>
 
 <style scoped>
