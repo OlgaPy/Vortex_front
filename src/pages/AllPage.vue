@@ -1,28 +1,29 @@
 <script setup lang="ts">
-import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
-import TogglePostActionsDirection from '@/features/TogglePostActionsDirection.vue';
-import PageUI from "@/shared/ui/PageUI.vue";
-import TextareaUI from "@/shared/ui/textarea-ui/TextareaUI.vue";
-import InputUI from "@/shared/ui/input-ui/InputUI.vue";
-import {InputType} from "@/shared/ui/input-ui/types";
-import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
-import EmptyButtonUI from "@/shared/ui/button-ui/EmptyButtonUI.vue";
-import TextButtonUI from "@/shared/ui/button-ui/TextButtonUI.vue";
-import IconButtonUI from "@/shared/ui/icon-button-ui/IconButtonUI.vue";
-import RateDownIcon from "@/shared/ui/icons/RateDownIcon.vue";
-import RateUpIcon from "@/shared/ui/icons/RateUpIcon.vue";
-import SaveIcon from "@/shared/ui/icons/SaveIcon.vue";
-import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
-import CheckboxUI from "@/shared/ui/checkbox-ui/CheckboxUI.vue";
-import { SearchInputUI } from '@/shared/ui/search-input-ui';
+import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
+import TogglePostActionsDirection from '@/features/TogglePostActionsDirection.vue'
+import PageUI from '@/shared/ui/PageUI.vue'
+import TextareaUI from '@/shared/ui/textarea-ui/TextareaUI.vue'
+import InputUI from '@/shared/ui/input-ui/InputUI.vue'
+import { InputType } from '@/shared/ui/input-ui/types'
+import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue'
+import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue'
+import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue'
+import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
+import RateDownIcon from '@/shared/ui/icons/RateDownIcon.vue'
+import RateUpIcon from '@/shared/ui/icons/RateUpIcon.vue'
+import SaveIcon from '@/shared/ui/icons/SaveIcon.vue'
+import TrashIcon from '@/shared/ui/icons/TrashIcon.vue'
+import CheckboxUI from '@/shared/ui/checkbox-ui/CheckboxUI.vue'
+import { SearchInputUI } from '@/shared/ui/search-input-ui'
+import { ref } from 'vue'
 
-const searchText = '';
+const searchText = ref<string>('')
 </script>
 
 <template>
-  <PageUI :class="$style.container">
-		<ToggleGlobalThemeFeature/>
-		<TogglePostActionsDirection/>
+	<PageUI :class="$style.container">
+		<ToggleGlobalThemeFeature />
+		<TogglePostActionsDirection />
 
 		<span>//TODO Textarea auto-sizing</span>
 		<TextareaUI>
@@ -30,19 +31,19 @@ const searchText = '';
 		</TextareaUI>
 
 		<InputUI :type="InputType.OUTFOCUS">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 		<InputUI :type="InputType.FOCUS">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 		<InputUI :type="InputType.SUCCESSFUL">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 		<InputUI :type="InputType.ERROR">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 
-		<SearchInputUI v-model="searchText" placeholder="Найти пост"/>
+		<SearchInputUI v-model="searchText" placeholder="Найти пост" />
 
 		<EmptyButtonUI>Button</EmptyButtonUI>
 		<EmptyButtonUI disabled>Button</EmptyButtonUI>
@@ -52,15 +53,15 @@ const searchText = '';
 		<TextButtonUI disabled>Button</TextButtonUI>
 
 		<IconButtonUI>
-			<template #left-icon><SaveIcon/></template>
+			<template #left-icon><SaveIcon /></template>
 		</IconButtonUI>
 		<IconButtonUI>
-			<template #left-icon><RateDownIcon/></template>
+			<template #left-icon><RateDownIcon /></template>
 			<template #text>RATE</template>
-			<template #right-icon><RateUpIcon/></template>
+			<template #right-icon><RateUpIcon /></template>
 		</IconButtonUI>
 		<IconButtonUI>
-			<template #right-icon><TrashIcon/></template>
+			<template #right-icon><TrashIcon /></template>
 		</IconButtonUI>
 
 		<CheckboxUI :modelValue="false" />

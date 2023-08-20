@@ -1,46 +1,52 @@
 <script setup lang="ts">
-import SearchIcon from '@/shared/ui/icons/SearchIcon.vue';
-import { ISearchInputUI } from '@/shared/ui/search-input-ui/types';
+import SearchIcon from '@/shared/ui/icons/SearchIcon.vue'
+import type { ISearchInputUI } from '@/shared/ui/search-input-ui/types'
 
-defineProps<ISearchInputUI>();
-defineEmits(['update:modelValue']);
+defineProps<ISearchInputUI>()
+const emit = defineEmits(['update:modelValue'])
+
+const onChangeInput = (event: Event) => {
+	const target = event.target as HTMLInputElement
+	const value = target.value
+
+	emit('update:modelValue', value)
+}
 </script>
 
 <template>
 	<label :class="$style.container">
-		<input
-			:value="modelValue"
-			@input="$emit('update:modelValue', $event.target.value)"
-			:placeholder="placeholder"
-		/>
-		<SearchIcon/>
+		<input :value="modelValue" @input="onChangeInput" :placeholder="placeholder" />
+		<SearchIcon />
 	</label>
 </template>
 
 <style module>
-	.container {
-		padding: 8px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 5px;
-		width: 100%;
-		max-width: 232px;
-		border-radius: var(--style-radius-5);
-		border-width: 1.5px;
-		border-style: solid;
-		border-color: var(--color-icons-bg);
-		background-color: var(--color-post-bg);
-	}
+.container {
+	padding: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+	width: 100%;
+	max-width: 232px;
+	border-radius: var(--style-radius-5);
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: var(--color-icons-bg);
+	background-color: var(--color-post-bg);
+}
 
-	.container input {
-		background: inherit;
-		border: unset;
-		outline: none;
-	}
+.container input {
+	background: inherit;
+	border: unset;
+	outline: none;
+	font-size: 15px;
+	line-height: 16px;
+	font-weight: 400;
+}
 
-	.container input,
-	.container input::placeholder {
-		color: var(--color-tags);
-	}
+.container input,
+.container input::placeholder {
+	color: var(--color-tags);
+}
 </style>

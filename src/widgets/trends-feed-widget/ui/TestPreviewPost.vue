@@ -1,44 +1,42 @@
 <script setup lang="ts">
-import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
-import TagsList from "@/entities/tag/ui/TagsList.vue";
-import PostPreviewFooterUI from "@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue";
+import PreviewPostUI from '@/entities/post/ui/PreviewPostUI.vue'
+import TagsList from '@/entities/tag/ui/TagsList.vue'
+import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue'
 </script>
 
 <template>
-  <PreviewPostUI>
-    <template #header>
-      <div :class="$style.postProfile">TODO Здесь будет профиль</div>
-    </template>
-    <template #title>
-      Сытно и просто - картофель по-деревенски! 🥔✨
-    </template>
-    <template #tags>
-      <TagsList :tags="['Меню', 'Баян', 'Без рейтинга']"/>
-    </template>
-    <template #body>
-      <img src="@/widgets/trends-feed-widget/img/Pictures.png" alt="Post Image">
-      <span>
-        Нарежьте картошку кубиками, посыпьте розмарином, солью и перцем, добавьте немного растительного масла.
-        Выпекайте в разогретой духовке до золотистой корки. Этот домашний деликатес прекрасно подходит к мясным
-        блюдам или просто с огоньком кетчупа! 🍅🔥
-      </span>
-    </template>
-    <template #footer>
-      <PostPreviewFooterUI/>
-    </template>
-  </PreviewPostUI>
+	<PreviewPostUI>
+		<template #header>
+			<div :class="$style.postProfile">TODO Здесь будет профиль</div>
+		</template>
+		<template #title> Сытно и просто - картофель по-деревенски! 🥔✨ </template>
+		<template #tags>
+			<TagsList :tags="['Меню', 'Баян', 'Без рейтинга']" />
+		</template>
+		<template #body>
+			<img src="@/widgets/trends-feed-widget/img/Pictures.png" alt="Post Image" />
+			<span>
+				Нарежьте картошку кубиками, посыпьте розмарином, солью и перцем, добавьте немного
+				растительного масла. Выпекайте в разогретой духовке до золотистой корки. Этот домашний
+				деликатес прекрасно подходит к мясным блюдам или просто с огоньком кетчупа! 🍅🔥
+			</span>
+		</template>
+		<template #footer>
+			<PostPreviewFooterUI />
+		</template>
+	</PreviewPostUI>
 </template>
 
 <style module>
 .postProfile {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 8px;
-  height: 36px;
-  width: 100%;
-  border: 1px solid var(--color-gray-22);
-  color: var(--color-gray-22);
-  font: var(--font-text);
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 8px;
+	height: 36px;
+	width: 100%;
+	border: 1px solid var(--color-gray-22);
+	color: var(--color-gray-22);
+	font: var(--font-text);
 }
 </style>
