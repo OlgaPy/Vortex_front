@@ -14,6 +14,9 @@ import RateUpIcon from "@/shared/ui/icons/RateUpIcon.vue";
 import SaveIcon from "@/shared/ui/icons/SaveIcon.vue";
 import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
 import CheckboxUI from "@/shared/ui/checkbox-ui/CheckboxUI.vue";
+import { SearchInputUI } from '@/shared/ui/search-input-ui';
+
+const searchText = '';
 </script>
 
 <template>
@@ -39,6 +42,8 @@ import CheckboxUI from "@/shared/ui/checkbox-ui/CheckboxUI.vue";
 			<input placeholder="Placeholder"/>
 		</InputUI>
 
+		<SearchInputUI v-model="searchText" placeholder="Найти пост"/>
+
 		<EmptyButtonUI>Button</EmptyButtonUI>
 		<EmptyButtonUI disabled>Button</EmptyButtonUI>
 		<ButtonUI>Button</ButtonUI>
@@ -57,6 +62,7 @@ import CheckboxUI from "@/shared/ui/checkbox-ui/CheckboxUI.vue";
 		<IconButtonUI>
 			<template #right-icon><TrashIcon/></template>
 		</IconButtonUI>
+
 		<CheckboxUI :modelValue="false" />
 		<CheckboxUI :modelValue="true" />
 	</PageUI>

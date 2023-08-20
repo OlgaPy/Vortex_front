@@ -8,6 +8,15 @@ $-schema: (
 	'primary-2' hsl(195 67% 30%) hsl(180 63% 42%),
 	// Main background
 	'base-bg' hsl(0 0% 95%) hsl(260 14% 8%),
+
+	//TODO rename by last hsl percentage for light mode
+	'post-bg' hsl(0 0% 98%) hsl(257 10% 14%),
+	'icons-bg' hsl(0 0% 89%) hsl(257 6% 22%),
+	// context colors
+	'tags' hsl(0 0% 53%) hsl(0 0% 53%),
+	'text' hsl(257 6% 22%) hsl(0 0% 98%),
+
+
 	/* The names are based on the last HSL property L- lightness */
 	//Black
 	'black-0-30' hsla(0, 0%, 0%, .3) hsla(0, 0%, 0%, .3),
