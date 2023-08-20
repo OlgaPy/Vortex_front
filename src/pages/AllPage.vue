@@ -13,6 +13,7 @@ import RateDownIcon from "@/shared/ui/icons/RateDownIcon.vue";
 import RateUpIcon from "@/shared/ui/icons/RateUpIcon.vue";
 import SaveIcon from "@/shared/ui/icons/SaveIcon.vue";
 import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
+import CheckboxUI from "@/shared/ui/checkbox-ui/CheckboxUI.vue";
 </script>
 
 <template>
@@ -56,6 +57,8 @@ import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
 		<IconButtonUI>
 			<template #right-icon><TrashIcon/></template>
 		</IconButtonUI>
+		<CheckboxUI :modelValue="false" />
+		<CheckboxUI :modelValue="true" />
 	</PageUI>
 </template>
 
