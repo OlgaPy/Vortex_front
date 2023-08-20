@@ -1,29 +1,43 @@
-import {defineStore} from "pinia";
-import {ref} from "vue";
+import {ref} from 'vue';
+import {defineStore} from 'pinia';
 
-const LC_THEME_KEY = 'current-theme';
+export enum Themes {
+	DEFAULT = 'default',
+};
 
-export enum ThemesList {
-    WHITE = 'white',
-    DARK = 'dark',
-}
+export enum ThemeModes {
+	AUTO = 'auto',
+	LIGHT = 'light',
+	DARK = 'dark',
+};
 
+/**
+ * Theme switcher
+ */
 export const useThemeStore = defineStore('themeStore', () => {
-    const savedTheme = localStorage.getItem(LC_THEME_KEY);
-    const theme = ref(savedTheme || ThemesList.WHITE);
+	const html = document.documentElement;
+	const animationTime = getComputedStyle(html).getPropertyValue('--transition-default');
+	const animationClass = 'animation-theme-switch';
+	const theme = ref(html.dataset.theme);
+	const themeMode = ref(html.dataset.colorSchema);
 
-    function setTheme(newTheme: ThemesList) {
-        theme.value = newTheme;
-        localStorage.setItem(LC_THEME_KEY, theme.value);
-    }
+	const startAnimation = () => html.classList.add(animationClass);
+	const stopAnimation = () => setTimeout(() => html.classList.remove(animationClass), parseInt(animationTime));
+	const setTheme = (newTheme: Themes) => {
+		startAnimation();
+		theme.value = html.dataset.theme = newTheme;
+		stopAnimation();
+	};
+	const setThemeMode = (mode: ThemeModes) => {
+		startAnimation();
+		themeMode.value = html.dataset.colorSchema = mode;
+		stopAnimation();
+	};
 
-    function setWhite() {
-        setTheme(ThemesList.WHITE);
-    }
-
-    function setDark() {
-        setTheme(ThemesList.DARK);
-    }
-
-    return { theme, setWhite, setDark };
+	return {
+		theme,
+		themeMode,
+		setTheme,
+		setThemeMode,
+	};
 });
