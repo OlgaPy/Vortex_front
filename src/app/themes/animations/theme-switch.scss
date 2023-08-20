@@ -1,0 +1,10 @@
+.animation-theme-switch *,
+.animation-theme-switch *::before,
+.animation-theme-switch *::after {
+	transition:
+		color var(--transition-default),
+		background-color var(--transition-default),
+		border-color var(--transition-default),
+		outline-color var(--transition-default),
+		fill var(--transition-default) !important;
+}

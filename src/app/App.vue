@@ -1,11 +1,5 @@
-<script setup lang="ts">
-import {useThemeStore} from "@/shared/stores/ThemeStore";
-
-const themeStore = useThemeStore();
-</script>
-
 <template>
-  <div :class="$style.container" :data-theme="themeStore.theme">
+  <div :class="$style.container">
     <RouterView/>
   </div>
 </template>

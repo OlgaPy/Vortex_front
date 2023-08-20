@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import {useThemeStore} from "@/shared/stores/ThemeStore";
+import {useThemeStore, ThemeModes} from "@/shared/stores/ThemeStore";
 import FilledButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
 
-const themeStore = useThemeStore();
+const {setThemeMode} = useThemeStore();
 </script>
 
 <template>
   <div :class="$style.container">
-		<FilledButtonUI v-on:click="themeStore.setWhite()">White Theme</FilledButtonUI>
-		<FilledButtonUI v-on:click="themeStore.setDark()">Dark Theme</FilledButtonUI>
+		<FilledButtonUI @click="setThemeMode(ThemeModes.AUTO)">Auto Theme</FilledButtonUI>
+		<FilledButtonUI @click="setThemeMode(ThemeModes.LIGHT)">White Theme</FilledButtonUI>
+		<FilledButtonUI @click="setThemeMode(ThemeModes.DARK)">Dark Theme</FilledButtonUI>
   </div>
 </template>
 
