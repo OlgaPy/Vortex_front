@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import type {Emits} from './types'
-import TrashIcon from "@/shared/ui/icons/TrashIcon.vue";
-import IconButtonUI from "@/shared/ui/icon-button-ui/IconButtonUI.vue";
+import type { Emits } from './types'
+import TrashIcon from '@/shared/ui/icons/TrashIcon.vue'
+import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
 
-const emit = defineEmits<Emits>();
+defineEmits<Emits>()
 </script>
 
 <template>
-  <div :class="[$style.container, 'color-gray-53', 'font-size-micro']">
+	<div :class="[$style.container, 'color-gray-53', 'font-size-micro']">
 		<slot></slot>
 		<IconButtonUI :class="$style.clearBtn" @click="$emit('remove')">
 			<template #left-icon>
-				<TrashIcon/>
+				<TrashIcon />
 			</template>
 		</IconButtonUI>
-  </div>
+	</div>
 </template>
 
 <style module>
 .container {
 	position: relative;
-  padding: 8px;
-  display: flex;
-  justify-content:stretch;
-  align-items: start;
-  border-radius: var(--style-radius-5);
-  border: 1.5px solid var(--color-gray-53);
+	padding: 8px;
+	display: flex;
+	justify-content: stretch;
+	align-items: start;
+	border-radius: var(--style-radius-5);
+	border: 1.5px solid var(--color-gray-53);
 	background-color: var(--color-gray-98);
 	gap: 10px;
 }

@@ -1,4 +1,4 @@
 export interface ISearchInputUI {
-	modelValue: string,
-	placeholder: string,
+	modelValue: string
+	placeholder: string
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type {Props} from "./types";
+import type { Props } from './types'
 
-const {type} = defineProps<Props>();
+const { type } = defineProps<Props>()
 </script>
 
 <template>
@@ -26,35 +26,42 @@ const {type} = defineProps<Props>();
 	background: inherit;
 	border: unset;
 	outline: none;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 400;
 }
 
-.container[data-type="outfocus"] {
+.container[data-type='outfocus'] {
 	border-color: var(--color-gray-53);
 }
-.container[data-type="outfocus"]	input, .container[data-type="outfocus"] input::placeholder {
+.container[data-type='outfocus'] input,
+.container[data-type='outfocus'] input::placeholder {
 	color: var(--color-gray-53);
 }
 
-.container[data-type="focus"] {
+.container[data-type='focus'] {
 	border-color: var(--color-gray-53);
 }
-.container[data-type="focus"] input, .container[data-type="focus"] input::placeholder {
+.container[data-type='focus'] input,
+.container[data-type='focus'] input::placeholder {
 	color: var(--color-gray-53);
 }
 
-.container[data-type="error"] {
+.container[data-type='error'] {
 	background-color: var(--color-base-bg);
 	border-color: var(--color-red-70);
 }
-.container[data-type="error"] input, .container[data-type="error"] input::placeholder {
+.container[data-type='error'] input,
+.container[data-type='error'] input::placeholder {
 	color: var(--color-red-79);
 }
 
-.container[data-type="successful"] {
+.container[data-type='successful'] {
 	background-color: var(--color-base-bg);
 	border-color: var(--color-primary-1);
 }
-.container[data-type="successful"]	input, .container[data-type="successful"] input::placeholder {
+.container[data-type='successful'] input,
+.container[data-type='successful'] input::placeholder {
 	color: var(--color-primary-2);
 }
 </style>

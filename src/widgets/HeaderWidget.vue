@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import ShortLogoIcon from "@/shared/ui/icons/ShortLogoIcon.vue";
-import MenuIcon from "@/shared/ui/icons/MenuIcon.vue";
-import AuthWidget from "@/widgets/AuthWidget.vue";
+import ShortLogoIcon from '@/shared/ui/icons/ShortLogoIcon.vue'
+import MenuIcon from '@/shared/ui/icons/MenuIcon.vue'
+import AuthWidget from '@/widgets/AuthWidget.vue'
 </script>
 
 <template>
-  <div :class="$style.container">
-    <MenuIcon :class="$style.menuButton"></MenuIcon>
-    <ShortLogoIcon :class="$style.logoIcon"></ShortLogoIcon>
-    <AuthWidget />
-  </div>
+	<div :class="$style.container">
+		<MenuIcon :class="$style.menuButton"></MenuIcon>
+		<ShortLogoIcon :class="$style.logoIcon"></ShortLogoIcon>
+		<AuthWidget />
+	</div>
 </template>
 
 <style module>
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 56px;
-  padding: 10px 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 56px;
+	padding: 10px 12px;
 }
 </style>

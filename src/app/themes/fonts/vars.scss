@@ -8,8 +8,8 @@ $-default-family: var(--font-family-default);
 	--font-base-b: normal 600 1.5rem/1.6rem #{$-default-family};
 	// Buttons
 	--font-btn: normal 400 1.4rem/1.6rem #{$-default-family};
-	--font-btn-big: #{$-default-family};// TODO
-	--font-btn-small: #{$-default-family};// TODO
+	--font-btn-big: #{$-default-family}; // TODO
+	--font-btn-small: #{$-default-family}; // TODO
 	// Headings
 	--font-h1: normal 600 1.7rem/2rem #{$-default-family}; //MV_Title Large
 	--font-h2: normal 500 1.5rem/1.6rem #{$-default-family}; //MV_Title Medium
