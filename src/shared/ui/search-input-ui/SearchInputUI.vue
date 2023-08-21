@@ -32,8 +32,8 @@ const onChangeInput = (event: Event) => {
 	border-radius: var(--style-radius-5);
 	border-width: 1.5px;
 	border-style: solid;
-	border-color: var(--color-icons-bg);
-	background-color: var(--color-post-bg);
+	border-color: var(--color-gray-89);
+	background-color: var(--color-gray-98);
 }
 
 .container input {
@@ -47,6 +47,6 @@ const onChangeInput = (event: Event) => {
 
 .container input,
 .container input::placeholder {
-	color: var(--color-tags);
+	color: var(--color-gray-53);
 }
 </style>
