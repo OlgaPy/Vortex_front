@@ -92,7 +92,9 @@ const handleRatingDecreaseClick = () => {
 	background: none;
 	border: none;
 	cursor: pointer;
-	transition: opacity 0.3s ease-in-out;
+	transition:
+		opacity 0.3s ease-in-out,
+		color 0.3s ease-in-out;
 }
 
 .ratingButton:hover {
