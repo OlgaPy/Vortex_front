@@ -21,7 +21,9 @@ $-schema: (
 	'gray-98' hsl(0 0% 98%) hsl(257 10% 14%),
 	// Red
 	'red-70' hsl(3 97% 70%) hsl(3 97% 70%),
-	'red-79' hsl(3 96% 79%) hsl(3 96% 79%)
+	'red-79' hsl(3 96% 79%) hsl(3 96% 79%),
+	// Green
+	'green-42' hsl(180 63% 42%) hsl(180 63% 42%),
 );
 
 @include m.create-vars($-schema, 'default');

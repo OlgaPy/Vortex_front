@@ -3,7 +3,7 @@
 		<rect width="24" height="24" rx="12" :class="$style.rectFill" />
 		<path
 			d="M7.875 12H16.125"
-			stroke="#888888"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
