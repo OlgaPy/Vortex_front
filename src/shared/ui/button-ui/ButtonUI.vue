@@ -12,9 +12,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	letter-spacing: 0.5px;
 	border-radius: var(--style-radius-5);
 	background-color: var(--color-primary-1);
+	border: 1px solid var(--color-primary-1);
 	color: var(--color-base-bg);
 }
 

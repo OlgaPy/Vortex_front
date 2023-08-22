@@ -48,6 +48,7 @@ const inverted = useInvertedPostActions()
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+	font: var(--font-tags);
 }
 
 .actionsInverted {

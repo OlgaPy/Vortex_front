@@ -26,9 +26,7 @@ const { type } = defineProps<Props>()
 	background: inherit;
 	border: unset;
 	outline: none;
-	font-size: 12px;
-	line-height: 16px;
-	font-weight: 400;
+	font: var(--font-tags);
 }
 
 .container[data-type='outfocus'] {

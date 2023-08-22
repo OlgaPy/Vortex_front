@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
 import TogglePostActionsDirection from '@/features/TogglePostActionsDirection.vue'
-import PageUI from '@/shared/ui/PageUI.vue'
+import PageUI from '@/shared/ui/page-ui/MobilePageUI.vue'
 import TextareaUI from '@/shared/ui/textarea-ui/TextareaUI.vue'
 import InputUI from '@/shared/ui/input-ui/InputUI.vue'
 import { InputType } from '@/shared/ui/input-ui/types'

@@ -7,7 +7,7 @@
 		</header>
 		<main :class="$style.main">
 			<h1 class="font-h1"><slot name="title"></slot></h1>
-			<span class="font-text-small"><slot name="tags"></slot></span>
+			<span class="font-tags"><slot name="tags"></slot></span>
 			<div :class="[$style.body, 'font-text-large']"><slot name="body"></slot></div>
 		</main>
 		<footer :class="$style.footer">

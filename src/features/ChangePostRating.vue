@@ -18,7 +18,7 @@ const inverted = useInvertedPostActions()
 	>
 		<template #left-icon><RateUpIcon /></template>
 		<template #text>
-			<span :class="[$style.ratingCount, 'font-text-small']">432099</span>
+			<span :class="$style.ratingCount">432099</span>
 		</template>
 		<template #right-icon><RateDownIcon /></template>
 	</IconTextUI>

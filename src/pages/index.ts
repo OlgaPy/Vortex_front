@@ -2,7 +2,7 @@ export const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: () => import('./HomePage.vue')
+		component: () => import('./home-page/HomePage.vue')
 	},
 	{
 		path: '/all',

@@ -12,7 +12,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	letter-spacing: 0.5px;
 	border-radius: var(--style-radius-5);
 	border: unset;
 	background: unset;

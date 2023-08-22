@@ -22,6 +22,18 @@ $-default-family: var(--font-family-default);
 	--font-tags: normal 400 1.2rem/1.6rem #{$-default-family};
 }
 
+//TODO ApplicationOrientationStore.ts duplicate 1280px, make config?
+@media screen and (min-width: 1280px) {
+	:root {
+		--font-base: normal 400 1.5rem/2rem #{$-default-family};
+		--font-h1: normal 600 2.8rem/3.6rem #{$-default-family};
+		--font-h3: normal 400 1.8rem/2.4rem #{$-default-family};
+		--font-text: normal 400 1.6rem/2.4rem #{$-default-family};
+		--font-text-small: normal 400 1.5rem/2rem #{$-default-family};
+		--font-tags: normal 400 1.4rem/2.4rem #{$-default-family};
+	}
+}
+
 // TODO
 // mixin on-desktop {
 // 	:root {

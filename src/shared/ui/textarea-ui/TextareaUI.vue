@@ -33,6 +33,9 @@ defineEmits<Emits>()
 .container textarea {
 	font: var(--font-text);
 	color: var(--color-gray-53);
+	border: unset;
+	background-color: inherit;
+	outline: unset;
 	width: 100%;
 	height: 100%;
 }

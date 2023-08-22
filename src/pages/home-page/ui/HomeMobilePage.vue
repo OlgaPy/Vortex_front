@@ -2,17 +2,17 @@
 import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue'
 import TapeMenu from '@/widgets/TapeLinksWidget.vue'
 import Header from '@/widgets/HeaderWidget.vue'
-import PageUI from '@/shared/ui/PageUI.vue'
+import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue'
 </script>
 
 <template>
-	<PageUI>
+	<MobilePageUI>
 		<header :class="[$style.headerContainer, 'color-bg-gray-98']">
-			<Header />
-			<TapeMenu />
+			<Header/>
+			<TapeMenu/>
 		</header>
-		<TrendsFeedWidget /> </PageUI
-	>>
+		<TrendsFeedWidget/>
+	</MobilePageUI>
 </template>
 
 <style module>

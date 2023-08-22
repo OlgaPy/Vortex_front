@@ -14,10 +14,10 @@ const onChangeInput = (event: Event) => {
 </script>
 
 <template>
-	<label :class="$style.container">
+	<div :class="$style.container">
 		<input :value="modelValue" @input="onChangeInput" :placeholder="placeholder" />
-		<SearchIcon />
-	</label>
+		<SearchIcon :class="$style.searchIcon"/>
+	</div>
 </template>
 
 <style module>
@@ -32,21 +32,24 @@ const onChangeInput = (event: Event) => {
 	border-radius: var(--style-radius-5);
 	border-width: 1.5px;
 	border-style: solid;
+	font: var(--font-base);
 	border-color: var(--color-gray-89);
-	background-color: var(--color-gray-98);
+	background-color: var(--color-gray-89);
 }
 
 .container input {
 	background: inherit;
 	border: unset;
 	outline: none;
-	font-size: 15px;
-	line-height: 16px;
-	font-weight: 400;
+	cursor: pointer;
 }
 
 .container input,
 .container input::placeholder {
 	color: var(--color-gray-53);
+}
+
+.searchIcon:hover {
+	cursor: pointer;
 }
 </style>

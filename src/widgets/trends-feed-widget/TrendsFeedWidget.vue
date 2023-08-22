@@ -34,6 +34,7 @@ import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
 }
 .showViewedPosts {
 	padding: 4px 12px;
+	font: var(--font-text-small);
 }
 
 .feed {
