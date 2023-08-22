@@ -1,11 +1,11 @@
 <template>
-  <router-link :class="$style.container" to="/all">
-		<div :class="$style.profile">
+  <div :class="$style.container">
+		<router-link :class="$style.profile" to="/all">
 			<img src="./icons/userpic.svg" alt="Аватар">
 			<span :class="$style.nickname">Username</span>
-		</div>
+		</router-link>
 		<slot :class="$style.action" name="action"></slot>
-  </router-link>
+  </div>
 </template>
 
 <style module>
