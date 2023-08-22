@@ -70,6 +70,7 @@ import SearchInputUI from "@/shared/ui/search-input-ui/SearchInputUI.vue";
 .menuSection > *:hover, .activeLink {
   background: var(--color-gray-95);
   border-radius: var(--style-radius-5) 0 0 var(--style-radius-5);
+  cursor: pointer;
 }
 .searchSection {
   width: 236px;

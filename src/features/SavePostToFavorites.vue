@@ -6,9 +6,14 @@ import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
 <template>
 	<IconButtonUI>
 		<template #left-icon>
-			<SaveIcon />
+			<SaveIcon :class="$style.saveIcon"/>
 		</template>
 	</IconButtonUI>
 </template>
 
-<style scoped></style>
+<style module>
+.saveIcon {
+  width: 24px;
+  height: 24px;
+}
+</style>

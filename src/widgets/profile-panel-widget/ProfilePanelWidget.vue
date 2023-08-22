@@ -3,7 +3,7 @@ import PlusIcon from "@/shared/ui/icons/PlusIcon.svg";
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import NotificationTextUI from "@/shared/ui/notification-text-ui/NotificationTextUI.vue";
 import RespondIcon from "@/shared/ui/icons/RespondIcon.svg";
-import CommentIcon from "@/shared/ui/icons/comment-icon/CommentIcon18.svg";
+import CommentIcon from "@/shared/ui/icons/CommentIcon.svg";
 import SaveIcon from "@/shared/ui/icons/SaveIcon.svg";
 import EyeIcon from "@/shared/ui/icons/EyeIcon.svg";
 import IgnoreIcon from "@/shared/ui/icons/IgnoreIcon.svg";
@@ -11,6 +11,7 @@ import ConfigurationIcon from "@/shared/ui/icons/ConfigurationIcon.svg";
 import ExitIcon from "@/shared/ui/icons/ExitIcon.svg";
 import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
 </script>
+
 
 <template>
 	<div :class="$style.container">
@@ -112,10 +113,12 @@ import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
 	gap: 8px;
 }
 .menuItem:hover {
+  color: var(--color-primary-1);
 	cursor: pointer;
 }
 .menuIcon {
-	width: 16px;
+	width: 20px;
+  height: 20px;
 }
 
 .notification {
