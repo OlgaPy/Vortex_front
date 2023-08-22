@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchIcon from '@/shared/ui/icons/SearchIcon.vue'
+import SearchIcon from '@/shared/ui/icons/SearchIcon.svg'
 import type { ISearchInputUI } from '@/shared/ui/search-input-ui/types'
 
 defineProps<ISearchInputUI>()

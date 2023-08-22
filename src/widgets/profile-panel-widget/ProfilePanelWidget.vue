@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import PlusIcon from "@/shared/ui/icons/PlusIcon.vue";
+import PlusIcon from "@/shared/ui/icons/PlusIcon.svg";
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import ExitFromProfileFeature from "@/features/ExitFromProfileFeature.vue";
 import NotificationTextUI from "@/shared/ui/notification-text-ui/NotificationTextUI.vue";
-import RespondIcon from "@/shared/ui/icons/RespondIcon.vue";
-import CommentIcon from "@/shared/ui/icons/comment-icon/CommentIcon18.vue";
+import RespondIcon from "@/shared/ui/icons/RespondIcon.svg";
+import CommentIcon from "@/shared/ui/icons/comment-icon/CommentIcon18.svg";
 import SaveIcon from "@/shared/ui/icons/SaveIcon.vue";
-import EyeIcon from "@/shared/ui/icons/EyeIcon.vue";
-import IgnoreIcon from "@/shared/ui/icons/IgnoreIcon.vue";
-import ConfigurationIcon from "@/shared/ui/icons/ConfigurationIcon.vue";
-import ExitIcon from "@/shared/ui/icons/ExitIcon.vue";
+import EyeIcon from "@/shared/ui/icons/EyeIcon.svg";
+import IgnoreIcon from "@/shared/ui/icons/IgnoreIcon.svg";
+import ConfigurationIcon from "@/shared/ui/icons/ConfigurationIcon.svg";
+import ExitIcon from "@/shared/ui/icons/ExitIcon.svg";
 import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
 </script>
 

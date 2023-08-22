@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import IconTextUI from '@/shared/ui/IconTextUI.vue'
-import CommentIcon from '@/shared/ui/icons/comment-icon/CommentIcon24.vue'
+import CommentIcon from '@/shared/ui/icons/comment-icon/CommentIcon24.svg'
 </script>
 
 <template>

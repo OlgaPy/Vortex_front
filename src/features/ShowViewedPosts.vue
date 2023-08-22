@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ArrowIcon from '@/shared/ui/icons/ArrowIcon.vue'
+import ArrowIcon from '@/shared/ui/icons/ArrowIcon.svg'
 import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
 </script>
 

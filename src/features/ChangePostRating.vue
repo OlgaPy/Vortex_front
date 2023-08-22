@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import IconTextUI from '@/shared/ui/IconTextUI.vue'
-import RateUpIcon from '@/shared/ui/icons/RateUpIcon.vue'
-import RateDownIcon from '@/shared/ui/icons/RateDownIcon.vue'
+import RateUpIcon from '@/shared/ui/icons/RateUpIcon.svg'
+import RateDownIcon from '@/shared/ui/icons/RateDownIcon.svg'
 import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore'
 
 const rating = ref<number>(432099)
@@ -102,12 +102,12 @@ const handleRatingDecreaseClick = () => {
 }
 
 .ratingButton[data-type='minus']:hover,
-.ratingButton[data-active='true'] {
+.ratingButton[data-type='minus'][data-active='true'] {
 	color: var(--color-red-70);
 }
 
 .ratingButton[data-type='plus']:hover,
-.ratingButton[data-active='true'] {
+.ratingButton[data-type='plus'][data-active='true'] {
 	color: var(--color-green-42);
 }
 </style>
