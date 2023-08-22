@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import { useCssModule } from 'vue'
-
-const style = useCssModule()
 const items = [
-	{ name: 'Тренды', path: '/', style: style.trends },
-	{ name: 'Новое', path: '/all', style: style.new },
-	{ name: 'Топ', path: '/all', style: style.top },
-	{ name: 'Обсуждаемое', path: '/all', style: style.discussed },
-	{ name: 'Подписки', path: '/all', style: style.subscriptions },
-	{ name: 'Группы', path: '/all', style: style.groups }
+	{ name: 'Тренды', path: '/' },
+	{ name: 'Новое', path: '/all' },
+	{ name: 'Топ', path: '/all' },
+	{ name: 'Обсуждаемое', path: '/all' },
+	{ name: 'Подписки', path: '/all' },
+	{ name: 'Группы', path: '/all' }
 ]
 </script>
 
@@ -17,7 +14,7 @@ const items = [
 		<router-link
 			v-for="(item, index) in items"
 			:key="index"
-			:class="item.style"
+			:class="$style.button"
 			:active-class="$style.activeItem"
 			:to="item.path"
 		>
@@ -31,44 +28,31 @@ const items = [
 	display: flex;
 	justify-items: start;
 	align-items: center;
+	gap: 16px;
 	width: 100%;
-	overflow-y: auto;
-	padding: 8px;
+	overflow-x: auto;
+	padding: 0 24px;
 	box-shadow: 0 1px 3px 0 var(--color-black-0-30);
 	color: var(--color-gray-22);
+	font: var(--font-text-medium);
 }
 .container::-webkit-scrollbar {
 	display: none;
 }
 
-.container > * {
-	display: flex;
-	justify-items: center;
-	align-items: start;
-	padding: 8px 4px;
-	font: var(--font-text);
+.container a {
+	cursor: pointer;
 }
 
-.trends {
-	width: 62px;
-}
-.new {
-	width: 55px;
-}
-.top {
-	width: 35px;
-}
-.discussed {
-	width: 111px;
-}
-.subscriptions {
-	width: 82px;
-}
-.groups {
-	width: 59px;
+.button {
+	padding: 16px 4px;
 }
 
-.activeItem > * {
-	font: var(--font-btn);
+.activeItem {
+	font: var(--font-btn-medium);
+}
+
+.container .activeItem {
+	cursor: default;
 }
 </style>

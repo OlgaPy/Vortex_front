@@ -1,10 +1,45 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import IconTextUI from '@/shared/ui/IconTextUI.vue'
 import RateUpIcon from '@/shared/ui/icons/RateUpIcon.vue'
 import RateDownIcon from '@/shared/ui/icons/RateDownIcon.vue'
 import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore'
 
+const rating = ref<number>(432099)
+const ratingDecreased = ref<boolean>(false)
+const ratingIncreased = ref<boolean>(false)
+
 const inverted = useInvertedPostActions()
+
+const handleRatingRaiseClick = () => {
+	if (ratingIncreased.value) {
+		rating.value--
+	} else {
+		rating.value++
+	}
+
+	if (ratingDecreased.value) {
+		rating.value++
+	}
+
+	ratingIncreased.value = !ratingIncreased.value
+	ratingDecreased.value = false
+}
+
+const handleRatingDecreaseClick = () => {
+	if (ratingDecreased.value) {
+		rating.value++
+	} else {
+		rating.value--
+	}
+
+	if (ratingIncreased.value) {
+		rating.value--
+	}
+
+	ratingDecreased.value = !ratingDecreased.value
+	ratingIncreased.value = false
+}
 </script>
 
 <template>
@@ -16,11 +51,29 @@ const inverted = useInvertedPostActions()
 			}
 		]"
 	>
-		<template #left-icon><RateUpIcon /></template>
-		<template #text>
-			<span :class="$style.ratingCount">432099</span>
+		<template #left-icon>
+			<button
+				:class="$style.ratingButton"
+				@click="handleRatingRaiseClick"
+				data-type="plus"
+				:data-active="ratingIncreased"
+			>
+				<RateUpIcon />
+			</button>
 		</template>
-		<template #right-icon><RateDownIcon /></template>
+		<template #text>
+			<span :class="[$style.ratingCount, 'font-text-small']">{{ rating }}</span>
+		</template>
+		<template #right-icon>
+			<button
+				:class="$style.ratingButton"
+				@click="handleRatingDecreaseClick"
+				data-type="minus"
+				:data-active="ratingDecreased"
+			>
+				<RateDownIcon />
+			</button>
+		</template>
 	</IconTextUI>
 </template>
 
@@ -31,5 +84,30 @@ const inverted = useInvertedPostActions()
 
 .inverted {
 	flex-direction: row-reverse;
+}
+
+.ratingButton {
+	display: flex;
+	color: var(--color-gray-73);
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition:
+		opacity 0.3s ease-in-out,
+		color 0.3s ease-in-out;
+}
+
+.ratingButton:hover {
+	opacity: 0.7;
+}
+
+.ratingButton[data-type='minus']:hover,
+.ratingButton[data-active='true'] {
+	color: var(--color-red-70);
+}
+
+.ratingButton[data-type='plus']:hover,
+.ratingButton[data-active='true'] {
+	color: var(--color-green-42);
 }
 </style>
