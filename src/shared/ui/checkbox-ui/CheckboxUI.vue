@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CheckIcon from '@/shared/ui/icons/CheckIcon.vue'
+import CheckIcon from '@/shared/ui/icons/CheckIcon.svg'
 import type { Props, Emits } from './types'
 
 const { modelValue } = defineProps<Props>()

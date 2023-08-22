@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ShortLogoIcon from '@/shared/ui/icons/ShortLogoIcon.vue'
-import MenuIcon from '@/shared/ui/icons/MenuIcon.vue'
+import ShortLogoIcon from '@/shared/ui/icons/ShortLogoIcon.svg'
+import MenuIcon from '@/shared/ui/icons/MenuIcon.svg'
 import AuthWidget from '@/widgets/AuthWidget.vue'
 </script>
 
