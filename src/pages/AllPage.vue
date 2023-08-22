@@ -9,6 +9,8 @@ import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue'
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue'
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue'
 import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
+import TinyButtonUI from '@/shared/ui/icon-button-ui/TinyButtonUI.vue'
+import { ButtonSize } from '@/shared/ui/icon-button-ui/types'
 import RateDownIcon from '@/shared/ui/icons/RateDownIcon.vue'
 import RateUpIcon from '@/shared/ui/icons/RateUpIcon.vue'
 import SaveIcon from '@/shared/ui/icons/SaveIcon.vue'
@@ -63,6 +65,10 @@ const searchText = ref<string>('')
 		<IconButtonUI>
 			<template #right-icon><TrashIcon /></template>
 		</IconButtonUI>
+		<TinyButtonUI :size="ButtonSize.SMALL">
+			<template #left-icon><TrashIcon /></template>
+			<template #text>Tag</template>
+		</TinyButtonUI>
 
 		<CheckboxUI :modelValue="false" />
 		<CheckboxUI :modelValue="true" />
