@@ -18,7 +18,7 @@ const { size } = defineProps<Props>();
 	flex-direction: row;
 	align-items: center;
 	border: 1px solid var(--color-gray-92);
-	border-radius: var(--style-radius-4);
+	border-radius: var(--style-radius-5);
 	color: var(--color-primary-1);
 }
 
