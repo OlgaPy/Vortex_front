@@ -3,14 +3,14 @@
 		<rect width="24" height="24" rx="12" :class="$style.rectFill" />
 		<path
 			d="M8.25 12H15.75"
-			stroke="#888888"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
 		/>
 		<path
 			d="M12 8.25V15.75"
-			stroke="#888888"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
