@@ -24,7 +24,6 @@ $-default-family: var(--font-family-default);
 	--font-tags: normal 400 1.2rem/1.6rem #{$-default-family};
 }
 
-//TODO ApplicationOrientationStore.ts duplicate 1280px, make config?
 @media screen and (min-width: 1280px) {
 	:root {
 		--font-base: normal 400 1.5rem/2rem #{$-default-family};
