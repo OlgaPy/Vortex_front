@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Props } from './types';
+import type { Props } from './types'
 
-const { size } = defineProps<Props>();
+const { size } = defineProps<Props>()
 </script>
 
 <template>

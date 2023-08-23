@@ -1,7 +1,7 @@
 <template>
-  <div :class="$style.container">
-    <router-link to="/">Реклама / инструменты модератора</router-link>
-  </div>
+	<div :class="$style.container">
+		<router-link to="/">Реклама / инструменты модератора</router-link>
+	</div>
 </template>
 
 <style module>

@@ -6,7 +6,7 @@ import CommentIcon from '@/shared/ui/icons/CommentIcon.svg'
 <template>
 	<router-link to="/all">
 		<IconTextUI :class="$style.commentsLink">
-			<template #left-icon><CommentIcon :class="$style.commentsIcon"/></template>
+			<template #left-icon><CommentIcon :class="$style.commentsIcon" /></template>
 			<template #text>
 				<span>1516</span>
 			</template>
@@ -20,7 +20,7 @@ import CommentIcon from '@/shared/ui/icons/CommentIcon.svg'
 	gap: 4px;
 }
 .commentsIcon {
-  width: 24px;
-  height: 24px;
+	width: 24px;
+	height: 24px;
 }
 </style>
