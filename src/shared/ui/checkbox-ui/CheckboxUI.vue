@@ -7,22 +7,47 @@ const emit = defineEmits<Emits>()
 </script>
 
 <template>
-	<label :class="$style.container" @click.prevent="() => emit('update:modelValue', !modelValue)">
+	<div :class="$style.container" @click.prevent="() => emit('update:modelValue', !modelValue)">
 		<input type="checkbox" :checked="modelValue" :class="$style.hidden" />
-		<template v-if="modelValue">
-			<CheckIcon />
-		</template>
-	</label>
+		<div :class="$style.view">
+			<div :class="$style.icon">
+				<CheckIcon v-if="modelValue"/>
+			</div>
+			<slot></slot>
+		</div>
+	</div>
 </template>
 
 <style module>
 .container {
+	display: flex;
+	width: 100%;
+	height: 22px;
+	font: var(--text);
+	color: var(--color-gray-22);
+}
+
+.view {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	gap: 12px;
+}
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 22px;
 	height: 22px;
 	border: 2px solid var(--color-gray-53);
 	border-radius: var(--style-radius-5);
-	color: var(--color-base-bg);
-	cursor: pointer;
+}
+.icon > svg {
+	width: 18px;
+	height: 18px;
 }
 
 .hidden {
