@@ -19,7 +19,7 @@ const alreadyExistTags = [
 <template>
 	<footer :class="$style.footer">
 		<section :class="$style.tagSection">
-			<span class="font-text">
+			<span class="font-text color-gray-22">
 				Добавьте к посту до 10 тегов
 			</span>
 			<div :class="$style.tagList">
