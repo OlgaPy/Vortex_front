@@ -3,6 +3,9 @@ import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue'
 import TapeMenu from '@/widgets/TapeLinksWidget.vue'
 import Header from '@/widgets/HeaderWidget.vue'
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue'
+import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore'
+import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue'
+const MobileNavigationStore = useMobileNavigationStore()
 </script>
 
 <template>
@@ -11,7 +14,8 @@ import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue'
 			<Header />
 			<TapeMenu />
 		</header>
-		<TrendsFeedWidget />
+		<SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
+		<TrendsFeedWidget/>
 	</MobilePageUI>
 </template>
 
