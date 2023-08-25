@@ -1,32 +1,39 @@
 <script setup lang="ts">
 import { useThemeStore, ThemeModes } from '@/shared/stores/ThemeStore'
 import { storeToRefs } from 'pinia'
-import MoonIcon from '@/shared/ui/icons/MoonIcon.svg'
 import SunIcon from '@/shared/ui/icons/SunIcon.svg'
+import MoonIcon from '@/shared/ui/icons/MoonIcon.svg'
 
-const themeStore = useThemeStore()
-const { setThemeMode } = themeStore
-const { themeMode } = storeToRefs(themeStore)
+const store = useThemeStore()
+const { themeMode } = storeToRefs(store)
+const { setThemeMode } = store
 
-function changeTheme() {
-	setThemeMode(themeMode.value === ThemeModes.DARK ? ThemeModes.LIGHT : ThemeModes.DARK)
+const toggleThemeMode = () => {
+	const newMode = themeMode.value !== ThemeModes.DARK ? ThemeModes.DARK : ThemeModes.LIGHT
+	setThemeMode(newMode)
 }
 </script>
 
 <template>
-	<div
-		:class="[
-			$style.container,
-			{
-				[$style.containerDark]: themeMode === ThemeModes.DARK
-			}
-		]"
-		@click="changeTheme"
+	<label
+		@click.prevent="toggleThemeMode"
+		:class="$style.container"
 	>
-		<div :class="$style.filler"></div>
-		<div v-if="themeMode !== ThemeModes.DARK" :class="$style.icon"><SunIcon /></div>
-		<div v-else :class="$style.icon"><MoonIcon /></div>
-	</div>
+		<input
+			type="checkbox"
+			:checked="themeMode === ThemeModes.DARK"
+			:class="$style.checkbox"
+		/>
+  	<span :class="$style.slider"></span>
+		<SunIcon
+			v-if="themeMode === ThemeModes.DARK"
+			:class="$style.sun_icon"
+		/>
+		<MoonIcon
+			v-else
+			:class="$style.moon_icon"
+		/>
+	</label>
 </template>
 
 <style module>
@@ -34,41 +41,43 @@ function changeTheme() {
 	position: relative;
 	height: 24px;
 	width: 48px;
-	border-radius: var(--style-radius-16);
-	padding: 2px;
-	background: var(--color-gray-89);
-	box-shadow: 2px 0 4px 0 var(--color-dark-gray-73) inset;
+	border-radius: 12px;
 	cursor: pointer;
+	background-color: var(--color-gray-22);
+	box-shadow: inset 2px 0 4px var(--color-gray-8);
 }
 
-.filler {
+.checkbox {
+	width: 0;
+	height: 0;
+	appearance: none;
+}
+
+.slider {
 	position: absolute;
-	top: 2px;
 	left: 2px;
+	top: 2px;
 	width: 20px;
 	height: 20px;
-	border-radius: var(--style-radius-50per);
-	background: var(--color-primary-1);
-	box-shadow:
-		0 1px 3px 1px var(--color-black-0-15),
-		0 1px 2px 0 var(--color-black-0-30);
-	transform: translateX(24px);
+	background-color: var(--color-primary-1);
+	border-radius: 50%;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15),
+							0px 1px 2px rgba(0, 0, 0, 0.30);
 }
 
-.icon {
+.checkbox:checked + .slider {
+	left: calc(48px - 20px - 2px);
+}
+
+.moon_icon {
 	position: absolute;
-	top: 50%;
-	left: 4px;
-	transform: translateY(-50%);
-	display: flex;
-}
-
-.containerDark .filler {
-	transform: translateX(0px);
-}
-
-.containerDark .icon {
-	left: auto;
+	top: 4px;
 	right: 4px;
+}
+
+.sun_icon {
+	position: absolute;
+	top: 4px;
+	left: 4px;
 }
 </style>
