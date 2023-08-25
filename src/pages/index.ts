@@ -12,6 +12,6 @@ export const routes = [
 	{
 		path: '/post-editor',
 		name: 'post-editor',
-		component: () => import('./post-editor/PostEditorDescktopPage.vue')
+		component: () => import('./post-editor/PostEditorDesktopPage.vue')
 	}
 ]

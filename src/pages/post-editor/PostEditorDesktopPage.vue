@@ -8,14 +8,16 @@ import IconCheckboxUI from "./ui/IconButtonUI.vue";
 import InputUI from "./ui/InputUI.vue";
 import PostEditorFooter from "@/pages/post-editor/ui/PostEditorFooter.vue";
 import PlusIcon from "@/shared/ui/icons/PlusIcon.svg";
+import DesktopAsideBlockUI from "@/shared/ui/aside-block-ui/DesktopAsideBlockUI.vue";
+import DesktopMainBlockUI from "@/shared/ui/main-block-ui/DesktopMainBlockUI.vue";
 </script>
 
 <template>
 	<DesktopPageUI>
-		<aside :class="$style.sidebar">
+		<DesktopAsideBlockUI>
 			<SiteNavigationPanelWidget :class="$style.siteNavigationPanel"/>
-		</aside>
-		<main :class="$style.main">
+		</DesktopAsideBlockUI>
+		<DesktopMainBlockUI :class="$style.main">
 			<header :class="$style.postTitle">
 				<InputUI>
 					<input placeholder="Заголовок">
@@ -41,31 +43,18 @@ import PlusIcon from "@/shared/ui/icons/PlusIcon.svg";
 				</section>
 			</main>
 			<PostEditorFooter/>
-		</main>
-		<aside :class="$style.sidebar">
+		</DesktopMainBlockUI>
+		<DesktopAsideBlockUI>
 			<ProfilePanelWidget :class="$style.profilePanelWidget"/>
 			<SiteInfoPanel :class="$style.siteInfoPanel"/>
 			<AdInfoPanelWidget :class="$style.adInfoPanel"/>
-		</aside>
+		</DesktopAsideBlockUI>>
 	</DesktopPageUI>
 </template>
 
 <style module>
-.sidebar, .main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	width: 300px;
-}
 .main {
-	width: 700px;
 	gap: 20px;
-}
-
-.siteNavigationPanel, .adInfoPanel,
-.profilePanelWidget, .siteInfoPanel {
-	margin-bottom: 32px;
 }
 
 .postEditor {

@@ -45,7 +45,7 @@ const isActive = ref(false);
 	justify-content: start;
 	align-items: center;
 	flex-direction: column;
-	width: 300px;
+	width: 100%;
 	position: relative;
 }
 

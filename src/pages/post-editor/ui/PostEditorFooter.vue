@@ -37,7 +37,7 @@ const alreadyExistTags = [
 		<section :class="$style.sectionAdditional">
 			<CheckboxUI :model-value="false">Авторский контент</CheckboxUI>
 			<CheckboxUI :model-value="true" >Опубликовать пост в группе</CheckboxUI>
-			<SelectUI/>
+			<SelectUI :class="$style.chooseGroup"/>
 		</section>
 		<section :class="$style.sectionSubmit">
 			<ButtonUI>Опубликовать</ButtonUI>
@@ -82,6 +82,9 @@ const alreadyExistTags = [
 	padding: 12px 8px;
 	border-radius: var(--style-radius-10);
 	background-color: var(--color-gray-98);
+}
+.chooseGroup {
+	width: 245px;
 }
 
 .sectionSubmit {

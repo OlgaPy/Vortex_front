@@ -5,41 +5,25 @@ import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidge
 import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue'
 import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue'
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue'
+import DesktopAsideBlockUI from "@/shared/ui/aside-block-ui/DesktopAsideBlockUI.vue";
+import DesktopMainBlockUI from "@/shared/ui/main-block-ui/DesktopMainBlockUI.vue";
 </script>
 
 <template>
 	<DesktopPageUI>
-		<aside :class="$style.sidebar">
-			<SiteNavigationPanelWidget :class="$style.siteNavigationPanel" />
-		</aside>
-		<main :class="$style.main">
+		<DesktopAsideBlockUI>
+			<SiteNavigationPanelWidget/>
+		</DesktopAsideBlockUI>
+		<DesktopMainBlockUI>
 			<TrendsFeedWidget />
-		</main>
-		<aside :class="$style.sidebar">
-			<ProfilePanelWidget :class="$style.profilePanelWidget" />
-			<SiteInfoPanel :class="$style.siteInfoPanel" />
-			<AdInfoPanelWidget :class="$style.adInfoPanel" />
-		</aside>
+		</DesktopMainBlockUI>
+			<DesktopAsideBlockUI>
+				<ProfilePanelWidget/>
+				<SiteInfoPanel/>
+				<AdInfoPanelWidget/>
+			</DesktopAsideBlockUI>
 	</DesktopPageUI>
 </template>
 
-<style module>
-.sidebar,
-.main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	width: 300px;
-}
-.main {
-	width: 700px;
-}
-
-.siteNavigationPanel,
-.adInfoPanel,
-.profilePanelWidget,
-.siteInfoPanel {
-	margin-bottom: 32px;
-}
+<style module lang="scss">
 </style>
