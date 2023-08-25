@@ -4,9 +4,7 @@ const { tags } = defineProps<{ tags: String[] }>()
 
 <template>
 	<span :class="$style.container">
-		<span class="color-gray-53 font-tags" v-for="(tag, index) in tags" :key="index">{{
-			tag
-		}}</span>
+		<span class="color-gray-53 font-tags" v-for="(tag, index) in tags" :key="index">{{ tag }}</span>
 	</span>
 </template>
 

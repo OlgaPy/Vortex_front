@@ -10,6 +10,7 @@ $-schema: (
 	// Main background
 	'base-bg' hsl(0 0% 95%) hsl(260 14% 8%),
 	/* The names are based on the last HSL property L- lightness */ //Black
+	'black-0-15' hsla(0, 0%, 0%, 0.15) hsla(0, 0%, 0%, 0.15),
 	'black-0-30' hsla(0, 0%, 0%, 0.3) hsla(0, 0%, 0%, 0.3),
 	// Gray
 	'gray-14' hsl(257 10% 14%) hsl(0 0% 98%),
@@ -20,11 +21,13 @@ $-schema: (
 	'gray-92' hsl(0 0% 92%) hsl(257 6% 22%),
 	'gray-95' hsl(0 0% 95%) hsl(260 14% 8%),
 	'gray-98' hsl(0 0% 98%) hsl(257 10% 14%),
+	// DarkGray
+	'dark-gray-73' hsl(180 6% 73%) hsl(260 14% 8%),
 	// Red
 	'red-70' hsl(3 97% 70%) hsl(3 97% 70%),
 	'red-79' hsl(3 96% 79%) hsl(3 96% 79%),
 	// Green
-	'green-42' hsl(180 63% 42%) hsl(180 63% 42%),
+	'green-42' hsl(180 63% 42%) hsl(180 63% 42%)
 );
 
 @include m.create-vars($-schema, 'default');

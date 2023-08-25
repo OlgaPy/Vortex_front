@@ -1,19 +1,19 @@
 <template>
-  <div :class="$style.container">
+	<div :class="$style.container">
 		<router-link :class="$style.profile" to="/all">
-			<img src="./icons/userpic.svg" alt="Аватар">
+			<img src="./icons/userpic.svg" alt="Аватар" />
 			<span :class="$style.nickname">Username</span>
 		</router-link>
 		<slot :class="$style.action" name="action"></slot>
-  </div>
+	</div>
 </template>
 
 <style module>
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 48px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 48px;
 	width: 100%;
 	gap: 8px;
 }
@@ -29,5 +29,4 @@
 	color: var(--color-gray-22);
 }
 </style>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

@@ -16,7 +16,7 @@ const onChangeInput = (event: Event) => {
 <template>
 	<div :class="$style.container">
 		<input :value="modelValue" @input="onChangeInput" :placeholder="placeholder" />
-		<SearchIcon :class="$style.searchIcon"/>
+		<SearchIcon :class="$style.searchIcon" />
 	</div>
 </template>
 

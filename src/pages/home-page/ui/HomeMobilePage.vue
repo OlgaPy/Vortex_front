@@ -8,10 +8,10 @@ import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue'
 <template>
 	<MobilePageUI>
 		<header :class="[$style.headerContainer, 'color-bg-gray-98']">
-			<Header/>
-			<TapeMenu/>
+			<Header />
+			<TapeMenu />
 		</header>
-		<TrendsFeedWidget/>
+		<TrendsFeedWidget />
 	</MobilePageUI>
 </template>
 
