@@ -3,35 +3,38 @@ $-default-family: var(--font-family-default);
 
 //1rem == 10px
 :root {
-	// Basic font
-	--font-base: normal 400 1.5rem/1.6rem #{$-default-family};
-	--font-base-b: normal 600 1.5rem/1.6rem #{$-default-family};
-	// Buttons
-	--font-btn: normal 400 1.4rem/1.6rem #{$-default-family};
-	--font-btn-medium: normal 600 1.4rem/2rem #{$-default-family}; //MV_Button_Medium
-	--font-btn-big: #{$-default-family}; // TODO
-	--font-btn-small: #{$-default-family}; // TODO
-	// Headings
-	--font-h1: normal 600 1.7rem/2rem #{$-default-family}; //MV_Title Large
-	--font-h2: normal 500 1.5rem/1.6rem #{$-default-family}; //MV_Title Medium
-	--font-h3: normal 400 1.5rem/1.6rem #{$-default-family}; //MV_Title Small
-	// Texts
-	--font-text: normal 400 1.5rem/1.6rem #{$-default-family};
-	--font-text-medium: normal 400 1.5rem/2rem #{$-default-family}; //MV_Text_Medium
-	--font-text-small: normal 400 1.2rem/1.6rem #{$-default-family};
-	// TODO: sort and change
-	--font-post-title: normal 600 1.7rem/2rem #{$-default-family};
-	--font-tags: normal 400 1.2rem/1.6rem #{$-default-family};
+	//DO NOT USE THIS NAMING
+	--font-base: normal 400 1.5rem/1.6rem #{$-default-family};--font-base-b: normal 600 1.5rem/1.6rem #{$-default-family};--font-btn: normal 400 1.4rem/1.6rem #{$-default-family};--font-btn-medium: normal 600 1.4rem/2rem #{$-default-family}; //MV_Button_Medium--font-btn-big: #{$-default-family}; // TODO--font-btn-small: #{$-default-family}; // TODO--font-h1: normal 600 1.7rem/2rem #{$-default-family}; //MV_Title Large--font-h2: normal 500 1.5rem/1.6rem #{$-default-family}; //MV_Title Medium--font-h3: normal 400 1.5rem/1.6rem #{$-default-family}; //MV_Title Small--font-text: normal 400 1.5rem/1.6rem #{$-default-family};--font-text-medium: normal 400 1.5rem/2rem #{$-default-family}; //MV_Text_Medium--font-text-small: normal 400 1.2rem/1.6rem #{$-default-family};--font-post-title: normal 600 1.7rem/2rem #{$-default-family}; --font-tags: normal 400 1.2rem/1.6rem #{$-default-family};
+	//DO NOT USE THIS NAMING
+
+	//USE THIS NAMING
+	--title: normal 700 1.7rem/2.4rem #{$-default-family};
+	--sub-title: normal 400 1.5rem/2rem #{$-default-family};
+	--sub-title-bold: normal 700 1.5rem/2rem #{$-default-family};
+
+	--text: normal 400 1.4rem/2rem #{$-default-family};
+	--text-bold: normal 700 1.4rem/2rem #{$-default-family};
+
+	--small: normal 400 1.2rem/1.6rem #{$-default-family};
+	--smaller: normal 400 1rem/1.6rem #{$-default-family};
 }
 
 @media screen and (min-width: 1280px) {
 	:root {
-		--font-base: normal 400 1.5rem/2rem #{$-default-family};
-		--font-h1: normal 600 2.8rem/3.6rem #{$-default-family};
-		--font-h3: normal 400 1.8rem/2.4rem #{$-default-family};
-		--font-text: normal 400 1.6rem/2.4rem #{$-default-family};
-		--font-text-small: normal 400 1.5rem/2rem #{$-default-family};
-		--font-tags: normal 400 1.4rem/2.4rem #{$-default-family};
+		//DO NOT USE THIS NAMING
+		--font-base: normal 400 1.5rem/2rem #{$-default-family};--font-h1: normal 600 2.8rem/3.6rem #{$-default-family};--font-h3: normal 400 1.8rem/2.4rem #{$-default-family};--font-text: normal 400 1.6rem/2.4rem #{$-default-family};--font-text-small: normal 400 1.5rem/2rem #{$-default-family};--font-tags: normal 400 1.4rem/2.4rem #{$-default-family};
+		//DO NOT USE THIS NAMING
+
+		//USE THIS NAMING
+		--title: normal 700 2.8rem/3.6rem #{$-default-family};
+		--sub-title: normal 400 1.8rem/2.4rem #{$-default-family};
+		--sub-title-bold: normal 700 1.8rem/2.4rem #{$-default-family};
+
+		--text: normal 400 1.6rem/2.4rem #{$-default-family};
+		--text-bold: normal 700 1.6rem/2.4rem #{$-default-family};
+
+		--small: normal 400 1.4rem/2rem #{$-default-family};
+		--smaller: normal 400 1.2rem/1.6rem #{$-default-family};
 	}
 }
 
