@@ -49,7 +49,7 @@ defineEmits<Emits>()
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 8px;
+	border-radius: var(--style-radius-10);
 	background-color: #e4e4e488;
 	z-index: 1;
 }

@@ -5,12 +5,9 @@ import SearchInputUI from '@/shared/ui/search-input-ui/SearchInputUI.vue'
 <template>
 	<div :class="$style.container">
 		<section :class="`${$style.section} ${$style.logoSection}`">
-			<!--      <img :class="$style.darkLogo" src="./img/dark-color-logo.svg" alt="Капибара лого" />-->
-			<!--      <img :class="$style.lightLogo" src="./img/white-color-logo.svg" alt="Капибара лого" />-->
-			<!--			TODO -->
-			<img src="./img/dark-color-logo.svg" alt="Капибара лого" />
+			<img :class="[$style.logo, $style.darkLogo]" src="./img/dark-color-logo.svg" alt="Капибара лого" />
+			<img :class="[$style.logo, $style.lightLogo]" src="./img/white-color-logo.svg" alt="Капибара лого" />
 		</section>
-		<!--	TODO 	-->
 		<section :class="`${$style.section} ${$style.menuSection}`">
 			<router-link to="/" :active-class="$style.activeLink">Тренды</router-link>
 			<router-link to="/all" :active-class="$style.activeLink">Новое</router-link>
@@ -35,7 +32,7 @@ import SearchInputUI from '@/shared/ui/search-input-ui/SearchInputUI.vue'
 	align-items: center;
 	flex-direction: column;
 	background: var(--color-gray-98);
-	border-radius: 10px;
+	border-radius: var(--style-radius-10);
 	width: 300px;
 }
 .section {
@@ -64,6 +61,17 @@ import SearchInputUI from '@/shared/ui/search-input-ui/SearchInputUI.vue'
 	height: 40px;
 	width: 284px;
 }
+
+.logo {
+	display: none;
+}
+//TODO import color-schemas
+[data-color-schema="dark"] .lightLogo,
+[data-color-schema="light"] .darkLogo,
+[data-color-schema="auto"] .darkLogo {
+	display: block;
+}
+
 .activeLink {
 	font-weight: 600;
 }

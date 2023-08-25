@@ -81,7 +81,7 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
 	background: var(--color-gray-98);
 	font: var(--font-text);
 	color: var(--color-gray-22);
-	border-radius: 10px;
+	border-radius: var(--style-radius-10);
 	width: 100%;
 	gap: 32px;
 }

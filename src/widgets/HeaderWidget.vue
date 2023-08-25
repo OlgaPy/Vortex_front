@@ -50,13 +50,13 @@ import MegaphoneIcon from '@/shared/ui/icons/MegaphoneIcon.svg'
 	background-color: var(--color-primary-1);
 	height: 32px;
 	width: 32px;
-	border-radius: 16px;
+	border-radius: var(--style-radius-16);
 	color: var(--color-gray-98);
 }
 .icon_button {
 	height: 32px;
 	width: 32px;
-	border-radius: 16px;
+	border-radius: var(--style-radius-16);
 	border: 1px solid var(--color-primary-1);
 }
 

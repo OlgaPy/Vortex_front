@@ -18,7 +18,7 @@
 	background: var(--color-gray-98);
 	color: var(--color-gray-22);
 	font: var(--font-tags);
-	border-radius: 10px;
+	border-radius: var(--style-radius-10);
 	width: 100%;
 	min-height: 240px;
 	gap: 14px;

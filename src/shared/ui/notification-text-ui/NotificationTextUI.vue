@@ -17,7 +17,7 @@ const { attract } = defineProps<Props>()
 	justify-content: center;
 	align-items: center;
 	height: 18px;
-	border-radius: 100px;
+	border-radius: var(--style-radius-100);
 	font: var(--font-tags);
 	color: var(--color-primary-1);
 }

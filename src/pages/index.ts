@@ -8,5 +8,10 @@ export const routes = [
 		path: '/all',
 		name: 'all',
 		component: () => import('./AllPage.vue')
+	},
+	{
+		path: '/post-editor',
+		name: 'post-editor',
+		component: () => import('./post-editor/PostEditorDescktopPage.vue')
 	}
 ]

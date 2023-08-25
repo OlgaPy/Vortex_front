@@ -34,7 +34,7 @@ function changeTheme() {
 	position: relative;
 	height: 24px;
 	width: 48px;
-	border-radius: 16px;
+	border-radius: var(--style-radius-16);
 	padding: 2px;
 	background: var(--color-gray-89);
 	box-shadow: 2px 0 4px 0 var(--color-dark-gray-73) inset;
@@ -47,7 +47,7 @@ function changeTheme() {
 	left: 2px;
 	width: 20px;
 	height: 20px;
-	border-radius: 50%;
+	border-radius: var(--style-radius-50per);
 	background: var(--color-primary-1);
 	box-shadow:
 		0 1px 3px 1px var(--color-black-0-15),
