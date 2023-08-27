@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type {Emits, Option, Props} from "./types";
 import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
 import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
 import {ref} from 'vue';
@@ -11,14 +12,30 @@ const {floatingStyles} = useFloating(reference, floating, {
 	whileElementsMounted: autoUpdate,
 });
 
-const isActive = ref(false);
+const emit = defineEmits<Emits>();
+const { modelValue, options, attractorText } = defineProps<Props>();
+
+const isOpen = ref(false);
+
+const openList = () => {
+  isOpen.value = true;
+};
+const closeList = () => {
+  isOpen.value = false;
+};
+
+const selectOption = (option: Option) => {
+  emit('update:modelValue', option);
+  closeList();
+};
 </script>
 
 <template>
-	<div :class="[$style.container, {[$style.isActive]: isActive}]" v-out-click="() => {isActive = false}">
-		<div :class="$style.preview" ref="reference">
-			<div :class="$style.attractor" @click="isActive = true">
-				<span>Выберите группу</span>
+	<div :class="[$style.container, {[$style.isActive]: isOpen}]" v-outside-click="closeList">
+
+    <div :class="$style.preview" ref="reference">
+			<div :class="$style.attractor" @click="openList">
+				<span>{{ modelValue? modelValue.text : attractorText }}</span>
 				<ArrowIcon :class="$style.arrowIcon"/>
 			</div>
 			<div :class="$style.search">
@@ -26,14 +43,23 @@ const isActive = ref(false);
 				<SearchIcon/>
 			</div>
 		</div>
+
 		<div :class="$style.selectionWindow" ref="floating" :style="floatingStyles">
-			<div :class="$style.options">
-				<div :class="$style.option" v-for="item in [1,2,3,4,5]" :key="item">
-					<div :class="$style.optionText">Лига капибар</div>
-					<div :class="$style.optionIcon"><ArrowIcon :class="$style.arrowIcon"/></div>
-				</div>
-			</div>
+			<ul :class="$style.options">
+				<li
+            :class="$style.option"
+            v-for="(option, index) in options"
+            :key="index"
+            @click="() => { selectOption(option); }"
+        >
+					<div :class="$style.optionText">{{ option.text }}</div>
+					<div :class="$style.optionIcon">
+            <ArrowIcon :class="$style.arrowIcon"/>
+          </div>
+				</li>
+			</ul>
 		</div>
+
 	</div>
 </template>
 

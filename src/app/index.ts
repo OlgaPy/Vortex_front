@@ -11,12 +11,12 @@ import router from './providers/router'
 import App from './App.vue'
 
 // Import App directives
-import outClickDirective from "@/app/providers/directives/out-click-directive";
+import outsideClickDirective from "@/app/providers/directives/outside-click-directive";
 
 export const registerPlugins = (app: ReturnType<CreateAppFunction<Element>>): void => {
 	app.use(createPinia()).use(router);
 
-	app.directive('out-click', outClickDirective);
+	app.directive('outside-click', outsideClickDirective);
 }
 
 export { App }
