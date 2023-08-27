@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import ShowViewedPosts from '@/features/ShowViewedPosts.vue'
 import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue'
+import MobileMainBlockUI from "@/shared/ui/block-ui/MobileMainBlockUI.vue";
 </script>
 
 <template>
-	<div :class="$style.container">
+	<MobileMainBlockUI>
 		<header :class="$style.header">
 			<ShowViewedPosts :class="$style.showViewedPosts" />
 		</header>
@@ -13,19 +14,10 @@ import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
 			<TestPreviewPost />
 			<TestPreviewPost />
 		</main>
-	</div>
+	</MobileMainBlockUI>
 </template>
 
 <style module>
-.container {
-	display: flex;
-	justify-items: start;
-	align-items: center;
-	flex-direction: column;
-	width: 100%;
-	max-width: 786px;
-}
-
 .header {
 	display: flex;
 	justify-content: start;
@@ -34,7 +26,7 @@ import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue
 }
 .showViewedPosts {
 	padding: 4px 12px;
-	font: var(--font-text-small);
+	font: var(--font-small);
 }
 
 .feed {

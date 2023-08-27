@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchInputUI from '@/shared/ui/search-input-ui/SearchInputUI.vue'
+import {SearchInputUI} from '@/shared/ui/search-input-ui'
 </script>
 
 <template>
@@ -50,7 +50,7 @@ import SearchInputUI from '@/shared/ui/search-input-ui/SearchInputUI.vue'
 	align-items: end;
 	flex-direction: column;
 	width: 100%;
-	font: var(--font-h3);
+	font: var(--font-sub-title);
 	color: var(--color-gray-22);
 }
 .menuSection > * {

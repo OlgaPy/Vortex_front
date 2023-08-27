@@ -6,9 +6,11 @@
 			<slot name="header"></slot>
 		</header>
 		<main :class="$style.main">
-			<h1 class="font-h1"><slot name="title"></slot></h1>
-			<span class="font-tags"><slot name="tags"></slot></span>
-			<div :class="[$style.body, 'font-text-large']"><slot name="body"></slot></div>
+			<h1 class="font-title"><slot name="title"></slot></h1>
+			<span class="font-smaller"><slot name="tags"></slot></span>
+			<div :class="[$style.body, 'font-text']">
+        <slot name="body"></slot>
+      </div>
 		</main>
 		<footer :class="$style.footer">
 			<slot name="footer"></slot>
@@ -45,7 +47,6 @@
 	flex-direction: column;
 	gap: 12px;
 	color: var(--color-gray-14);
-	font: var(--font-text);
 }
 .main > * {
 	padding: 0 12px;

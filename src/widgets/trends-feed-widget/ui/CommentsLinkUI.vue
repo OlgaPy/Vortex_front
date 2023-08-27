@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import IconTextUI from '@/shared/ui/IconTextUI.vue'
-import CommentIcon from '@/shared/ui/icons/CommentIcon.svg'
+import CommentIcon from '@/shared/assets/icons/CommentIcon.svg'
 </script>
 
 <template>
@@ -16,7 +16,6 @@ import CommentIcon from '@/shared/ui/icons/CommentIcon.svg'
 
 <style module>
 .commentsLink {
-	width: 79px;
 	gap: 4px;
 }
 .commentsIcon {

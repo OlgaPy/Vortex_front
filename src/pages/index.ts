@@ -1,17 +1,17 @@
 export const routes = [
 	{
 		path: '/',
-		name: 'Home',
+		name: 'Тренды',
 		component: () => import('./home-page/HomePage.vue')
 	},
 	{
 		path: '/all',
-		name: 'all',
-		component: () => import('./AllPage.vue')
+		name: 'Все компоненты',
+		component: () => import('@/pages/all/AllPage.vue')
 	},
 	{
 		path: '/post-editor',
-		name: 'post-editor',
-		component: () => import('./post-editor/PostEditorDesktopPage.vue')
+		name: 'Создать пост',
+		component: () => import('./post-editor/PostEditorPage.vue')
 	}
 ]

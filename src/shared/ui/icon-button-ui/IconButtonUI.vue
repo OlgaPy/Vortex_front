@@ -1,28 +1,24 @@
-<script setup lang="ts"></script>
-
 <template>
-	<button :class="[$style.container, 'font-btn']">
-		<slot name="left-icon"></slot>
-		<slot name="text"></slot>
-		<slot name="right-icon"></slot>
+	<button :class="$style.container">
+		<slot name="left-icon"/>
+		<span :class="$style.text">
+			<slot name="text"/>
+		</span>
+		<slot name="right-icon"/>
 	</button>
 </template>
 
-<style module>
+<style module lang="scss">
 .container {
+	padding: 4px 8px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	letter-spacing: 0.5px;
-	border-radius: var(--style-radius-5);
-	border: unset;
-	background: unset;
-	gap: 4px;
+	gap: 8px;
+	font: var(--font-small);
 	color: var(--color-primary-1);
-}
-
-.container[disabled] {
-	color: var(--color-gray-73);
-	cursor: default;
+	background-color: var(--color-gray-98);
+	border: 1px solid var(--color-gray-92);
+	border-radius: var(--style-radius-5);
 }
 </style>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ArrowIcon from '@/shared/ui/icons/ArrowIcon.svg';
-import SearchIcon from '@/shared/ui/icons/SearchIcon.svg';
+import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
+import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
 import {ref} from 'vue';
-import {useFloating, flip, autoUpdate, shift} from '@floating-ui/vue';
+import {autoUpdate, flip, shift, useFloating} from '@floating-ui/vue';
 
 const reference = ref(null);
 const floating = ref(null);
@@ -61,7 +61,7 @@ const isActive = ref(false);
 	gap: 4px;
 	padding: 8px;
 	width: 100%;
-	font: var(--text);
+	font: var(--font-text);
 	color: var(--color-primary-2);
 	background-color: var(--color-gray-89);
 	border-radius: var(--style-radius-5);
@@ -77,7 +77,7 @@ const isActive = ref(false);
 	gap: 4px;
 	padding: 8px;
 	width: 100%;
-	font: var(--text);
+	font: var(--font-text);
 	background-color: var(--color-gray-89);
 	color: var(--color-gray-53);
 	border-radius: var(--style-radius-5);
@@ -92,7 +92,7 @@ const isActive = ref(false);
 	align-items: start;
 	flex-direction: column;
 	width: 100%;
-	font: var(--text);
+	font: var(--font-text);
 	border-radius: var(--style-radius-5);
 	overflow: hidden;
 }
@@ -132,6 +132,8 @@ const isActive = ref(false);
 }
 
 .arrowIcon {
+  width: 10px;
+  height: 6px;
 	transform: rotateZ(90deg);
 }
 </style>

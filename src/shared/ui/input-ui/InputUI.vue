@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { Props } from './types'
+import type {Props} from './types'
 
 const { type } = defineProps<Props>()
 </script>
 
 <template>
-	<label :class="[$style.container, 'font-text-micro']" :data-type="type">
+	<label :class="[$style.container, 'font-smaller']" :data-type="type">
 		<slot></slot>
 	</label>
 </template>
@@ -26,7 +26,7 @@ const { type } = defineProps<Props>()
 	background: inherit;
 	border: unset;
 	outline: none;
-	font: var(--font-tags);
+	font: var(--font-small);
 }
 
 .container[data-type='outfocus'] {

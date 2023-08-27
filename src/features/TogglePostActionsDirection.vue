@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { EPostActionsDirection, useUserSettingsStore } from '@/shared/stores/UserSettingsStore'
-import type { IUserSettings } from '@/shared/stores/UserSettingsStore'
-import { storeToRefs } from 'pinia'
+import type {IUserSettings} from '@/shared/stores/UserSettingsStore'
+import {EPostActionsDirection, useUserSettingsStore} from '@/shared/stores/UserSettingsStore'
+import {storeToRefs} from 'pinia'
 import FilledButtonUI from '@/shared/ui/button-ui/ButtonUI.vue'
-import { computed } from 'vue'
+import {computed} from 'vue'
 
 const settingsStore = useUserSettingsStore()
 const { settings } = storeToRefs(settingsStore)

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useThemeStore, ThemeModes } from '@/shared/stores/ThemeStore'
-import { storeToRefs } from 'pinia'
-import SunIcon from '@/shared/ui/icons/SunIcon.svg'
-import MoonIcon from '@/shared/ui/icons/MoonIcon.svg'
+import {ThemeModes, useThemeStore} from '@/shared/stores/ThemeStore'
+import {storeToRefs} from 'pinia'
+import SunIcon from '@/shared/assets/icons/SunIcon.svg'
+import MoonIcon from '@/shared/assets/icons/MoonIcon.svg'
 
 const store = useThemeStore()
 const { themeMode } = storeToRefs(store)

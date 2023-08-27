@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import PlusIcon from '@/shared/ui/icons/PlusIcon.svg'
+import PlusIcon from '@/shared/assets/icons/PlusIcon.svg'
 import ProfilePreviewUI from '@/entities/profile/ui/ProfilePreviewUI.vue'
 import NotificationTextUI from '@/shared/ui/notification-text-ui/NotificationTextUI.vue'
-import RespondIcon from '@/shared/ui/icons/RespondIcon.svg'
-import CommentIcon from '@/shared/ui/icons/CommentIcon.svg'
-import SaveIcon from '@/shared/ui/icons/SaveIcon.svg'
-import EyeIcon from '@/shared/ui/icons/EyeIcon.svg'
-import IgnoreIcon from '@/shared/ui/icons/IgnoreIcon.svg'
-import ConfigurationIcon from '@/shared/ui/icons/ConfigurationIcon.svg'
-import ExitIcon from '@/shared/ui/icons/ExitIcon.svg'
+import RespondIcon from '@/shared/assets/icons/RespondIcon.svg'
+import CommentIcon from '@/shared/assets/icons/CommentIcon.svg'
+import SaveIcon from '@/shared/assets/icons/SaveIcon.svg'
+import EyeIcon from '@/shared/assets/icons/EyeIcon.svg'
+import IgnoreIcon from '@/shared/assets/icons/IgnoreIcon.svg'
+import ConfigurationIcon from '@/shared/assets/icons/ConfigurationIcon.svg'
+import ExitIcon from '@/shared/assets/icons/ExitIcon.svg'
 import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
 </script>
 
@@ -63,10 +63,10 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
 		</section>
 		<section :class="[$style.section, $style.createPostSection]">
 			<div :class="[$style.createPostButton]">
-				<PlusIcon :class="$style.menuIcon" />
+				<PlusIcon :class="$style.createPostIcon" />
 				<router-link to="/all">Создать пост</router-link>
 			</div>
-			<router-link class="font-tags color-primary-1" to="/all">Мои черновики</router-link>
+			<router-link class="font-small color-primary-1" to="/all">Мои черновики</router-link>
 		</section>
 	</div>
 </template>
@@ -78,7 +78,7 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
 	justify-content: start;
 	align-items: center;
 	flex-direction: column;
-	background: var(--color-gray-98);
+	background-color: var(--color-gray-98);
 	font: var(--font-text);
 	color: var(--color-gray-22);
 	border-radius: var(--style-radius-10);
@@ -118,6 +118,7 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
 .menuIcon {
 	width: 20px;
 	height: 20px;
+	color: var(--color-gray-53);
 }
 
 .notification {
@@ -139,5 +140,10 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue'
 	color: var(--color-contrast-primary-1);
 	border-radius: var(--style-radius-5);
 	font: var(--font-text);
+}
+.createPostIcon {
+	width: 12px;
+	height: 12px;
+	color: var(--color-contrast-primary-1);
 }
 </style>

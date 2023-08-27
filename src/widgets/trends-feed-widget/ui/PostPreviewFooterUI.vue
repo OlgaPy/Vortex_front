@@ -3,7 +3,7 @@ import SharePost from '@/features/SharePost.vue'
 import ChangePostRating from '@/features/ChangePostRating.vue'
 import CommentsLinkUI from '@/widgets/trends-feed-widget/ui/CommentsLinkUI.vue'
 import SavePostToFavorites from '@/features/SavePostToFavorites.vue'
-import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore'
+import {useInvertedPostActions} from '@/shared/stores/UserSettingsStore'
 
 const inverted = useInvertedPostActions()
 </script>
@@ -48,15 +48,12 @@ const inverted = useInvertedPostActions()
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	font: var(--font-tags);
+	font: var(--font-small);
+	color: var(--color-gray-53);
 }
 
 .actionsInverted {
 	flex-direction: row-reverse;
-}
-
-.ratingChanger {
-	width: 111px;
 }
 
 .leftSection,

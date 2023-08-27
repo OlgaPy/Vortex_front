@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Props } from './types'
+import type {Props} from './types'
 
 const { attract } = defineProps<Props>()
 </script>
@@ -18,7 +18,7 @@ const { attract } = defineProps<Props>()
 	align-items: center;
 	height: 18px;
 	border-radius: var(--style-radius-100);
-	font: var(--font-tags);
+	font: var(--font-small);
 	color: var(--color-primary-1);
 }
 .attract {

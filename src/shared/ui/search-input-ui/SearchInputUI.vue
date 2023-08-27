@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SearchIcon from '@/shared/ui/icons/SearchIcon.svg'
-import type { ISearchInputUI } from '@/shared/ui/search-input-ui/types'
+import SearchIcon from '@/shared/assets/icons/SearchIcon.svg'
+import type {ISearchInputUI} from './types'
 
 defineProps<ISearchInputUI>()
 const emit = defineEmits(['update:modelValue'])
@@ -32,7 +32,7 @@ const onChangeInput = (event: Event) => {
 	border-radius: var(--style-radius-5);
 	border-width: 1.5px;
 	border-style: solid;
-	font: var(--font-base);
+	font: var(--font-text);
 	border-color: var(--color-gray-89);
 	background-color: var(--color-gray-89);
 }

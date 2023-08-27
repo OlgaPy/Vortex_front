@@ -2,7 +2,7 @@
 
 <template>
 	<router-link to="/">
-		<span :class="[$style.authText, 'font-text-small color-gray-22']">Войти</span>
+		<span :class="[$style.authText, 'font-text color-gray-22']">Войти</span>
 	</router-link>
 </template>
 

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore'
-import { useThemeStore } from '@/shared/stores/ThemeStore'
-import { SearchInputUI } from '@/shared/ui/search-input-ui'
+import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore'
+import {useThemeStore} from '@/shared/stores/ThemeStore'
+import {SearchInputUI} from '@/shared/ui/search-input-ui'
+
 const MobileNavigationStore = useMobileNavigationStore()
 const ThemeStore = useThemeStore()
 
@@ -73,7 +74,6 @@ const footerLinks = [
 	top: 56px;
 	left: 0px;
 	overflow-y: scroll;
-	width: 80vw;
 	height: calc(100vh - 56px);
 	z-index: 2;
 	display: flex;

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-	<button :class="[$style.container, 'font-btn']">
+	<button :class="[$style.container, 'font-text']">
 		<slot></slot>
 	</button>
 </template>

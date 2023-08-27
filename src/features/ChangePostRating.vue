@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import {ref} from 'vue'
 import IconTextUI from '@/shared/ui/IconTextUI.vue'
-import RateUpIcon from '@/shared/ui/icons/RateUpIcon.svg'
-import RateDownIcon from '@/shared/ui/icons/RateDownIcon.svg'
-import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore'
+import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg'
+import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg'
+import {useInvertedPostActions} from '@/shared/stores/UserSettingsStore'
 
 const rating = ref<number>(432099)
 const ratingDecreased = ref<boolean>(false)
@@ -58,7 +58,7 @@ const handleRatingDecreaseClick = () => {
 				data-type="plus"
 				:data-active="ratingIncreased"
 			>
-				<RateUpIcon />
+				<RateUpIcon :class="$style.icon" />
 			</button>
 		</template>
 		<template #text>
@@ -71,7 +71,7 @@ const handleRatingDecreaseClick = () => {
 				data-type="minus"
 				:data-active="ratingDecreased"
 			>
-				<RateDownIcon />
+				<RateDownIcon :class="$style.icon"/>
 			</button>
 		</template>
 	</IconTextUI>
@@ -109,5 +109,10 @@ const handleRatingDecreaseClick = () => {
 .ratingButton[data-type='plus']:hover,
 .ratingButton[data-type='plus'][data-active='true'] {
 	color: var(--color-green-42);
+}
+
+.icon {
+	width: 32px;
+	height: 32px;
 }
 </style>

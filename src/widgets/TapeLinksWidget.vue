@@ -34,7 +34,7 @@ const items = [
 	padding: 0 24px;
 	box-shadow: 0 1px 3px 0 var(--color-black-0-30);
 	color: var(--color-gray-22);
-	font: var(--font-text-medium);
+	font: var(--font-sub-title);
 }
 .container::-webkit-scrollbar {
 	display: none;
@@ -49,7 +49,7 @@ const items = [
 }
 
 .activeItem {
-	font: var(--font-btn-medium);
+	font-weight: bold;
 }
 
 .container .activeItem {
