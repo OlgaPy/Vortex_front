@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ShowViewedPosts from '@/features/ShowViewedPosts.vue'
-import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue'
 import MobileMainBlockUI from "@/shared/ui/block-ui/MobileMainBlockUI.vue";
+import { PostsContainer } from '@/widgets/trends-feed-widget';
 </script>
 
 <template>
@@ -10,18 +10,7 @@ import MobileMainBlockUI from "@/shared/ui/block-ui/MobileMainBlockUI.vue";
 			<ShowViewedPosts :class="$style.showViewedPosts" />
 		</header>
 		<main :class="[$style.feed, 'color-bg-base-bg']">
-			<TestPreviewPost >
-				<img src="@/widgets/trends-feed-widget/img/Comments dark.jpg" alt="Post Image" />
-			</TestPreviewPost>
-			<TestPreviewPost >
-				<img src="@/widgets/trends-feed-widget/img/home dark 1.1 (2).jpg" alt="Post Image" />
-			</TestPreviewPost>
-			<TestPreviewPost >
-				<img src="@/widgets/trends-feed-widget/img/upscale_4.png" alt="Post Image" />
-			</TestPreviewPost>
-			<TestPreviewPost >
-				<img src="@/widgets/trends-feed-widget/img/Pictures.png" alt="Post Image" />
-			</TestPreviewPost>
+			<PostsContainer />
 		</main>
 	</MobileMainBlockUI>
 </template>

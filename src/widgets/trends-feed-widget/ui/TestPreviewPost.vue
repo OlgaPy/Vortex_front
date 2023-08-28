@@ -2,6 +2,9 @@
 import PreviewPostUI from '@/entities/post/ui/PreviewPostUI.vue'
 import TagsList from '@/entities/tag/ui/TagsList.vue'
 import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue'
+import type { IPost } from '@/shared/stores/PostsStore'
+
+const { title, body, img, tags } = defineProps<IPost>();
 </script>
 
 <template>
@@ -9,16 +12,15 @@ import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFoot
 		<template #header>
 			<div :class="$style.postProfile">TODO Здесь будет профиль</div>
 		</template>
-		<template #title> Сытно и просто - картофель по-деревенски! 🥔✨ </template>
+		<template #title>{{ title }}</template>
 		<template #tags>
-			<TagsList :tags="['Меню', 'Баян', 'Без рейтинга']" />
+			<TagsList :tags="tags" />
 		</template>
 		<template #body>
 			<slot></slot>
+			<img v-show="img" :src="img" :class="$style.postImage" alt="Post Image" />
 			<span>
-				Нарежьте картошку кубиками, посыпьте розмарином, солью и перцем, добавьте немного
-				растительного масла. Выпекайте в разогретой духовке до золотистой корки. Этот домашний
-				деликатес прекрасно подходит к мясным блюдам или просто с огоньком кетчупа! 🍅🔥
+				{{ body }}
 			</span>
 		</template>
 		<template #footer>
@@ -38,5 +40,8 @@ import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFoot
 	border: 1px solid var(--color-gray-22);
 	color: var(--color-gray-22);
 	font: var(--font-text);
+}
+.postImage {
+	max-width: 100%;
 }
 </style>
