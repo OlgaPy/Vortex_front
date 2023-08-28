@@ -2,7 +2,7 @@ export const routes = [
 	{
 		path: '/',
 		name: 'Тренды',
-		component: () => import('./home-page/HomePage.vue')
+		component: () => import('@/pages/home-page/HomePage.vue')
 	},
 	{
 		path: '/all',
@@ -12,6 +12,11 @@ export const routes = [
 	{
 		path: '/post-editor',
 		name: 'Создать пост',
-		component: () => import('./post-editor/PostEditorPage.vue')
+		component: () => import('@/pages/post-editor/PostEditorPage.vue')
+	},
+	{
+		path: '/:pathMatch(.*)*',
+		name: 'Не найдено',
+		component: () => import('@/pages/not-found/NotFoundPage.vue')
 	}
 ]
