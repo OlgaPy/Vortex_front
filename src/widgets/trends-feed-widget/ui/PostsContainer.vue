@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { Suspense } from 'vue';
-import { storeToRefs } from 'pinia';
+import { Suspense } from 'vue'
+import { storeToRefs } from 'pinia'
 import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue'
-import { getPosts } from '@/entities/post';
-import { usePostsStore } from '@/shared/stores/PostsStore';
-import { InfinityScroll } from '@/shared/lib/InfinityScroll';
+import { getPosts } from '@/entities/post'
+import { usePostsStore } from '@/shared/stores/PostsStore'
+import { InfinityScroll } from '@/shared/lib/InfinityScroll'
 
-const postsStore = usePostsStore();
-const { setPosts } = postsStore;
-const { posts } = storeToRefs(postsStore);
+const postsStore = usePostsStore()
+const { setPosts } = postsStore
+const { posts } = storeToRefs(postsStore)
 </script>
 
 <template>
@@ -16,7 +16,15 @@ const { posts } = storeToRefs(postsStore);
 		<InfinityScroll :getData="getPosts" :updateData="setPosts">
 			<template #content>
 				<div :class="$style.container">
-					<TestPreviewPost v-for="{ title, body, id, tags, img } in posts" :title="title" :body="body" :tags="tags" :key="id" :id="id" :img="img" />
+					<TestPreviewPost
+						v-for="{ title, body, id, tags, img } in posts"
+						:title="title"
+						:body="body"
+						:tags="tags"
+						:key="id"
+						:id="id"
+						:img="img"
+					/>
 				</div>
 			</template>
 			<template #loader>

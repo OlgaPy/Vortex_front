@@ -1,10 +1,8 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
 	<header :class="$style.container">
-		<input placeholder="Заголовок">
+		<input placeholder="Заголовок" />
 	</header>
 </template>
 

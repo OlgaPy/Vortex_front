@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import {SearchInputUI} from '@/shared/ui/search-input-ui'
+import { SearchInputUI } from '@/shared/ui/search-input-ui'
 </script>
 
 <template>
 	<div :class="$style.container">
 		<section :class="`${$style.section} ${$style.logoSection}`">
-			<img :class="[$style.logo, $style.darkLogo]" src="./img/dark-color-logo.svg" alt="Капибара лого" />
-			<img :class="[$style.logo, $style.lightLogo]" src="./img/white-color-logo.svg" alt="Капибара лого" />
+			<img
+				:class="[$style.logo, $style.darkLogo]"
+				src="./img/dark-color-logo.svg"
+				alt="Капибара лого"
+			/>
+			<img
+				:class="[$style.logo, $style.lightLogo]"
+				src="./img/white-color-logo.svg"
+				alt="Капибара лого"
+			/>
 		</section>
 		<section :class="`${$style.section} ${$style.menuSection}`">
 			<router-link to="/" :active-class="$style.activeLink">Тренды</router-link>
@@ -66,9 +74,9 @@ import {SearchInputUI} from '@/shared/ui/search-input-ui'
 	display: none;
 }
 //TODO import color-schemas
-[data-color-schema="dark"] .lightLogo,
-[data-color-schema="light"] .darkLogo,
-[data-color-schema="auto"] .darkLogo {
+[data-color-schema='dark'] .lightLogo,
+[data-color-schema='light'] .darkLogo,
+[data-color-schema='auto'] .darkLogo {
 	display: block;
 }
 

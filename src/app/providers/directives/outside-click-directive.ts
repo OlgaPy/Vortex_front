@@ -1,6 +1,6 @@
-import type {Directive} from "vue";
+import type { Directive } from 'vue'
 
-export default <Directive> {
+export default <Directive>{
 	mounted: function (el, binding) {
 		el.clickOutsideEvent = function (event) {
 			if (!(el == event.target || el.contains(event.target))) {
@@ -8,9 +8,9 @@ export default <Directive> {
 				binding.value(event, el)
 			}
 		}
-		document.addEventListener("click", el.clickOutsideEvent)
+		document.addEventListener('click', el.clickOutsideEvent)
 	},
 	unmounted: function (el) {
-		document.removeEventListener("click", el.clickOutsideEvent)
-	},
-};
+		document.removeEventListener('click', el.clickOutsideEvent)
+	}
+}

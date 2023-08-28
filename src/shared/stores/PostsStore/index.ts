@@ -1,4 +1,4 @@
-import type { IPost } from './types';
-import { usePostsStore } from './PostsStore';
+import type { IPost } from './types'
+import { usePostsStore } from './PostsStore'
 
-export { IPost, usePostsStore };
+export { IPost, usePostsStore }

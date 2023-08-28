@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref } from 'vue'
 import IconTextUI from '@/shared/ui/IconTextUI.vue'
 import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg'
 import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg'
-import {useInvertedPostActions} from '@/shared/stores/UserSettingsStore'
+import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore'
 
 const rating = ref<number>(432099)
 const ratingDecreased = ref<boolean>(false)
@@ -71,7 +71,7 @@ const handleRatingDecreaseClick = () => {
 				data-type="minus"
 				:data-active="ratingDecreased"
 			>
-				<RateDownIcon :class="$style.icon"/>
+				<RateDownIcon :class="$style.icon" />
 			</button>
 		</template>
 	</IconTextUI>

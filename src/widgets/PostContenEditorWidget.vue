@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import IconButtonUI from "@/shared/ui/icon-button-ui/IconButtonUI.vue";
-import PlusIcon from "@/shared/assets/icons/PlusIcon.svg";
+import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
+import PlusIcon from '@/shared/assets/icons/PlusIcon.svg'
 </script>
 
 <template>
@@ -10,15 +10,15 @@ import PlusIcon from "@/shared/assets/icons/PlusIcon.svg";
 		</section>
 		<section :class="$style.contentTypes">
 			<IconButtonUI>
-				<template #left-icon><PlusIcon :class="$style.smallIcon"/></template>
+				<template #left-icon><PlusIcon :class="$style.smallIcon" /></template>
 				<template #text>Видео</template>
 			</IconButtonUI>
 			<IconButtonUI>
-				<template #left-icon><PlusIcon :class="$style.smallIcon"/></template>
+				<template #left-icon><PlusIcon :class="$style.smallIcon" /></template>
 				<template #text>Изображение</template>
 			</IconButtonUI>
 			<IconButtonUI>
-				<template #left-icon><PlusIcon :class="$style.smallIcon"/></template>
+				<template #left-icon><PlusIcon :class="$style.smallIcon" /></template>
 				<template #text>Текст</template>
 			</IconButtonUI>
 		</section>

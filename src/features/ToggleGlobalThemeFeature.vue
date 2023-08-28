@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {ThemeModes, useThemeStore} from '@/shared/stores/ThemeStore'
-import {storeToRefs} from 'pinia'
+import { ThemeModes, useThemeStore } from '@/shared/stores/ThemeStore'
+import { storeToRefs } from 'pinia'
 import SunIcon from '@/shared/assets/icons/SunIcon.svg'
 import MoonIcon from '@/shared/assets/icons/MoonIcon.svg'
 
@@ -15,24 +15,11 @@ const toggleThemeMode = () => {
 </script>
 
 <template>
-	<label
-		@click.prevent="toggleThemeMode"
-		:class="$style.container"
-	>
-		<input
-			type="checkbox"
-			:checked="themeMode === ThemeModes.DARK"
-			:class="$style.checkbox"
-		/>
-  	<span :class="$style.slider"></span>
-		<SunIcon
-			v-if="themeMode === ThemeModes.DARK"
-			:class="$style.sun_icon"
-		/>
-		<MoonIcon
-			v-else
-			:class="$style.moon_icon"
-		/>
+	<label @click.prevent="toggleThemeMode" :class="$style.container">
+		<input type="checkbox" :checked="themeMode === ThemeModes.DARK" :class="$style.checkbox" />
+		<span :class="$style.slider"></span>
+		<SunIcon v-if="themeMode === ThemeModes.DARK" :class="$style.sun_icon" />
+		<MoonIcon v-else :class="$style.moon_icon" />
 	</label>
 </template>
 
@@ -61,8 +48,9 @@ const toggleThemeMode = () => {
 	height: 20px;
 	background-color: var(--color-primary-1);
 	border-radius: 50%;
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15),
-							0px 1px 2px rgba(0, 0, 0, 0.30);
+	box-shadow:
+		0px 1px 3px rgba(0, 0, 0, 0.15),
+		0px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .checkbox:checked + .slider {

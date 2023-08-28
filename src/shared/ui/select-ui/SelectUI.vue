@@ -1,65 +1,67 @@
 <script setup lang="ts">
-import type {Emits, Option, Props} from "./types";
-import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
-import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
-import {ref} from 'vue';
-import {autoUpdate, flip, shift, useFloating} from '@floating-ui/vue';
+import type { Emits, Option, Props } from './types'
+import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg'
+import SearchIcon from '@/shared/assets/icons/SearchIcon.svg'
+import { ref } from 'vue'
+import { autoUpdate, flip, shift, useFloating } from '@floating-ui/vue'
 
-const reference = ref(null);
-const floating = ref(null);
-const {floatingStyles} = useFloating(reference, floating, {
+const reference = ref(null)
+const floating = ref(null)
+const { floatingStyles } = useFloating(reference, floating, {
 	middleware: [shift(), flip()],
-	whileElementsMounted: autoUpdate,
-});
+	whileElementsMounted: autoUpdate
+})
 
-const emit = defineEmits<Emits>();
-const { modelValue, options, attractorText } = defineProps<Props>();
+const emit = defineEmits<Emits>()
+const { modelValue, options, attractorText } = defineProps<Props>()
 
-const isOpen = ref(false);
+const isOpen = ref(false)
 
 const openList = () => {
-  isOpen.value = true;
-};
+	isOpen.value = true
+}
 const closeList = () => {
-  isOpen.value = false;
-};
+	isOpen.value = false
+}
 
 const selectOption = (option: Option) => {
-  emit('update:modelValue', option);
-  closeList();
-};
+	emit('update:modelValue', option)
+	closeList()
+}
 </script>
 
 <template>
-	<div :class="[$style.container, {[$style.isActive]: isOpen}]" v-outside-click="closeList">
-
-    <div :class="$style.preview" ref="reference">
+	<div :class="[$style.container, { [$style.isActive]: isOpen }]" v-outside-click="closeList">
+		<div :class="$style.preview" ref="reference">
 			<div :class="$style.attractor" @click="openList">
-				<span>{{ modelValue? modelValue.text : attractorText }}</span>
-				<ArrowIcon :class="$style.arrowIcon"/>
+				<span>{{ modelValue ? modelValue.text : attractorText }}</span>
+				<ArrowIcon :class="$style.arrowIcon" />
 			</div>
 			<div :class="$style.search">
-				<input type="text" placeholder="Введите название…"/>
-				<SearchIcon/>
+				<input type="text" placeholder="Введите название…" />
+				<SearchIcon />
 			</div>
 		</div>
 
 		<div :class="$style.selectionWindow" ref="floating" :style="floatingStyles">
 			<ul :class="$style.options">
 				<li
-            :class="$style.option"
-            v-for="(option, index) in options"
-            :key="index"
-            @click="() => { selectOption(option); }"
-        >
+					:class="$style.option"
+					v-for="(option, index) in options"
+					:key="index"
+					@click="
+						() => {
+							selectOption(option)
+						}
+					"
+				>
 					<div :class="$style.optionText">{{ option.text }}</div>
 					<div :class="$style.optionIcon">
-            <ArrowIcon :class="$style.arrowIcon"/>
-          </div>
+						<ArrowIcon :class="$style.arrowIcon" />
+					</div>
 				</li>
 			</ul>
 		</div>
-
 	</div>
 </template>
 
@@ -158,8 +160,8 @@ const selectOption = (option: Option) => {
 }
 
 .arrowIcon {
-  width: 10px;
-  height: 6px;
+	width: 10px;
+	height: 6px;
 	transform: rotateZ(90deg);
 }
 </style>

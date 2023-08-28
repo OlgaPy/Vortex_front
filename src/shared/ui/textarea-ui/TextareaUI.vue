@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {Emits} from './types'
+import type { Emits } from './types'
 import TrashIcon from '@/shared/assets/icons/TrashIcon.svg'
 import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue'
 
@@ -11,7 +11,7 @@ defineEmits<Emits>()
 		<slot></slot>
 		<IconTextButtonUI :class="$style.clearBtn" @click="$emit('remove')">
 			<template #left-icon>
-				<TrashIcon :class="$style.trashIcon"/>
+				<TrashIcon :class="$style.trashIcon" />
 			</template>
 		</IconTextButtonUI>
 	</div>
@@ -55,7 +55,7 @@ defineEmits<Emits>()
 }
 
 .trashIcon {
-  width: 16px;
-  height: 16px;
+	width: 16px;
+	height: 16px;
 }
 </style>

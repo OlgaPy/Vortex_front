@@ -1,1 +1,1 @@
-export { getPosts } from './api/post-feed-api';
+export { getPosts } from './api/post-feed-api'

@@ -1,10 +1,8 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
 	<aside :class="$style.sidebar">
-		<slot/>
+		<slot />
 	</aside>
 </template>
 

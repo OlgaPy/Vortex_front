@@ -1,10 +1,10 @@
 <template>
 	<button :class="$style.container">
-		<slot name="left-icon"/>
+		<slot name="left-icon" />
 		<span :class="$style.text">
-			<slot name="text"/>
+			<slot name="text" />
 		</span>
-		<slot name="right-icon"/>
+		<slot name="right-icon" />
 	</button>
 </template>
 

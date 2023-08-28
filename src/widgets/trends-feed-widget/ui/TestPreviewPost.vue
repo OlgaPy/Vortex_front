@@ -4,7 +4,7 @@ import TagsList from '@/entities/tag/ui/TagsList.vue'
 import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue'
 import type { IPost } from '@/shared/stores/PostsStore'
 
-const { title, body, img, tags } = defineProps<IPost>();
+const { title, body, img, tags } = defineProps<IPost>()
 </script>
 
 <template>

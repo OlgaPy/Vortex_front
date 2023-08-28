@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CheckboxUI from "@/shared/ui/checkbox-ui/CheckboxUI.vue";
-import {ref} from "vue";
+import CheckboxUI from '@/shared/ui/checkbox-ui/CheckboxUI.vue'
+import { ref } from 'vue'
 
 let checked = ref(true),
-    unchecked = ref(false);
+	unchecked = ref(false)
 </script>
 
 <template>
@@ -14,6 +14,4 @@ let checked = ref(true),
 	</fieldset>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
