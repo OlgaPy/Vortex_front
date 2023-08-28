@@ -10,9 +10,18 @@ import MobileMainBlockUI from "@/shared/ui/block-ui/MobileMainBlockUI.vue";
 			<ShowViewedPosts :class="$style.showViewedPosts" />
 		</header>
 		<main :class="[$style.feed, 'color-bg-base-bg']">
-			<TestPreviewPost />
-			<TestPreviewPost />
-			<TestPreviewPost />
+			<TestPreviewPost >
+				<img src="@/widgets/trends-feed-widget/img/Comments dark.jpg" alt="Post Image" />
+			</TestPreviewPost>
+			<TestPreviewPost >
+				<img src="@/widgets/trends-feed-widget/img/home dark 1.1 (2).jpg" alt="Post Image" />
+			</TestPreviewPost>
+			<TestPreviewPost >
+				<img src="@/widgets/trends-feed-widget/img/upscale_4.png" alt="Post Image" />
+			</TestPreviewPost>
+			<TestPreviewPost >
+				<img src="@/widgets/trends-feed-widget/img/Pictures.png" alt="Post Image" />
+			</TestPreviewPost>
 		</main>
 	</MobileMainBlockUI>
 </template>

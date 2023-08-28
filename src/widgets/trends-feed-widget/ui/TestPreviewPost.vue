@@ -14,7 +14,7 @@ import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFoot
 			<TagsList :tags="['Меню', 'Баян', 'Без рейтинга']" />
 		</template>
 		<template #body>
-			<img src="@/widgets/trends-feed-widget/img/Pictures.png" alt="Post Image" />
+			<slot></slot>
 			<span>
 				Нарежьте картошку кубиками, посыпьте розмарином, солью и перцем, добавьте немного
 				растительного масла. Выпекайте в разогретой духовке до золотистой корки. Этот домашний
