@@ -42,11 +42,17 @@ const onChangeInput = (event: Event) => {
 	border: unset;
 	outline: none;
 	cursor: pointer;
+	max-width: calc(100% - 25px);
 }
 
 .container input,
 .container input::placeholder {
 	color: var(--color-gray-53);
+}
+
+.searchIcon {
+	width: 16px;
+	height: 16px;
 }
 
 .searchIcon:hover {
