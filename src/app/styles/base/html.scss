@@ -1,6 +1,5 @@
 html {
-	// Do not use vw/vh here, they includes scrollbar and address bar (in mobile browsers)
-	width: 100%;
-	height: 100%;
-	cursor: default;
+	color: var(--color-gray-8);
+	background: var(--color-base-bg);
+	transition: background-color var(--transition-default);
 }
