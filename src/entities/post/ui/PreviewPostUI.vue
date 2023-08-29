@@ -9,8 +9,8 @@
 			<h1 class="font-title"><slot name="title"></slot></h1>
 			<span class="font-smaller"><slot name="tags"></slot></span>
 			<div :class="[$style.body, 'font-text']">
-        <slot name="body"></slot>
-      </div>
+				<slot name="body"></slot>
+			</div>
 		</main>
 		<footer :class="$style.footer">
 			<slot name="footer"></slot>

@@ -1,10 +1,8 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
 	<main :class="$style.main">
-		<slot/>
+		<slot />
 	</main>
 </template>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PostEditorMobilePage from "@/pages/post-editor/ui/PostEditorMobilePage.vue";
-import PostEditorDesktopPage from "@/pages/post-editor/ui/PostEditorDesktopPage.vue";
+import PostEditorMobilePage from '@/pages/post-editor/ui/PostEditorMobilePage.vue'
+import PostEditorDesktopPage from '@/pages/post-editor/ui/PostEditorDesktopPage.vue'
 </script>
 
 <template>

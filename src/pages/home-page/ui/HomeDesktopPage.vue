@@ -5,25 +5,24 @@ import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidge
 import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue'
 import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue'
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue'
-import DesktopAsideBlockUI from "@/shared/ui/block-ui/DesktopAsideBlockUI.vue";
-import DesktopMainBlockUI from "@/shared/ui/block-ui/DesktopMainBlockUI.vue";
+import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue'
+import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue'
 </script>
 
 <template>
 	<DesktopPageUI>
 		<DesktopAsideBlockUI>
-			<SiteNavigationPanelWidget/>
+			<SiteNavigationPanelWidget />
 		</DesktopAsideBlockUI>
 		<DesktopMainBlockUI>
 			<TrendsFeedWidget />
 		</DesktopMainBlockUI>
-			<DesktopAsideBlockUI>
-				<ProfilePanelWidget/>
-				<SiteInfoPanel/>
-				<AdInfoPanelWidget/>
-			</DesktopAsideBlockUI>
+		<DesktopAsideBlockUI>
+			<ProfilePanelWidget />
+			<SiteInfoPanel />
+			<AdInfoPanelWidget />
+		</DesktopAsideBlockUI>
 	</DesktopPageUI>
 </template>
 
-<style module lang="scss">
-</style>
+<style module lang="scss"></style>

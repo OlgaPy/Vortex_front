@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {InputType} from "@/shared/ui/input-ui/types";
-import InputUI from "@/shared/ui/input-ui/InputUI.vue";
+import { InputType } from '@/shared/ui/input-ui/types'
+import InputUI from '@/shared/ui/input-ui/InputUI.vue'
 </script>
 
 <template>
@@ -8,20 +8,18 @@ import InputUI from "@/shared/ui/input-ui/InputUI.vue";
 		<label>Inputs</label>
 
 		<InputUI :type="InputType.OUTFOCUS">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 		<InputUI :type="InputType.FOCUS">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 		<InputUI :type="InputType.SUCCESSFUL">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 		<InputUI :type="InputType.ERROR">
-			<input placeholder="Placeholder"/>
+			<input placeholder="Placeholder" />
 		</InputUI>
 	</fieldset>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

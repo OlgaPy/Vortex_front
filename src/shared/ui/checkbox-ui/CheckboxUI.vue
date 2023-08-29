@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import CheckIcon from '@/shared/assets/icons/CheckIcon.svg';
-import type {Emits, Props} from './types'
+import CheckIcon from '@/shared/assets/icons/CheckIcon.svg'
+import type { Emits, Props } from './types'
 
-const { modelValue } = defineProps<Props>();
-const emit = defineEmits<Emits>();
+const { modelValue } = defineProps<Props>()
+const emit = defineEmits<Emits>()
 </script>
 
 <template>
-  <div :class="$style.container" @click.prevent="() => emit('update:modelValue', !modelValue)">
-    <input type="checkbox" :checked="modelValue" :class="$style.hidden" />
-    <div :class="$style.view">
-      <div :class="$style.icon">
-        <CheckIcon v-if="modelValue"/>
-      </div>
-      <slot></slot>
-    </div>
-  </div>
+	<div :class="$style.container" @click.prevent="() => emit('update:modelValue', !modelValue)">
+		<input type="checkbox" :checked="modelValue" :class="$style.hidden" />
+		<div :class="$style.view">
+			<div :class="$style.icon">
+				<CheckIcon v-if="modelValue" />
+			</div>
+			<slot></slot>
+		</div>
+	</div>
 </template>
 
 <style module>
@@ -25,7 +25,7 @@ const emit = defineEmits<Emits>();
 	height: 22px;
 	font: var(--font-sub-title);
 	color: var(--color-gray-53);
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .view {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SearchIcon from '@/shared/assets/icons/SearchIcon.svg'
-import type {ISearchInputUI} from './types'
+import type { ISearchInputUI } from './types'
 
 defineProps<ISearchInputUI>()
 const emit = defineEmits(['update:modelValue'])
@@ -42,11 +42,17 @@ const onChangeInput = (event: Event) => {
 	border: unset;
 	outline: none;
 	cursor: pointer;
+	max-width: calc(100% - 25px);
 }
 
 .container input,
 .container input::placeholder {
 	color: var(--color-gray-53);
+}
+
+.searchIcon {
+	width: 16px;
+	height: 16px;
 }
 
 .searchIcon:hover {

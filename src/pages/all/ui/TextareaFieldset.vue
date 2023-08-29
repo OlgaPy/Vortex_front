@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-import TextareaUI from "@/shared/ui/textarea-ui/TextareaUI.vue";
+import TextareaUI from '@/shared/ui/textarea-ui/TextareaUI.vue'
 </script>
 
 <template>
@@ -14,6 +13,4 @@ import TextareaUI from "@/shared/ui/textarea-ui/TextareaUI.vue";
 	</fieldset>
 </template>
 
-<style module>
-
-</style>
+<style module></style>

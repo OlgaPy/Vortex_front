@@ -1,30 +1,28 @@
 <script setup lang="ts">
-import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
-import CloseIcon from '@/shared/assets/icons/CloseIcon.svg';
-import IconEmptyButtonUI from "@/shared/ui/icon-button-ui/IconEmptyButtonUI.vue";
-import IconButtonUI from "@/shared/ui/icon-button-ui/IconButtonUI.vue";
+import PlusIcon from '@/shared/assets/icons/PlusIcon.svg'
+import CloseIcon from '@/shared/assets/icons/CloseIcon.svg'
+import IconEmptyButtonUI from '@/shared/ui/icon-button-ui/IconEmptyButtonUI.vue'
+import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
 
 const alreadyExistTags = [
-	{ name: 'Котики', },
-	{ name: 'Мой кот', },
-	{ name: 'Пушистик', },
-	{ name: 'Без рейтинга', },
-];
+	{ name: 'Котики' },
+	{ name: 'Мой кот' },
+	{ name: 'Пушистик' },
+	{ name: 'Без рейтинга' }
+]
 </script>
 
 <template>
 	<section :class="$style.tagSection">
-		<span class="font-text color-gray-22">
-			Добавьте к посту до 10 тегов
-		</span>
+		<span class="font-text color-gray-22"> Добавьте к посту до 10 тегов </span>
 		<div :class="$style.tagList">
 			<!--	TODO активность, обводка			-->
 			<IconEmptyButtonUI>
-				<template #left-icon><PlusIcon :class="$style.smallIcon"/></template>
+				<template #left-icon><PlusIcon :class="$style.smallIcon" /></template>
 				<template #text>Тег</template>
 			</IconEmptyButtonUI>
 			<IconButtonUI v-for="(tag, index) in alreadyExistTags" :key="index">
-				<template #left-icon><CloseIcon :class="$style.smallIcon"/></template>
+				<template #left-icon><CloseIcon :class="$style.smallIcon" /></template>
 				<template #text>{{ tag.name }}</template>
 			</IconButtonUI>
 		</div>
