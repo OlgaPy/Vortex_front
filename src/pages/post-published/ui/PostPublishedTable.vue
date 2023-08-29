@@ -14,12 +14,14 @@ import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue'
 		<HeaderHorizontalPanelUI>
 			<HeaderWidget>
 				<template #left-content>
-					<GoToPrevPage><h3 :class="$style.title">Пост успешно опубликован!</h3></GoToPrevPage>
+					<GoToPrevPage>
+						<h3 :class="$style.title">Пост успешно опубликован!</h3>
+					</GoToPrevPage>
 				</template>
 			</HeaderWidget>
 		</HeaderHorizontalPanelUI>
 		<div :class="$style.content">
-			<span :class="$style.checkPost"> Он уже появился в Новом, хотите просмотреть? </span>
+			<span :class="$style.checkPost"> Он уже появился в Новом, хотите просмотреть?</span>
 			<section :class="$style.links">
 				<ButtonUI :class="$style.link">Перейти в пост</ButtonUI>
 				<EmptyButtonUI :class="$style.link">В Тренды</EmptyButtonUI>

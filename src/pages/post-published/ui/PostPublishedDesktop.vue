@@ -19,7 +19,7 @@ import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue'
 		<DesktopMainBlockUI>
 			<div :class="$style.postPublished">
 				<h3 :class="$style.title">Пост успешно опубликован!</h3>
-				<span :class="$style.checkPost"> Он уже появился в Новом, хотите просмотреть? </span>
+				<span :class="$style.checkPost"> Он уже появился в Новом, хотите просмотреть?</span>
 			</div>
 			<section :class="$style.links">
 				<ButtonUI :class="$style.link">Перейти в пост</ButtonUI>
