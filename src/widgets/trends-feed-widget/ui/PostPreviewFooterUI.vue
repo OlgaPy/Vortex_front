@@ -4,7 +4,9 @@ import ChangePostRating from '@/features/ChangePostRating.vue'
 import CommentsLinkUI from '@/widgets/trends-feed-widget/ui/CommentsLinkUI.vue'
 import SavePostToFavorites from '@/features/SavePostToFavorites.vue'
 import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore'
+import type { IPost } from '@/shared/stores/PostsStore';
 
+const { rating } = defineProps<Pick<IPost, 'rating'>>()
 const inverted = useInvertedPostActions()
 </script>
 
@@ -25,7 +27,7 @@ const inverted = useInvertedPostActions()
 				}
 			]"
 		>
-			<ChangePostRating :class="$style.ratingChanger" />
+			<ChangePostRating :rating="rating" :class="$style.ratingChanger" />
 			<CommentsLinkUI />
 		</div>
 		<div

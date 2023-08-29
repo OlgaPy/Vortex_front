@@ -5,30 +5,57 @@ import pic4 from '@/widgets/trends-feed-widget/img/Pictures.png'
 import type { IPost } from './types'
 
 const initialPost: IPost = {
+	uuid: '1',
 	title: `Сытно и просто - картофель по-деревенски! 🥔✨`,
-	body: `
+	content: {
+		0: {
+			type: 'img',
+			value: pic1
+		},
+		1: {
+			type: 'text',
+			value: `
 	Нарежьте картошку кубиками, посыпьте розмарином, солью и перцем, добавьте немного растительного масла. Выпекайте в разогретой духовке до золотистой корки. Этот домашний деликатес прекрасно подходит к мясным блюдам или просто с огоньком кетчупа! 🍅🔥
-	`,
+	`
+		}
+	},
 	tags: ['Меню', 'Баян', 'Без рейтинга'],
-	id: 1,
-	img: pic1
+	rating: 12345
 }
 
-export const initialPosts = [
+export const initialPosts: IPost[] = [
 	initialPost,
 	{
 		...initialPost,
-		id: 2,
-		img: pic2
+		uuid: '2',
+		content: {
+			...initialPost.content,
+			0: {
+				...initialPost.content[0],
+				value: pic2,
+			}
+		}
 	},
 	{
 		...initialPost,
-		id: 3,
-		img: pic3
+		uuid: '3',
+		content: {
+			...initialPost.content,
+			0: {
+				...initialPost.content[0],
+				value: pic3,
+			}
+		}
 	},
 	{
 		...initialPost,
-		id: 4,
-		img: pic4
+		uuid: '4',
+		content: {
+			...initialPost.content,
+			0: {
+				...initialPost.content[0],
+				value: pic4,
+			}
+		}
 	}
 ]

@@ -17,13 +17,13 @@ const { posts } = storeToRefs(postsStore)
 			<template #content>
 				<div :class="$style.container">
 					<TestPreviewPost
-						v-for="{ title, body, id, tags, img } in posts"
+						v-for="{ title, content, uuid, tags, rating } in posts"
 						:title="title"
-						:body="body"
+						:content="content"
 						:tags="tags"
-						:key="id"
-						:id="id"
-						:img="img"
+						:rating="rating"
+						:key="uuid"
+						:uuid="uuid"
 					/>
 				</div>
 			</template>
