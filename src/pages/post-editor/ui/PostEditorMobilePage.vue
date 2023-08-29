@@ -7,7 +7,6 @@ import PostEditorHeader from "@/pages/post-editor/ui/PostEditorHeader.vue";
 import PostEditor from "@/widgets/PostContenEditorWidget.vue";
 import PostEditorFooter from "@/pages/post-editor/ui/PostEditorFooter.vue";
 import MobileMainBlockUI from "@/shared/ui/block-ui/MobileMainBlockUI.vue";
-import TapeLinksWidget from "@/widgets/TapeLinksWidget.vue";
 import HeaderHorizontalPanelUI from "@/shared/ui/HeaderHorizontalPanelUI.vue";
 import GoToPrevPage from "@/features/GoToPrevPage.vue";
 
@@ -21,8 +20,7 @@ const MobileNavigationStore = useMobileNavigationStore();
         <template #left-content>
           <GoToPrevPage>Создать пост</GoToPrevPage>
         </template>
-      </HeaderWidget>>
-			<TapeLinksWidget/>
+      </HeaderWidget>
       <SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
     </HeaderHorizontalPanelUI>
 
