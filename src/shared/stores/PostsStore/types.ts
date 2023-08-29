@@ -10,4 +10,3 @@ export interface IPost {
 	tags: string[]
 	rating: number
 }
-

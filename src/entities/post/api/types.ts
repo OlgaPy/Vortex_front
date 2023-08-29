@@ -1,7 +1,7 @@
 import type { IPost as IStorePost } from '@/shared/stores/PostsStore'
 
 enum EStatus {
-	DRAFT = 'draft',
+	DRAFT = 'draft'
 }
 
 interface IAuthor {

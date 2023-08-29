@@ -15,14 +15,14 @@ const MobileNavigationStore = useMobileNavigationStore()
 
 <template>
 	<MobilePageUI>
-    <HeaderHorizontalPanelUI>
-      <HeaderWidget>
-        <template #left-content>
-          <GoToPrevPage>Создать пост</GoToPrevPage>
-        </template>
-      </HeaderWidget>
-      <SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
-    </HeaderHorizontalPanelUI>
+		<HeaderHorizontalPanelUI>
+			<HeaderWidget>
+				<template #left-content>
+					<GoToPrevPage>Создать пост</GoToPrevPage>
+				</template>
+			</HeaderWidget>
+			<SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
+		</HeaderHorizontalPanelUI>
 
 		<MobileMainBlockUI :class="$style.postEditor">
 			<PostEditorHeader />

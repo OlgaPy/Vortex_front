@@ -1,6 +1,13 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid'
 import type { IPost } from '@/shared/stores/PostsStore'
-import { CUT_OFF_LOREM_MAX, CUT_OFF_LOREM_MIN, LOREM_TEXT, LOREM_TITLE, MIN_POST_RATING, MAX_POST_RATING } from './consts'
+import {
+	CUT_OFF_LOREM_MAX,
+	CUT_OFF_LOREM_MIN,
+	LOREM_TEXT,
+	LOREM_TITLE,
+	MIN_POST_RATING,
+	MAX_POST_RATING
+} from './consts'
 
 export const getRandomNumber = (min: number, max: number) => {
 	return min + Math.floor(Math.random() * (max - min))
@@ -28,7 +35,7 @@ export const getLoremPost = (): IPost => {
 		content: {
 			0: {
 				type: 'text',
-				value: getLoremText(),
+				value: getLoremText()
 			}
 		},
 		tags: getLoremTags(),

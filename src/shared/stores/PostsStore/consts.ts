@@ -32,7 +32,7 @@ export const initialPosts: IPost[] = [
 			...initialPost.content,
 			0: {
 				...initialPost.content[0],
-				value: pic2,
+				value: pic2
 			}
 		}
 	},
@@ -43,7 +43,7 @@ export const initialPosts: IPost[] = [
 			...initialPost.content,
 			0: {
 				...initialPost.content[0],
-				value: pic3,
+				value: pic3
 			}
 		}
 	},
@@ -54,7 +54,7 @@ export const initialPosts: IPost[] = [
 			...initialPost.content,
 			0: {
 				...initialPost.content[0],
-				value: pic4,
+				value: pic4
 			}
 		}
 	}
