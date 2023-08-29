@@ -44,6 +44,7 @@ const MobileNavigationStore = useMobileNavigationStore()
 	font-weight: 700;
 	line-height: 24px;
 	font-family: var(--font-family-default);
+	color: var(--color-gray-22);
 }
 
 .checkPost {
