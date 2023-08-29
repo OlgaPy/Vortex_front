@@ -23,7 +23,6 @@ import router from "@/app/providers/router";
   gap: 14px;
   color: var(--color-gray-22);
   font: var(--font-title);
-  font-weight: 400;
 }
 .icon {
 	width: 10px;
