@@ -2,7 +2,6 @@ import { createPinia } from 'pinia'
 import type { CreateAppFunction } from 'vue'
 
 // Import App scss
-import './styles/config/index.scss'
 import './styles/base/index.scss'
 import './themes/index.scss'
 
