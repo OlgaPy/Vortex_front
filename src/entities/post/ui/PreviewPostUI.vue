@@ -18,7 +18,7 @@
 	</main>
 </template>
 
-<style module>
+<style module lang="scss">
 .container {
 	display: flex;
 	justify-items: start;
@@ -73,7 +73,7 @@
 	padding: 16px 12px;
 }
 
-@media screen and (min-width: 834px) {
+@media screen and (min-width: $screen-lg) {
 	.container {
 		border-radius: var(--style-radius-10);
 	}

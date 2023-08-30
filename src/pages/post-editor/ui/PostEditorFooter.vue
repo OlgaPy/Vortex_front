@@ -40,7 +40,7 @@ import PostEditorTagManagementWidget from '@/widgets/PostEditorTagManagementWidg
 	width: 30%;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: $screen-sm) {
 	.sectionSubmit {
 		flex-wrap: wrap;
 	}

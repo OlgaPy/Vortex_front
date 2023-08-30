@@ -20,13 +20,13 @@ import HomeMobilePage from './ui/HomeMobilePage.vue'
 	display: none;
 }
 
-@media screen and (min-width: 360px) and (max-width: 1280px) {
+@media screen and (min-width: $screen-xs) and (max-width: $screen-xl) {
 	.homeMobilePage {
 		display: flex;
 	}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: $screen-xl) {
 	.homeDesktopPage {
 		display: flex;
 	}
