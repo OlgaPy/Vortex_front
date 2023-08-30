@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useIntersectionObserver } from '@vueuse/core'
-import type { IInfinityScrollProps } from './types'
+import { ref } from 'vue';
+import { useIntersectionObserver } from '@vueuse/core';
+import type { IInfinityScrollProps } from './types';
 
-const { getData, updateData } = defineProps<IInfinityScrollProps>()
+const { getData, updateData } = defineProps<IInfinityScrollProps>();
 
-const fetching = ref(false)
-const loadingEnded = ref(false)
-const loadingEl = ref<HTMLDivElement | null>(null)
+const fetching = ref(false);
+const loadingEnded = ref(false);
+const loadingEl = ref<HTMLDivElement | null>(null);
 
 useIntersectionObserver(loadingEl, async ([{ isIntersecting }]) => {
 	if (fetching.value || !isIntersecting) {
-		return
+		return;
 	}
 
-	fetching.value = true
-	const newData = await getData()
+	fetching.value = true;
+	const newData = await getData();
 
 	if (!newData.length) {
-		loadingEnded.value = true
+		loadingEnded.value = true;
 	}
 
-	updateData(newData)
-	fetching.value = false
-})
+	updateData(newData);
+	fetching.value = false;
+});
 </script>
 
 <template>

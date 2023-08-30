@@ -6,5 +6,5 @@ export enum InputType {
 }
 
 export type Props = {
-	type: InputType
-}
+	type: InputType;
+};

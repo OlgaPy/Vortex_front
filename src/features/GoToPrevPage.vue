@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TinyArrowIcon from '@/shared/assets/icons/TinyArrowIcon.svg'
-import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue'
-import router from '@/app/providers/router'
+import TinyArrowIcon from '@/shared/assets/icons/TinyArrowIcon.svg';
+import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
+import router from '@/app/providers/router';
 </script>
 
 <template>

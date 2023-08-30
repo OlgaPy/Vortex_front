@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import ShortLogoIcon from '@/shared/assets/icons/ShortLogoIcon.svg'
-import MenuIcon from '@/shared/assets/icons/MenuIcon.svg'
-import CloseMenu from '@/shared/assets/icons/CloseMenu.svg'
-import AuthWidget from '@/widgets/AuthWidget.vue'
-import PlusIcon from '@/shared/assets/icons/PlusIcon.svg'
-import MegaphoneIcon from '@/shared/assets/icons/MegaphoneIcon.svg'
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore'
-import OnlyIconButtonUI from '@/shared/ui/icon-button-ui/OnlyIconButtonUI.vue'
-import OnlyIconEmptyButtonUI from '@/shared/ui/icon-button-ui/OnlyIconEmptyButtonUI.vue'
+import ShortLogoIcon from '@/shared/assets/icons/ShortLogoIcon.svg';
+import MenuIcon from '@/shared/assets/icons/MenuIcon.svg';
+import CloseMenu from '@/shared/assets/icons/CloseMenu.svg';
+import AuthWidget from '@/widgets/AuthWidget.vue';
+import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
+import MegaphoneIcon from '@/shared/assets/icons/MegaphoneIcon.svg';
+import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
+import OnlyIconButtonUI from '@/shared/ui/icon-button-ui/OnlyIconButtonUI.vue';
+import OnlyIconEmptyButtonUI from '@/shared/ui/icon-button-ui/OnlyIconEmptyButtonUI.vue';
 
-const MobileNavigationStore = useMobileNavigationStore()
+const MobileNavigationStore = useMobileNavigationStore();
 </script>
 
 <template>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import PreviewPostUI from '@/entities/post/ui/PreviewPostUI.vue'
-import TagsList from '@/entities/tag/ui/TagsList.vue'
-import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue'
-import type { IPost } from '@/shared/stores/PostsStore'
+import PreviewPostUI from '@/entities/post/ui/PreviewPostUI.vue';
+import TagsList from '@/entities/tag/ui/TagsList.vue';
+import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue';
+import type { IPost } from '@/shared/stores/PostsStore';
 
-const { title, content, tags, rating } = defineProps<IPost>()
-const posts = Object.entries(content)
+const { title, content, tags, rating } = defineProps<IPost>();
+const posts = Object.entries(content);
 </script>
 
 <template>

@@ -2,11 +2,11 @@
 import InputUI from '@/shared/ui/input-ui/InputUI.vue';
 import { InputType } from '@/shared/ui/input-ui/types';
 import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
-import ArrowDownIcon from '@/shared/assets/icons/ArrowDownIcon.svg'
+import ArrowDownIcon from '@/shared/assets/icons/ArrowDownIcon.svg';
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
-import {ref} from "vue";
-import {useAuthStore} from "@/shared/stores/AuthStore";
+import { ref } from 'vue';
+import { useAuthStore } from '@/shared/stores/AuthStore';
 
 //TODO REFACTOR
 const username = ref('kapibarin');
@@ -17,23 +17,17 @@ const authStore = useAuthStore();
 
 <template>
 	<form :class="$style.container">
-		<h1 :class="$style.header">
-			Вход или регистрация
-		</h1>
+		<h1 :class="$style.header">Вход или регистрация</h1>
 		<div :class="$style.control">
-			<label :class="$style.label">
-				Введите ник:
-			</label>
+			<label :class="$style.label"> Введите ник: </label>
 			<InputUI :type="InputType.OUTFOCUS" :class="$style.input">
-				<input v-model="username"/>
+				<input v-model="username" />
 			</InputUI>
 		</div>
 		<div :class="$style.control">
-			<label :class="$style.label">
-				Введите пароль:
-			</label>
+			<label :class="$style.label"> Введите пароль: </label>
 			<InputUI :type="InputType.OUTFOCUS" :class="$style.input">
-				<input v-model="password"/>
+				<input v-model="password" />
 			</InputUI>
 		</div>
 		<IconTextButtonUI :class="$style.help">
@@ -41,15 +35,13 @@ const authStore = useAuthStore();
 				<div>Забыли пароль?</div>
 			</template>
 			<template #right-icon>
-				<ArrowDownIcon :class="$style.icon"/>
+				<ArrowDownIcon :class="$style.icon" />
 			</template>
 		</IconTextButtonUI>
 		<ButtonUI :class="$style.button" @click.prevent="authStore.login(username, password)">
 			Войти
 		</ButtonUI>
-		<EmptyButtonUI :class="$style.button">
-			Зарегистрироваться
-		</EmptyButtonUI>
+		<EmptyButtonUI :class="$style.button"> Зарегистрироваться </EmptyButtonUI>
 	</form>
 </template>
 

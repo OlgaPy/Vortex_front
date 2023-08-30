@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { IUserSettings } from '@/shared/stores/UserSettingsStore'
-import { EPostActionsDirection, useUserSettingsStore } from '@/shared/stores/UserSettingsStore'
-import { storeToRefs } from 'pinia'
-import FilledButtonUI from '@/shared/ui/button-ui/ButtonUI.vue'
-import { computed } from 'vue'
+import type { IUserSettings } from '@/shared/stores/UserSettingsStore';
+import { EPostActionsDirection, useUserSettingsStore } from '@/shared/stores/UserSettingsStore';
+import { storeToRefs } from 'pinia';
+import FilledButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
+import { computed } from 'vue';
 
-const settingsStore = useUserSettingsStore()
-const { settings } = storeToRefs(settingsStore)
-const { setPostActionsDirection } = settingsStore
+const settingsStore = useUserSettingsStore();
+const { settings } = storeToRefs(settingsStore);
+const { setPostActionsDirection } = settingsStore;
 
 const postActionsDirection = computed<string>(() => {
-	const settingsValue = settings.value as IUserSettings
-	return settingsValue.postActionsDirection
-})
+	const settingsValue = settings.value as IUserSettings;
+	return settingsValue.postActionsDirection;
+});
 </script>
 
 <template>

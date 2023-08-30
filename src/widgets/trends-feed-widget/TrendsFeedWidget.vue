@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import ShowViewedPosts from '@/features/ShowViewedPosts.vue'
-import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue'
-import { PostsContainer } from '@/widgets/trends-feed-widget'
+import ShowViewedPosts from '@/features/ShowViewedPosts.vue';
+import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
+import { PostsContainer } from '@/widgets/trends-feed-widget';
 </script>
 
 <template>

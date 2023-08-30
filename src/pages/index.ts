@@ -17,7 +17,7 @@ export const routes = [
 	{
 		path: '/auth',
 		name: 'Авторизация',
-		component: () => import ('@/pages/auth/AuthPage.vue')
+		component: () => import('@/pages/auth/AuthPage.vue')
 	},
 	{
 		path: '/post-published',
@@ -29,4 +29,4 @@ export const routes = [
 		name: 'Не найдено',
 		component: () => import('@/pages/not-found/NotFoundPage.vue')
 	}
-]
+];

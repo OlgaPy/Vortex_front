@@ -1,3 +1,3 @@
-import type { IPost, IPostsResponse } from './types'
+import type { IPost, IPostsResponse } from './types';
 
-export { IPost, IPostsResponse }
+export { IPost, IPostsResponse };

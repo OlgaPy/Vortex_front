@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg'
-import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue'
+import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
+import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
 </script>
 
 <template>

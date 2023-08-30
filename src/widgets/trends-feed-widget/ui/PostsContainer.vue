@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { Suspense } from 'vue'
-import { storeToRefs } from 'pinia'
-import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue'
-import { getPosts } from '@/entities/post'
-import { usePostsStore } from '@/shared/stores/PostsStore'
-import { InfinityScroll } from '@/shared/lib/InfinityScroll'
+import { Suspense } from 'vue';
+import { storeToRefs } from 'pinia';
+import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue';
+import { getPosts } from '@/entities/post';
+import { usePostsStore } from '@/shared/stores/PostsStore';
+import { InfinityScroll } from '@/shared/lib/InfinityScroll';
 
-const postsStore = usePostsStore()
-const { setPosts } = postsStore
-const { posts } = storeToRefs(postsStore)
+const postsStore = usePostsStore();
+const { setPosts } = postsStore;
+const { posts } = storeToRefs(postsStore);
 </script>
 
 <template>

@@ -3,5 +3,5 @@ export enum ButtonSize {
 }
 
 export type Props = {
-	size: ButtonSize
-}
+	size: ButtonSize;
+};
