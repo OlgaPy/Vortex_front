@@ -1,7 +1,7 @@
 export type Props = {
-	modelValue: boolean
-}
+	modelValue: boolean;
+};
 
 export type Emits = {
-	(e: 'update:modelValue', value: boolean): void
-}
+	(e: 'update:modelValue', value: boolean): void;
+};

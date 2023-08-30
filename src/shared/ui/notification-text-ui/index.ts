@@ -1,1 +1,1 @@
-export * from './NotificationTextUI.vue'
+export * from './NotificationTextUI.vue';

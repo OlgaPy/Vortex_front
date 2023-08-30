@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue'
-import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue'
-import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue'
-import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue'
-import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue'
-import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue'
-import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue'
-import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue'
-import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue'
-import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue'
+import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
+import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
+import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
+import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
+import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
+import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue';
+import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
+import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
+import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
+import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 </script>
 
 <template>

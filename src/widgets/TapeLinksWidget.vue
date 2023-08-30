@@ -6,7 +6,7 @@ const items = [
 	{ name: 'Обсуждаемое', path: '/all' },
 	{ name: 'Подписки', path: '/all' },
 	{ name: 'Группы', path: '/all' }
-]
+];
 </script>
 
 <template>

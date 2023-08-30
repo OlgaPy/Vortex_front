@@ -1,48 +1,48 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import IconTextUI from '@/shared/ui/IconTextUI.vue'
-import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg'
-import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg'
-import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore'
-import type { IPost } from '@/shared/stores/PostsStore'
+import { ref } from 'vue';
+import IconTextUI from '@/shared/ui/IconTextUI.vue';
+import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg';
+import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg';
+import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore';
+import type { IPost } from '@/shared/stores/PostsStore';
 
-const { rating: initialRating } = defineProps<Pick<IPost, 'rating'>>()
+const { rating: initialRating } = defineProps<Pick<IPost, 'rating'>>();
 
-const rating = ref<number>(initialRating)
-const ratingDecreased = ref<boolean>(false)
-const ratingIncreased = ref<boolean>(false)
+const rating = ref<number>(initialRating);
+const ratingDecreased = ref<boolean>(false);
+const ratingIncreased = ref<boolean>(false);
 
-const inverted = useInvertedPostActions()
+const inverted = useInvertedPostActions();
 
 const handleRatingRaiseClick = () => {
 	if (ratingIncreased.value) {
-		rating.value--
+		rating.value--;
 	} else {
-		rating.value++
+		rating.value++;
 	}
 
 	if (ratingDecreased.value) {
-		rating.value++
+		rating.value++;
 	}
 
-	ratingIncreased.value = !ratingIncreased.value
-	ratingDecreased.value = false
-}
+	ratingIncreased.value = !ratingIncreased.value;
+	ratingDecreased.value = false;
+};
 
 const handleRatingDecreaseClick = () => {
 	if (ratingDecreased.value) {
-		rating.value++
+		rating.value++;
 	} else {
-		rating.value--
+		rating.value--;
 	}
 
 	if (ratingIncreased.value) {
-		rating.value--
+		rating.value--;
 	}
 
-	ratingDecreased.value = !ratingDecreased.value
-	ratingIncreased.value = false
-}
+	ratingDecreased.value = !ratingDecreased.value;
+	ratingIncreased.value = false;
+};
 </script>
 
 <template>

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import SearchIcon from '@/shared/assets/icons/SearchIcon.svg'
-import type { ISearchInputUI } from './types'
+import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
+import type { ISearchInputUI } from './types';
 
-defineProps<ISearchInputUI>()
-const emit = defineEmits(['update:modelValue'])
+defineProps<ISearchInputUI>();
+const emit = defineEmits(['update:modelValue']);
 
 const onChangeInput = (event: Event) => {
-	const target = event.target as HTMLInputElement
-	const value = target.value
+	const target = event.target as HTMLInputElement;
+	const value = target.value;
 
-	emit('update:modelValue', value)
-}
+	emit('update:modelValue', value);
+};
 </script>
 
 <template>

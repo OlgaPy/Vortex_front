@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ShareIcon from '@/shared/assets/icons/ShareIcon.svg'
-import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue'
+import ShareIcon from '@/shared/assets/icons/ShareIcon.svg';
+import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
 </script>
 
 <template>

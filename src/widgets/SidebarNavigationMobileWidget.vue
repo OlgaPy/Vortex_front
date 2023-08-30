@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore'
-import { useThemeStore } from '@/shared/stores/ThemeStore'
-import { SearchInputUI } from '@/shared/ui/search-input-ui'
+import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
+import { useThemeStore } from '@/shared/stores/ThemeStore';
+import { SearchInputUI } from '@/shared/ui/search-input-ui';
 
-const MobileNavigationStore = useMobileNavigationStore()
-const ThemeStore = useThemeStore()
+const MobileNavigationStore = useMobileNavigationStore();
+const ThemeStore = useThemeStore();
 
 const navigationLinks = [
 	{ name: 'Тренды', path: '/' },
@@ -14,7 +14,7 @@ const navigationLinks = [
 	{ name: 'Подписки', path: '/all' },
 	{ name: 'Группы', path: '/all' },
 	{ name: 'Теги', path: '/all' }
-]
+];
 
 const footerLinks = [
 	{ name: 'Помощь и поддержка', path: '/all' },
@@ -22,7 +22,7 @@ const footerLinks = [
 	{ name: 'Новости проекта', path: '/all' },
 	{ name: 'Правила сообщества', path: '/all' },
 	{ name: 'Контакты', path: '/all' }
-]
+];
 </script>
 
 <template>

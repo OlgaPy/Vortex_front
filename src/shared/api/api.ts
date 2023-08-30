@@ -1,4 +1,4 @@
-import type {Delete, Get, Post, Put, Request} from "./types";
+import type { Delete, Get, Post, Put, Request } from './types';
 
 export const API_URL = '/v1';
 
@@ -7,7 +7,7 @@ const refreshTokens = async () => {
 
 	if (refreshToken) {
 		const response: Response = await post('/token/refresh', {
-			refresh: localStorage.getItem('refresh'),
+			refresh: localStorage.getItem('refresh')
 		});
 
 		if (response.status === 200) {
@@ -29,8 +29,8 @@ const request: Request = async (url, params, method) => {
 		// credentials: "include",
 		headers: {
 			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${accessToken}`
-		},
+			Authorization: `Bearer ${accessToken}`
+		}
 	};
 
 	if (params) {

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import TrashIcon from '@/shared/assets/icons/TrashIcon.svg'
-import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
-import SaveIcon from '@/shared/assets/icons/SaveIcon.svg'
-import IconEmptyButtonUI from '@/shared/ui/icon-button-ui/IconEmptyButtonUI.vue'
-import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg'
-import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg'
-import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue'
+import TrashIcon from '@/shared/assets/icons/TrashIcon.svg';
+import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue';
+import SaveIcon from '@/shared/assets/icons/SaveIcon.svg';
+import IconEmptyButtonUI from '@/shared/ui/icon-button-ui/IconEmptyButtonUI.vue';
+import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg';
+import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg';
+import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
 </script>
 
 <template>

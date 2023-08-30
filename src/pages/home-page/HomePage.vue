@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HomeDesktopPage from './ui/HomeDesktopPage.vue'
-import HomeMobilePage from './ui/HomeMobilePage.vue'
+import HomeDesktopPage from './ui/HomeDesktopPage.vue';
+import HomeMobilePage from './ui/HomeMobilePage.vue';
 </script>
 
 <template>

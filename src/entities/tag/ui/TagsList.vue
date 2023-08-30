@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { tags } = defineProps<{ tags: String[] }>()
+const { tags } = defineProps<{ tags: String[] }>();
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { InputType } from '@/shared/ui/input-ui/types'
-import InputUI from '@/shared/ui/input-ui/InputUI.vue'
+import { InputType } from '@/shared/ui/input-ui/types';
+import InputUI from '@/shared/ui/input-ui/InputUI.vue';
 </script>
 
 <template>
