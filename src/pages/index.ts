@@ -1,3 +1,5 @@
+import { PostPreviewPage } from '@/pages/post-preview'
+
 export const routes = [
 	{
 		path: '/',
@@ -23,6 +25,11 @@ export const routes = [
 		path: '/post-published',
 		name: 'Пост опубликован',
 		component: () => import('@/pages/post-published/PostPublishedPage.vue')
+	},
+	{
+		path: '/post-preview',
+		name: 'Предпросмотр поста',
+		component: PostPreviewPage
 	},
 	{
 		path: '/:pathMatch(.*)*',
