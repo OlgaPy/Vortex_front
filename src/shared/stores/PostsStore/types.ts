@@ -1,7 +1,12 @@
+interface IContentItem {
+	type: 'text' | 'img' | 'video'
+	value: string
+}
+
 export interface IPost {
+	uuid: string
 	title: string
-	body: string
+	content: Record<number, IContentItem>
 	tags: string[]
-	id: number
-	img?: string
+	rating: number
 }

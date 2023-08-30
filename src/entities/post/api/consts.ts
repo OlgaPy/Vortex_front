@@ -12,3 +12,5 @@ export const POSTS_TO_LOAD = 10
 export const MAX_POSTS = 30
 export const MIN_POSTS_FETCH_DELAY = 100
 export const MAX_POSTS_FETCH_DELAY = 500
+export const MIN_POST_RATING = 50
+export const MAX_POST_RATING = 100
