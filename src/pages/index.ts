@@ -20,6 +20,11 @@ export const routes = [
 		component: () => import ('@/pages/auth/AuthPage.vue')
 	},
 	{
+		path: '/post-published',
+		name: 'Пост опубликован',
+		component: () => import('@/pages/post-published/PostPublishedPage.vue')
+	},
+	{
 		path: '/:pathMatch(.*)*',
 		name: 'Не найдено',
 		component: () => import('@/pages/not-found/NotFoundPage.vue')

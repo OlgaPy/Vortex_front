@@ -25,4 +25,5 @@ import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue'
 	</DesktopPageUI>
 </template>
 
-<style module lang="scss"></style>
+<style module lang="scss">
+</style>
