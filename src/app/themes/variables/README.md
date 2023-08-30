@@ -1,6 +1,6 @@
-# Screens
+# Variables
 
-This directory contains screen sizes which can be used inside .vue components in <style lang='scss'></style> section in @media-queries
+This directory contains global variables which can be used inside .vue components in <style lang='scss'></style> section
 
 ## Examples
 
@@ -8,7 +8,7 @@ This directory contains screen sizes which can be used inside .vue components in
 <style lang='scss'>
 @media screen and (min-width: $screen-xs) and (max-width: $screen-xl) {
 	.homeMobilePage {
-		display: flex;
+		display: $red;
 	}
 }
 </style>
