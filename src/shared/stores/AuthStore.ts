@@ -9,7 +9,7 @@ const setTokens = (access: string, refresh: string ) => {
 	localStorage.setItem('access', access);
 }
 
-export const useAuthStore = defineStore('themeStore', () => {
+export const useAuthStore = defineStore('authStore', () => {
 	const refreshToken = ref(localStorage.getItem('refresh'));
 	const accessToken = ref(localStorage.getItem('access'));
 
