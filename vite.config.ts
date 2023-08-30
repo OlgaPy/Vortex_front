@@ -17,5 +17,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '~': fileURLToPath(new URL('./src', import.meta.url)),
     }
-  }
+  },
+	server: {
+		proxy: {
+			'/v1': {
+				target: 'https://backend.kapi.bar',
+				changeOrigin: true,
+				secure: false,
+			}
+		}
+	}
 })
