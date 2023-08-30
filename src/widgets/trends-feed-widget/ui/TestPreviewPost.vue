@@ -4,7 +4,8 @@ import TagsList from '@/entities/tag/ui/TagsList.vue'
 import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue'
 import type { IPost } from '@/shared/stores/PostsStore'
 
-const { title, body, img, tags } = defineProps<IPost>()
+const { title, content, tags, rating } = defineProps<IPost>()
+const posts = Object.entries(content)
 </script>
 
 <template>
@@ -17,14 +18,15 @@ const { title, body, img, tags } = defineProps<IPost>()
 			<TagsList :tags="tags" />
 		</template>
 		<template #body>
-			<slot></slot>
-			<img v-show="img" :src="img" :class="$style.postImage" alt="Post Image" />
-			<span>
-				{{ body }}
-			</span>
+			<div v-for="[id, { type, value }] in posts" :key="id">
+				<img v-if="type === 'img'" :src="value" :class="$style.postImage" alt="Post Image" />
+				<span v-else>
+					{{ value }}
+				</span>
+			</div>
 		</template>
 		<template #footer>
-			<PostPreviewFooterUI />
+			<PostPreviewFooterUI :rating="rating" />
 		</template>
 	</PreviewPostUI>
 </template>
