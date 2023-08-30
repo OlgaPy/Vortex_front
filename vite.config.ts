@@ -5,6 +5,13 @@ import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "./src/app/themes/variables/index.scss" as *;`,
+      },
+    },
+  },
 	build: {
 		cssMinify: true,
 	},
