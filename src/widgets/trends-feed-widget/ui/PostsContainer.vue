@@ -40,7 +40,7 @@ const { posts } = storeToRefs(postsStore)
 	</Suspense>
 </template>
 
-<style module>
+<style module lang="scss">
 .container {
 	display: flex;
 	flex-direction: column;
@@ -52,7 +52,7 @@ const { posts } = storeToRefs(postsStore)
 	color: var(--color-gray-14);
 }
 
-@media screen and (min-width: 834px) {
+@media screen and (min-width: $screen-lg) {
 	.loader {
 		border-radius: var(--style-radius-10);
 	}

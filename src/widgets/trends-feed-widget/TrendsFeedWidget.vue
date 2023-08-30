@@ -15,7 +15,7 @@ import { PostsContainer } from '@/widgets/trends-feed-widget'
 	</MobileMainBlockUI>
 </template>
 
-<style module>
+<style module lang="scss">
 .header {
 	display: flex;
 	justify-content: start;
@@ -36,7 +36,7 @@ import { PostsContainer } from '@/widgets/trends-feed-widget'
 	gap: 10px;
 }
 
-@media screen and (min-width: 834px) {
+@media screen and (min-width: $screen-lg) {
 	.showViewedPosts {
 		padding: 4px 0;
 	}
