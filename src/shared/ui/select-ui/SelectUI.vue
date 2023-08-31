@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import type { Emits, Option, Props } from './types'
-import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg'
-import SearchIcon from '@/shared/assets/icons/SearchIcon.svg'
-import { ref } from 'vue'
-import { autoUpdate, flip, shift, useFloating } from '@floating-ui/vue'
+import type { Emits, Option, Props } from './types';
+import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
+import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
+import { ref } from 'vue';
+import { autoUpdate, flip, shift, useFloating } from '@floating-ui/vue';
 
-const reference = ref(null)
-const floating = ref(null)
+const reference = ref(null);
+const floating = ref(null);
 const { floatingStyles } = useFloating(reference, floating, {
 	middleware: [shift(), flip()],
 	whileElementsMounted: autoUpdate
-})
+});
 
-const emit = defineEmits<Emits>()
-const { modelValue, options, attractorText } = defineProps<Props>()
+const emit = defineEmits<Emits>();
+const { modelValue, options, attractorText } = defineProps<Props>();
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 
 const openList = () => {
-	isOpen.value = true
-}
+	isOpen.value = true;
+};
 const closeList = () => {
-	isOpen.value = false
-}
+	isOpen.value = false;
+};
 
 const selectOption = (option: Option) => {
-	emit('update:modelValue', option)
-	closeList()
-}
+	emit('update:modelValue', option);
+	closeList();
+};
 </script>
 
 <template>
@@ -51,7 +51,7 @@ const selectOption = (option: Option) => {
 					:key="index"
 					@click="
 						() => {
-							selectOption(option)
+							selectOption(option);
 						}
 					"
 				>

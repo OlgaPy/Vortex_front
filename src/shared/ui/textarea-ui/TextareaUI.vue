@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Emits } from './types'
-import TrashIcon from '@/shared/assets/icons/TrashIcon.svg'
-import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue'
+import type { Emits } from './types';
+import TrashIcon from '@/shared/assets/icons/TrashIcon.svg';
+import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
 
-defineEmits<Emits>()
+defineEmits<Emits>();
 </script>
 
 <template>

@@ -1,3 +1,3 @@
 export type Emits = {
-	(e: 'remove'): void
-}
+	(e: 'remove'): void;
+};

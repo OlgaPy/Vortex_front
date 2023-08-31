@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SearchInputUI } from '@/shared/ui/search-input-ui'
+import { SearchInputUI } from '@/shared/ui/search-input-ui';
 </script>
 
 <template>

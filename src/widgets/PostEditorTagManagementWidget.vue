@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import PlusIcon from '@/shared/assets/icons/PlusIcon.svg'
-import CloseIcon from '@/shared/assets/icons/CloseIcon.svg'
-import IconEmptyButtonUI from '@/shared/ui/icon-button-ui/IconEmptyButtonUI.vue'
-import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue'
+import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
+import CloseIcon from '@/shared/assets/icons/CloseIcon.svg';
+import IconEmptyButtonUI from '@/shared/ui/icon-button-ui/IconEmptyButtonUI.vue';
+import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue';
 
 const alreadyExistTags = [
 	{ name: 'Котики' },
 	{ name: 'Мой кот' },
 	{ name: 'Пушистик' },
 	{ name: 'Без рейтинга' }
-]
+];
 </script>
 
 <template>

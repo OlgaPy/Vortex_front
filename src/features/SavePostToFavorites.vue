@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SaveIcon from '@/shared/assets/icons/SaveIcon.svg'
-import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue'
+import SaveIcon from '@/shared/assets/icons/SaveIcon.svg';
+import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
 </script>
 
 <template>

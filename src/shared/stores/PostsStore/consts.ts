@@ -1,8 +1,8 @@
-import pic1 from '@/widgets/trends-feed-widget/img/Comments dark.jpg'
-import pic2 from '@/widgets/trends-feed-widget/img/home dark 1.1 (2).jpg'
-import pic3 from '@/widgets/trends-feed-widget/img/upscale_4.png'
-import pic4 from '@/widgets/trends-feed-widget/img/Pictures.png'
-import type { IPost } from './types'
+import pic1 from '@/widgets/trends-feed-widget/img/Comments dark.jpg';
+import pic2 from '@/widgets/trends-feed-widget/img/home dark 1.1 (2).jpg';
+import pic3 from '@/widgets/trends-feed-widget/img/upscale_4.png';
+import pic4 from '@/widgets/trends-feed-widget/img/Pictures.png';
+import type { IPost } from './types';
 
 const initialPost: IPost = {
 	uuid: '1',
@@ -21,7 +21,7 @@ const initialPost: IPost = {
 	},
 	tags: ['Меню', 'Баян', 'Без рейтинга'],
 	rating: 12345
-}
+};
 
 export const initialPosts: IPost[] = [
 	initialPost,
@@ -58,4 +58,4 @@ export const initialPosts: IPost[] = [
 			}
 		}
 	}
-]
+];

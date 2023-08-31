@@ -1,8 +1,7 @@
 <script setup lang="ts">
-
-import PostPublishedDesktop from './ui/PostPublishedDesktop.vue'
-import PostPublishedMobile from './ui/PostPublishedMobile.vue'
-import PostPublishedTable from './ui/PostPublishedTable.vue'
+import PostPublishedDesktop from './ui/PostPublishedDesktop.vue';
+import PostPublishedMobile from './ui/PostPublishedMobile.vue';
+import PostPublishedTable from './ui/PostPublishedTable.vue';
 </script>
 
 <template>
@@ -26,7 +25,6 @@ import PostPublishedTable from './ui/PostPublishedTable.vue'
 	display: none;
 }
 
-
 @media screen and (min-width: $screen-xs) and (max-width: $screen-lg) {
 	.homeMobilePage {
 		display: flex;
@@ -38,7 +36,6 @@ import PostPublishedTable from './ui/PostPublishedTable.vue'
 		display: flex;
 	}
 }
-
 
 @media screen and (min-width: $screen-xl) {
 	.homeDesktopPage {
