@@ -109,7 +109,7 @@ const password = ref('ficYP5MV');
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
-	gap: 16px;
+	gap: 32px;
 }
 .buttons > * {
 	width: 100%;

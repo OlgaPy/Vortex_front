@@ -190,6 +190,7 @@ changeInputStatus();
 	margin: 8px;
 	display: flex;
 	width: 100%;
+	height: calc(1em + 2px);
 	font: var(--font-small);
 	outline: none;
 	border: unset;
