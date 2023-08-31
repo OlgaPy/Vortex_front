@@ -106,13 +106,12 @@ changeInputStatus();
 			<div :class="$style.hint" v-show="showHint" v-outside-click="closeHintPopup">
 				<WarningCircle ref="reference" @click="openHintPopup"/>
 				<div
+					:class="$style.hintWrapper"
 					ref="floating"
 					:style="floatingStyles"
 					v-show="showHintPopup"
 				>
-					<div :class="$style.hintWrapper">
-						<slot name="hint"></slot>
-					</div>
+					<slot name="hint"></slot>
 				</div>
 			</div>
 		</section>
@@ -185,6 +184,7 @@ changeInputStatus();
 }
 
 .hint {
+	position: relative;
 	width: 16px;
 	height: 16px;
 	cursor: pointer;
@@ -204,6 +204,7 @@ changeInputStatus();
 	border: 1px solid var(--color-gray-92);
 	color: var(--color-gray-22);
 	overflow: hidden;
+	z-index: 1000;
 }
 
 .actionsSection, .infoSection {

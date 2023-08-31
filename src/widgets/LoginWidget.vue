@@ -30,7 +30,7 @@ const password = ref('ficYP5MV');
 					</template>
 				</InputUI>
 
-				<InputUI label="Введите пароль:" hide-text v-model="password">
+				<InputUI label="Введите пароль:" show-hint hide-text v-model="password">
 					<template #actions>
 						<!--	TODO Actions		-->
 						<div :class="$style.forgotPassword">
