@@ -22,6 +22,7 @@ export type Props = {
 	hideText?: boolean,
 	showHint?: boolean,
 	validators?: Validator[],
+	errors?: string[],
 }
 
 export type Emits = {

@@ -41,7 +41,7 @@ import { SearchInputUI } from '@/shared/ui/search-input-ui';
 	flex-direction: column;
 	background: var(--color-gray-98);
 	border-radius: var(--style-radius-10);
-	width: 300px;
+	width: 100%
 }
 .section {
 	display: flex;
@@ -67,7 +67,7 @@ import { SearchInputUI } from '@/shared/ui/search-input-ui';
 	justify-self: center;
 	align-items: center;
 	height: 40px;
-	width: 284px;
+	width: 312px;
 }
 
 .logo {
@@ -90,7 +90,7 @@ import { SearchInputUI } from '@/shared/ui/search-input-ui';
 	cursor: pointer;
 }
 .searchSection {
-	width: 236px;
+	width: 264px;
 	height: 40px;
 }
 </style>

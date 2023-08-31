@@ -14,8 +14,8 @@ const {floatingStyles} = useFloating(reference, floating, {
 
 const emit = defineEmits<Emits>();
 
-const {modelValue, label, hideText, showHint, validators, placeholder} = defineProps<Props>();
-const localErrors = ref<string[]>([]);
+const {modelValue, label, hideText, showHint, validators, errors, placeholder} = defineProps<Props>();
+const localErrors = ref<string[]>(errors || []);
 const inputValue = ref(modelValue || null);
 const inputStatus = ref<InputStates>();
 const inputFocusStatus = ref<InputFocusStates>();
@@ -32,7 +32,7 @@ const closeHintPopup = () => {
 }
 
 const validate = (value: string | null) => {
-	localErrors.value = [];
+	localErrors.value = errors || [];
 
 	if (!validators)
 		return;

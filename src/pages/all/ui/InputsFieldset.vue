@@ -31,6 +31,12 @@ const validator = (value: string) => {
 		/>
 
 		<InputUI
+			label="With errors as props"
+			:errors="['propError1', 'propError2']"
+			v-model="exampleValue"
+		/>
+
+		<InputUI
 			label="Hide text"
 			hide-text
 			v-model="exampleValue"
