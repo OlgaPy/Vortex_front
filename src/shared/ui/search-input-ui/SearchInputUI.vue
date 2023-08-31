@@ -28,7 +28,6 @@ const onChangeInput = (event: Event) => {
 	align-items: center;
 	gap: 5px;
 	width: 100%;
-	max-width: 232px;
 	border-radius: var(--style-radius-5);
 	border-width: 1.5px;
 	border-style: solid;
