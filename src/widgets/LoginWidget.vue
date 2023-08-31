@@ -24,10 +24,10 @@ const password = ref('ficYP5MV');
 					show-hint
 					v-model="username"
 				>
-<!--					<template #hint>-->
-<!--						<p>Размер ника от 4 до 16 символов;</p>-->
-<!--						<p>Разрешены буквы (a-z, A-Z), цифры (0-9), дефис (-), точка (.), нижнее подчеркивание (_)</p>-->
-<!--					</template>-->
+					<template #hint>
+						<p>Размер ника от 4 до 16 символов;</p>
+						<p>Разрешены буквы (a-z, A-Z), цифры (0-9), дефис (-), точка (.), нижнее подчеркивание (_)</p>
+					</template>
 				</InputUI>
 
 				<InputUI label="Введите пароль:" hide-text v-model="password">
@@ -37,6 +37,11 @@ const password = ref('ficYP5MV');
 							<span>Забыли пароль?</span>
 							<ArrowIcon/>
 						</div>
+					</template>
+					<template #hint>
+						<p>Размер пароля от 8 до 128 символов;</p>
+						<p>Разрешены буквы (a-z, A-Z), цифры (0-9) и символы (!@#$%^&*()_-+=);</p>
+						<p>Требуется минимум одна буква и минимум одна цифра</p>
 					</template>
 				</InputUI>
 			</fieldset>

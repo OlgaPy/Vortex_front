@@ -1,15 +1,37 @@
 <script setup lang="ts">
 import type {Emits, Props} from './types'
+import {InputFocusStates, InputStates} from "./types";
 import WarningCircle from '@/shared/assets/icons/WarningCircle.svg';
 import {ref} from "vue";
+import {autoUpdate, flip, shift, useFloating} from "@floating-ui/vue";
+
+const reference = ref(null);
+const floating = ref(null);
+const {floatingStyles} = useFloating(reference, floating, {
+	middleware: [shift(), flip()],
+	whileElementsMounted: autoUpdate
+});
 
 const emit = defineEmits<Emits>();
 
-const { modelValue, label, hideText, showHint, validators } = defineProps<Props>();
+const {modelValue, label, hideText, showHint, validators, placeholder} = defineProps<Props>();
 const localErrors = ref<string[]>([]);
-const inputValue = ref(modelValue);
+const inputValue = ref(modelValue || null);
+const inputStatus = ref<InputStates>();
+const inputFocusStatus = ref<InputFocusStates>();
+const showHintPopup = ref(false);
 
-const validate = (value: string) => {
+const openHintPopup = () => {
+	showHintPopup.value = true;
+};
+
+const closeHintPopup = () => {
+	if (showHintPopup.value) {
+		showHintPopup.value = false;
+	}
+}
+
+const validate = (value: string | null) => {
 	localErrors.value = [];
 
 	if (!validators)
@@ -29,16 +51,39 @@ const validate = (value: string) => {
 	}
 };
 
-const onChange = (value: string) => {
+const changeInputStatus = () => {
+	if (inputValue.value) {
+		if (inputValue.value && localErrors.value.length > 0) {
+			inputStatus.value = InputStates.ERROR;
+		} else {
+			inputStatus.value = InputStates.SUCCESSFUL;
+		}
+	} else {
+		inputStatus.value = InputStates.NONE;
+	}
+};
+
+const setInputFocusStatus = (state: InputFocusStates) => {
+	inputFocusStatus.value = state;
+};
+
+const onChange = (value: string | null) => {
 	validate(value);
 	emit('update:modelValue', value);
+	changeInputStatus();
 };
 
-const onFocusOut = (value: string) => {
+const onFocusOut = (value: string | null) => {
 	validate(value);
+	setInputFocusStatus(InputFocusStates.NONE);
 };
+
+const onFocusIn = () => {
+	setInputFocusStatus(InputFocusStates.FOCUS);
+}
 
 validate(modelValue);
+changeInputStatus();
 </script>
 
 <template>
@@ -47,19 +92,27 @@ validate(modelValue);
 			{{ label }}
 		</label>
 
-		<section :class="$style.inputSection">
+		<section :class="$style.inputSection" :data-status="inputStatus" :data-focus-status="inputFocusStatus">
 			<input
 				:class="$style.input"
 				:type="hideText? 'password' : 'text'"
 				v-model="inputValue"
 				@change="onChange(inputValue)"
 				@focusout="onFocusOut(inputValue)"
+				@focusin="onFocusIn"
+				:placeholder="placeholder"
 			/>
-			<div :class="$style.hint" v-show="showHint">
-				<!--TODO hint absolute block-->
-				<WarningCircle/>
-				<div>
-					<slot name="hint"></slot>
+
+			<div :class="$style.hint" v-show="showHint" v-outside-click="closeHintPopup">
+				<WarningCircle ref="reference" @click="openHintPopup"/>
+				<div
+					ref="floating"
+					:style="floatingStyles"
+					v-show="showHintPopup"
+				>
+					<div :class="$style.hintWrapper">
+						<slot name="hint"></slot>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -99,47 +152,58 @@ validate(modelValue);
 	width: 100%;
 	border-radius: var(--style-radius-5);
 	font: var(--font-small);
+	border: 1.5px solid var(--color-gray-92);
+	background-color: unset;
+	color: var(--color-gray-53);
+}
+
+.inputSection[data-focus-status='focus'] {
 	background-color: var(--color-gray-92);
+	border-color: var(--color-gray-92);
+	color: var(--color-gray-53);
+}
+
+.inputSection[data-status='error'] {
+	border-color: var(--color-red-70);
+	color: var(--color-red-79);
+}
+
+.inputSection[data-status='successful'] {
+	border-color: var(--color-primary-1);
+	color: var(--color-primary-2);
 }
 
 .input {
 	display: flex;
 	width: calc(100% - 24px);
 	font: var(--font-small);
-	color: var(--color-gray-53);
 	outline: none;
 	border: unset;
 	background-color: inherit;
-}
-.input::placeholder {
-	color: var(--color-gray-53);
-}
-
-.input[data-type='focus'],
-.input::placeholder {
-	border-color: var(--color-gray-53);
-	color: var(--color-gray-53);
-}
-
-.input[data-type='error'],
-.input[data-type='error']::placeholder {
-	background-color: var(--color-base-bg);
-	border-color: var(--color-red-70);
-	color: var(--color-red-79);
-}
-
-.input[data-type='successful'],
-.input[data-type='successful']::placeholder {
-	background-color: var(--color-base-bg);
-	border-color: var(--color-primary-1);
-	color: var(--color-primary-2);
+	border-color: inherit;
+	color: inherit;
 }
 
 .hint {
 	width: 16px;
 	height: 16px;
 	cursor: pointer;
-	color: var(--color-gray-53);
+}
+
+.hintWrapper {
+	margin: 4px;
+	padding: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
+	width: 264px;
+	font: var(--font-small);
+	border-radius: var(--style-radius-10);
+	background-color: var(--color-gray-98);
+	border: 1px solid var(--color-gray-92);
+	color: var(--color-gray-22);
+	overflow: hidden;
 }
 
 .actionsSection, .infoSection {

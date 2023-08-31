@@ -3,6 +3,7 @@ import InputUI from "@/shared/ui/input-ui/InputUI.vue";
 import {ref} from "vue";
 
 const exampleValue = ref('exampleValue');
+const exampleEmptyValue = ref('');
 const validator = (value: string) => {
 	if (value !== 'hide_error') {
 		return {
@@ -21,6 +22,12 @@ const validator = (value: string) => {
 		<InputUI
 			label="Base"
 			v-model="exampleValue"
+		/>
+
+		<InputUI
+			label="With placeholder"
+			v-model="exampleEmptyValue"
+			placeholder="Placeholder"
 		/>
 
 		<InputUI
