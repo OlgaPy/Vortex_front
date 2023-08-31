@@ -158,7 +158,7 @@ changeInputStatus();
 }
 
 .inputSection {
-	padding: 8px;
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -187,17 +187,21 @@ changeInputStatus();
 }
 
 .input {
+	margin: 8px;
 	display: flex;
-	width: calc(100% - 24px);
+	width: 100%;
 	font: var(--font-small);
 	outline: none;
 	border: unset;
 	background-color: inherit;
-	border-color: inherit;
 	color: inherit;
+	border-radius: var(--style-radius-5);
 }
 
 .actionIcons {
+	position: absolute;
+	right: 8px;
+	top: calc(50% - 8px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
