@@ -1,24 +1,45 @@
 <script setup lang="ts">
-import { InputType } from '@/shared/ui/input-ui/types'
-import InputUI from '@/shared/ui/input-ui/InputUI.vue'
+import InputUI from "@/shared/ui/input-ui/InputUI.vue";
+import {ref} from "vue";
+
+const exampleValue = ref('exampleValue');
+const validator = (value: string) => {
+	if (value !== 'hide_error') {
+		return {
+			errors: ['Terrible Error']
+		};
+	}
+
+	return null;
+};
 </script>
 
 <template>
 	<fieldset>
 		<label>Inputs</label>
 
-		<InputUI :type="InputType.OUTFOCUS">
-			<input placeholder="Placeholder" />
-		</InputUI>
-		<InputUI :type="InputType.FOCUS">
-			<input placeholder="Placeholder" />
-		</InputUI>
-		<InputUI :type="InputType.SUCCESSFUL">
-			<input placeholder="Placeholder" />
-		</InputUI>
-		<InputUI :type="InputType.ERROR">
-			<input placeholder="Placeholder" />
-		</InputUI>
+		<InputUI
+			label="Base"
+			v-model="exampleValue"
+		/>
+
+		<InputUI
+			label="Hide text"
+			hide-text
+			v-model="exampleValue"
+		/>
+
+		<InputUI
+			label="With hint"
+			show-hint
+			v-model="exampleValue"
+		/>
+
+		<InputUI
+			label="With validator (enter: hide_error)"
+			v-model="exampleValue"
+			:validators="[validator]"
+		/>
 	</fieldset>
 </template>
 
