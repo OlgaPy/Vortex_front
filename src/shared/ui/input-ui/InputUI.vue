@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type {Emits, Props} from './types'
 import {InputFocusStates, InputStates} from "./types";
-import WarningCircle from '@/shared/assets/icons/WarningCircle.svg';
+import WarningCircle from '@/shared/assets/icons/WarningCircleIcon.svg';
+import CloseIcon from '@/shared/assets/icons/CloseIcon.svg';
 import {ref} from "vue";
 import {autoUpdate, flip, shift, useFloating} from "@floating-ui/vue";
 
@@ -68,6 +69,7 @@ const setInputFocusStatus = (state: InputFocusStates) => {
 };
 
 const onChange = (value: string | null) => {
+	inputValue.value = value;
 	validate(value);
 	emit('update:modelValue', value);
 	changeInputStatus();
@@ -103,8 +105,20 @@ changeInputStatus();
 				:placeholder="placeholder"
 			/>
 
-			<div :class="$style.hint" v-show="showHint" v-outside-click="closeHintPopup">
-				<WarningCircle ref="reference" @click="openHintPopup"/>
+			<div :class="$style.actionIcons">
+				<WarningCircle
+					:class="$style.hintIcon"
+					v-show="showHint"
+					ref="reference"
+					@click="openHintPopup"
+					v-outside-click="closeHintPopup"
+				/>
+				<CloseIcon
+					:class="$style.clearIcon"
+					@click="onChange('')"
+					v-show="inputValue"
+				/>
+
 				<div
 					:class="$style.hintWrapper"
 					ref="floating"
@@ -183,10 +197,21 @@ changeInputStatus();
 	color: inherit;
 }
 
-.hint {
-	position: relative;
+.actionIcons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.hintIcon {
 	width: 16px;
 	height: 16px;
+	cursor: pointer;
+}
+.clearIcon {
+	width: 14px;
+	height: 14px;
 	cursor: pointer;
 }
 
@@ -198,6 +223,7 @@ changeInputStatus();
 	align-items: start;
 	flex-direction: column;
 	width: 264px;
+	height: auto;
 	font: var(--font-small);
 	border-radius: var(--style-radius-10);
 	background-color: var(--color-gray-98);
