@@ -20,7 +20,7 @@
 
 .container[disabled] {
 	color: var(--color-gray-73);
-	border-color: var(--color-gray-73);
+	border-color: var(--color-gray-89);
 	cursor: default;
 }
 </style>

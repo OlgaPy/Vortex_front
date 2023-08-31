@@ -19,9 +19,10 @@
 }
 
 .container[disabled] {
-	color: var(--color-gray-53);
-	background-color: var(--color-gray-73);
-	border-color: var(--color-gray-73);
+	color: var(--color-gray-73);
+	background-color: var(--color-gray-89);
+	border-color: var(--color-gray-89);
 	cursor: default;
+	font: var(--font-text-bold);
 }
 </style>
