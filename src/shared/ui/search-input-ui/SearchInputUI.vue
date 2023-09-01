@@ -37,7 +37,7 @@ const onChangeInput = (event: Event) => {
 }
 
 .container input {
-	background: inherit;
+	background-color: var(--color-gray-89);
 	border: unset;
 	outline: none;
 	cursor: pointer;
