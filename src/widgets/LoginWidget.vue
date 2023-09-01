@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
-import EmptyButtonUI from "@/shared/ui/button-ui/EmptyButtonUI.vue";
-import InputUI from "@/shared/ui/input-ui/InputUI.vue";
-import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
-import ArrowIcon from "@/shared/assets/icons/ArrowIcon.svg";
-import {ref} from "vue";
+import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
+import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
+import InputUI from '@/shared/ui/input-ui/InputUI.vue';
+import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue';
+import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
+import { ref } from 'vue';
 
 const username = ref('kapibarin');
 const password = ref('ficYP5MV');
@@ -19,14 +19,13 @@ const password = ref('ficYP5MV');
 
 		<main :class="$style.main">
 			<fieldset :class="$style.fieldset">
-				<InputUI
-					label="Введите ник:"
-					show-hint
-					v-model="username"
-				>
+				<InputUI label="Введите ник:" show-hint v-model="username">
 					<template #hint>
 						<p>Размер ника от 4 до 16 символов;</p>
-						<p>Разрешены буквы (a-z, A-Z), цифры (0-9), дефис (-), точка (.), нижнее подчеркивание (_)</p>
+						<p>
+							Разрешены буквы (a-z, A-Z), цифры (0-9), дефис (-), точка (.), нижнее подчеркивание
+							(_)
+						</p>
 					</template>
 				</InputUI>
 
@@ -35,7 +34,7 @@ const password = ref('ficYP5MV');
 						<!--	TODO Actions		-->
 						<div :class="$style.forgotPassword">
 							<span>Забыли пароль?</span>
-							<ArrowIcon/>
+							<ArrowIcon />
 						</div>
 					</template>
 					<template #hint>
@@ -52,12 +51,13 @@ const password = ref('ficYP5MV');
 				<EmptyButtonUI>Зарегистрироваться</EmptyButtonUI>
 			</div>
 		</main>
-
 	</div>
 </template>
 
 <style module>
-.container, .main, .fieldset {
+.container,
+.main,
+.fieldset {
 	display: flex;
 	justify-content: center;
 	align-items: center;

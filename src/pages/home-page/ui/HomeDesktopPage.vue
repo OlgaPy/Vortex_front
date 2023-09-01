@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue'
-import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue'
-import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue'
-import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue'
-import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue'
-import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue'
-import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue'
-import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue'
-import LoginWidget from "@/widgets/LoginWidget.vue";
-import {useProfileStore} from "@/entities/profile/model/ProfileStore";
+import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
+import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
+import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
+import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
+import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue';
+import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
+import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue';
+import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
+import LoginWidget from '@/widgets/LoginWidget.vue';
+import { useProfileStore } from '@/entities/profile/model/ProfileStore';
 
 const profileStore = useProfileStore();
 </script>
@@ -22,9 +22,8 @@ const profileStore = useProfileStore();
 			<TrendsFeedWidget />
 		</DesktopMainBlockUI>
 		<DesktopAsideBlockUI>
-
-			<ProfilePanelWidget v-if="profileStore.isAuth()"/>
-			<LoginWidget v-else/>
+			<ProfilePanelWidget v-if="profileStore.isAuth()" />
+			<LoginWidget v-else />
 
 			<SiteInfoPanel />
 			<AdInfoPanelWidget />
@@ -32,5 +31,4 @@ const profileStore = useProfileStore();
 	</DesktopPageUI>
 </template>
 
-<style module lang="scss">
-</style>
+<style module lang="scss"></style>

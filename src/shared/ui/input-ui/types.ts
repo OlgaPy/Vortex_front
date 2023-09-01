@@ -1,30 +1,30 @@
 export enum InputStates {
 	NONE = '',
 	ERROR = 'error',
-	SUCCESSFUL = 'successful',
+	SUCCESSFUL = 'successful'
 }
 
 export enum InputFocusStates {
 	NONE = '',
-	FOCUS = 'focus',
+	FOCUS = 'focus'
 }
 
 export type ValidationResult = {
-	errors: string[] | null,
+	errors: string[] | null;
 } | null;
 
 export type Validator = (value: string | null) => ValidationResult;
 
 export type Props = {
-	modelValue: string,
-	label: string,
-	placeholder?: string,
-	hideText?: boolean,
-	showHint?: boolean,
-	validators?: Validator[],
-	errors?: string[],
-}
+	modelValue: string;
+	label: string;
+	placeholder?: string;
+	hideText?: boolean;
+	showHint?: boolean;
+	validators?: Validator[];
+	errors?: string[];
+};
 
 export type Emits = {
-	(e: 'update:modelValue', value: string | null): void
-}
+	(e: 'update:modelValue', value: string | null): void;
+};

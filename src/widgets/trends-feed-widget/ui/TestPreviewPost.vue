@@ -2,14 +2,21 @@
 import PreviewPostUI from '@/entities/post/ui/PreviewPostUI.vue';
 import TagsList from '@/entities/tag/ui/TagsList.vue';
 import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue';
-import type { IPost } from '@/shared/stores/PostsStore';
+import type { IPostPreview } from './types';
 
-const { title, content, tags, rating } = defineProps<IPost>();
+const {
+	title,
+	content,
+	tags,
+	rating,
+	showFooter = true,
+	showProfile = true
+} = defineProps<IPostPreview>();
 const posts = Object.entries(content);
 </script>
 
 <template>
-	<PreviewPostUI>
+	<PreviewPostUI :show-footer="showFooter" :show-profile="showProfile">
 		<template #header>
 			<div :class="$style.postProfile">TODO Здесь будет профиль</div>
 		</template>
@@ -18,11 +25,15 @@ const posts = Object.entries(content);
 			<TagsList :tags="tags" />
 		</template>
 		<template #body>
-			<div v-for="[id, { type, value }] in posts" :key="id">
-				<img v-if="type === 'img'" :src="value" :class="$style.postImage" alt="Post Image" />
-				<span v-else>
-					{{ value }}
-				</span>
+			<div v-for="[id, { type, value }] in posts" :key="id" :class="$style.contentWrapper">
+				<div v-if="type === 'img'" :class="$style.mediaWrapper">
+					<img :src="value" :class="$style.postImage" alt="Post Image" />
+				</div>
+				<div v-else :class="$style.content">
+					<span>
+						{{ value }}
+					</span>
+				</div>
 			</div>
 		</template>
 		<template #footer>
@@ -31,7 +42,12 @@ const posts = Object.entries(content);
 	</PreviewPostUI>
 </template>
 
-<style module>
+<style module lang="scss">
+.contentWrapper,
+.mediaWrapper {
+	width: 100%;
+}
+
 .postProfile {
 	display: flex;
 	justify-content: start;
@@ -43,7 +59,24 @@ const posts = Object.entries(content);
 	color: var(--color-gray-22);
 	font: var(--font-text);
 }
+
 .postImage {
 	max-width: 100%;
+	width: 100%;
+}
+
+.mediaWrapper {
+	padding: 0;
+}
+
+.content {
+	padding: 0 30px;
+}
+
+@media screen and (max-width: $screen-lg) {
+	.mediaWrapper,
+	.content {
+		padding: 0 12px;
+	}
 }
 </style>

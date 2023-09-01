@@ -1,5 +1,5 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
+import { ref } from 'vue';
+import { defineStore } from 'pinia';
 
 //TODO
 export const useProfileStore = defineStore('profileStore', () => {
@@ -7,10 +7,10 @@ export const useProfileStore = defineStore('profileStore', () => {
 
 	const isAuth = () => {
 		return false;
-	}
+	};
 
 	return {
 		profile,
 		isAuth
 	};
-})
+});

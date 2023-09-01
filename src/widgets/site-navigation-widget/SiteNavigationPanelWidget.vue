@@ -41,7 +41,7 @@ import { SearchInputUI } from '@/shared/ui/search-input-ui';
 	flex-direction: column;
 	background: var(--color-gray-98);
 	border-radius: var(--style-radius-10);
-	width: 100%
+	width: 100%;
 }
 .section {
 	display: flex;

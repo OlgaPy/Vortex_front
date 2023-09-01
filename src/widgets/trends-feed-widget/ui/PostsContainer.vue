@@ -24,6 +24,8 @@ const { posts } = storeToRefs(postsStore);
 						:rating="rating"
 						:key="uuid"
 						:uuid="uuid"
+						:show-profile="true"
+						:show-footer="true"
 					/>
 				</div>
 			</template>
