@@ -1,21 +1,22 @@
 <script setup lang="ts">
-import type {Emits, Props} from './types'
-import {InputFocusStates, InputStates} from "./types";
+import type { Emits, Props } from './types';
+import { InputFocusStates, InputStates } from './types';
 import WarningCircle from '@/shared/assets/icons/WarningCircleIcon.svg';
 import CloseIcon from '@/shared/assets/icons/CloseIcon.svg';
-import {ref} from "vue";
-import {autoUpdate, flip, shift, useFloating} from "@floating-ui/vue";
+import { ref } from 'vue';
+import { autoUpdate, flip, shift, useFloating } from '@floating-ui/vue';
 
 const reference = ref(null);
 const floating = ref(null);
-const {floatingStyles} = useFloating(reference, floating, {
+const { floatingStyles } = useFloating(reference, floating, {
 	middleware: [shift(), flip()],
 	whileElementsMounted: autoUpdate
 });
 
 const emit = defineEmits<Emits>();
 
-const {modelValue, label, hideText, showHint, validators, errors, placeholder} = defineProps<Props>();
+const { modelValue, label, hideText, showHint, validators, errors, placeholder } =
+	defineProps<Props>();
 const localErrors = ref<string[]>(errors || []);
 const inputValue = ref(modelValue || null);
 const inputStatus = ref<InputStates>();
@@ -30,19 +31,17 @@ const closeHintPopup = () => {
 	if (showHintPopup.value) {
 		showHintPopup.value = false;
 	}
-}
+};
 
 const validate = (value: string | null) => {
 	localErrors.value = errors || [];
 
-	if (!validators)
-		return;
+	if (!validators) return;
 
 	for (let validator of validators) {
 		const validationResults = validator(value);
 
-		if (!validationResults)
-			continue;
+		if (!validationResults) continue;
 
 		if (validationResults.errors) {
 			for (let error of validationResults.errors) {
@@ -82,7 +81,7 @@ const onFocusOut = (value: string | null) => {
 
 const onFocusIn = () => {
 	setInputFocusStatus(InputFocusStates.FOCUS);
-}
+};
 
 validate(modelValue);
 changeInputStatus();
@@ -94,10 +93,14 @@ changeInputStatus();
 			{{ label }}
 		</label>
 
-		<section :class="$style.inputSection" :data-status="inputStatus" :data-focus-status="inputFocusStatus">
+		<section
+			:class="$style.inputSection"
+			:data-status="inputStatus"
+			:data-focus-status="inputFocusStatus"
+		>
 			<input
 				:class="$style.input"
-				:type="hideText? 'password' : 'text'"
+				:type="hideText ? 'password' : 'text'"
 				v-model="inputValue"
 				@change="onChange(inputValue)"
 				@focusout="onFocusOut(inputValue)"
@@ -113,11 +116,7 @@ changeInputStatus();
 					@click="openHintPopup"
 					v-outside-click="closeHintPopup"
 				/>
-				<CloseIcon
-					:class="$style.clearIcon"
-					@click="onChange('')"
-					v-show="inputValue"
-				/>
+				<CloseIcon :class="$style.clearIcon" @click="onChange('')" v-show="inputValue" />
 
 				<div
 					:class="$style.hintWrapper"
@@ -238,7 +237,8 @@ changeInputStatus();
 	z-index: 1000;
 }
 
-.actionsSection, .infoSection {
+.actionsSection,
+.infoSection {
 	display: flex;
 	justify-content: center;
 	align-items: start;

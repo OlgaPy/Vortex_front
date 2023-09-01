@@ -1,10 +1,10 @@
-<script setup lang='ts'>
-import { storeToRefs } from 'pinia'
-import PostPreviewHeader from '@/pages/post-preview/ui/PostPreviewHeader.vue'
-import PostPreviewFooter from '@/pages/post-preview/ui/PostPreviewFooter.vue'
-import PageLayout from '@/widgets/page-layout/PageLayout.vue'
+<script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import PostPreviewHeader from '@/pages/post-preview/ui/PostPreviewHeader.vue';
+import PostPreviewFooter from '@/pages/post-preview/ui/PostPreviewFooter.vue';
+import PageLayout from '@/widgets/page-layout/PageLayout.vue';
 import TestPreviewPost from '@/widgets/trends-feed-widget/ui/TestPreviewPost.vue';
-import { IPost, usePostsStore } from '@/shared/stores/PostsStore'
+import { IPost, usePostsStore } from '@/shared/stores/PostsStore';
 
 // temp content
 const postsStore = usePostsStore();

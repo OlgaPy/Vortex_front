@@ -1,4 +1,4 @@
-import { PostPreviewPage } from '@/pages/post-preview'
+import { PostPreviewPage } from '@/pages/post-preview';
 
 export const routes = [
 	{

@@ -1,11 +1,11 @@
 <template>
-	<div :class='$style.container'>
-		<h3 :class='$style.title'>Предпросмотр поста</h3>
-		<p :class='$style.text'>Так будет выглядеть ваш пост, внимательно проверьте его.</p>
+	<div :class="$style.container">
+		<h3 :class="$style.title">Предпросмотр поста</h3>
+		<p :class="$style.text">Так будет выглядеть ваш пост, внимательно проверьте его.</p>
 	</div>
 </template>
 
-<style module lang='scss'>
+<style module lang="scss">
 .container {
 	width: 100%;
 	margin-bottom: 32px;

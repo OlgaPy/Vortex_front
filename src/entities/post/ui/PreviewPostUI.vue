@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { IPostPreview } from './types'
+import { IPostPreview } from './types';
 
 const { showProfile = true, showFooter = true } = defineProps<IPostPreview>();
 </script>
 
 <template>
 	<main :class="[$style.container, 'color-bg-gray-98']">
-		<header v-show='showProfile' :class="$style.header">
+		<header v-show="showProfile" :class="$style.header">
 			<slot name="header"></slot>
 		</header>
 		<main :class="$style.main">
@@ -16,7 +16,7 @@ const { showProfile = true, showFooter = true } = defineProps<IPostPreview>();
 				<slot name="body"></slot>
 			</div>
 		</main>
-		<footer v-show='showFooter' :class="$style.footer">
+		<footer v-show="showFooter" :class="$style.footer">
 			<slot name="footer"></slot>
 		</footer>
 	</main>

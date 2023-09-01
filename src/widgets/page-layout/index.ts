@@ -1,3 +1,3 @@
-import PageLayout from '@/widgets/page-layout/PageLayout.vue'
+import PageLayout from '@/widgets/page-layout/PageLayout.vue';
 
-export { PageLayout }
+export { PageLayout };

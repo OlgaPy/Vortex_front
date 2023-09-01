@@ -1,3 +1,3 @@
-import PostPreviewPage from '@/pages/post-preview/PostPreviewPage.vue'
+import PostPreviewPage from '@/pages/post-preview/PostPreviewPage.vue';
 
-export { PostPreviewPage }
+export { PostPreviewPage };

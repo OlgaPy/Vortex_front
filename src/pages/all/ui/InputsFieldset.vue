@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import InputUI from "@/shared/ui/input-ui/InputUI.vue";
-import {ref} from "vue";
+import InputUI from '@/shared/ui/input-ui/InputUI.vue';
+import { ref } from 'vue';
 
 const exampleValue = ref('exampleValue');
 const exampleEmptyValue = ref('');
@@ -19,16 +19,9 @@ const validator = (value: string) => {
 	<fieldset>
 		<label>Inputs</label>
 
-		<InputUI
-			label="Base"
-			v-model="exampleValue"
-		/>
+		<InputUI label="Base" v-model="exampleValue" />
 
-		<InputUI
-			label="With placeholder"
-			v-model="exampleEmptyValue"
-			placeholder="Placeholder"
-		/>
+		<InputUI label="With placeholder" v-model="exampleEmptyValue" placeholder="Placeholder" />
 
 		<InputUI
 			label="With errors as props"
@@ -36,17 +29,9 @@ const validator = (value: string) => {
 			v-model="exampleValue"
 		/>
 
-		<InputUI
-			label="Hide text"
-			hide-text
-			v-model="exampleValue"
-		/>
+		<InputUI label="Hide text" hide-text v-model="exampleValue" />
 
-		<InputUI
-			label="With hint"
-			show-hint
-			v-model="exampleValue"
-		/>
+		<InputUI label="With hint" show-hint v-model="exampleValue" />
 
 		<InputUI
 			label="With validator (enter: hide_error)"

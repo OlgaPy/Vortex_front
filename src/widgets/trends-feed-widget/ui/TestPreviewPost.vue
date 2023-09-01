@@ -4,12 +4,19 @@ import TagsList from '@/entities/tag/ui/TagsList.vue';
 import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue';
 import type { IPostPreview } from './types';
 
-const { title, content, tags, rating, showFooter = true, showProfile = true } = defineProps<IPostPreview>();
+const {
+	title,
+	content,
+	tags,
+	rating,
+	showFooter = true,
+	showProfile = true
+} = defineProps<IPostPreview>();
 const posts = Object.entries(content);
 </script>
 
 <template>
-	<PreviewPostUI :show-footer='showFooter' :show-profile='showProfile'>
+	<PreviewPostUI :show-footer="showFooter" :show-profile="showProfile">
 		<template #header>
 			<div :class="$style.postProfile">TODO Здесь будет профиль</div>
 		</template>
@@ -18,11 +25,11 @@ const posts = Object.entries(content);
 			<TagsList :tags="tags" />
 		</template>
 		<template #body>
-			<div v-for="[id, { type, value }] in posts" :key="id" :class='$style.contentWrapper'>
-				<div v-if="type === 'img'" :class='$style.mediaWrapper'>
+			<div v-for="[id, { type, value }] in posts" :key="id" :class="$style.contentWrapper">
+				<div v-if="type === 'img'" :class="$style.mediaWrapper">
 					<img :src="value" :class="$style.postImage" alt="Post Image" />
 				</div>
-				<div v-else :class='$style.content'>
+				<div v-else :class="$style.content">
 					<span>
 						{{ value }}
 					</span>
@@ -35,7 +42,7 @@ const posts = Object.entries(content);
 	</PreviewPostUI>
 </template>
 
-<style module lang='scss'>
+<style module lang="scss">
 .contentWrapper,
 .mediaWrapper {
 	width: 100%;

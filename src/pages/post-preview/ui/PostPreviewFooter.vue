@@ -1,16 +1,16 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 </script>
 
 <template>
-<div :class='$style.container'>
-	<ButtonUI>Опубликовать</ButtonUI>
-	<EmptyButtonUI>Предпросмотр</EmptyButtonUI>
-</div>
+	<div :class="$style.container">
+		<ButtonUI>Опубликовать</ButtonUI>
+		<EmptyButtonUI>Предпросмотр</EmptyButtonUI>
+	</div>
 </template>
 
-<style module lang='scss'>
+<style module lang="scss">
 .container {
 	display: flex;
 	width: 100%;
