@@ -34,7 +34,7 @@ defineEmits<Emits>();
 	font: var(--font-text);
 	color: var(--color-gray-53);
 	border: unset;
-	background-color: inherit;
+	background-color: var(--color-gray-98);
 	outline: unset;
 	width: 100%;
 	height: 100%;

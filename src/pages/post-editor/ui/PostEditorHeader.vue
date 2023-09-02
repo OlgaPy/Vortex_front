@@ -22,7 +22,7 @@
 	width: 100%;
 	font: var(--font-text);
 	color: var(--color-gray-53);
-	background-color: inherit;
+	background-color: var(--color-gray-98);
 	border: unset;
 	outline: none;
 }
