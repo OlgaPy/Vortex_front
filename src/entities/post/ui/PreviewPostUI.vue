@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { IPostPreview } from './types';
 
-const { showProfile = true, showFooter = true } = defineProps<IPostPreview>();
+const { showProfile, showFooter } = withDefaults(defineProps<IPostPreview>(), {
+	showProfile: true,
+	showFooter: true
+});
 </script>
 
 <template>

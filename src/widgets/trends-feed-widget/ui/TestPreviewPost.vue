@@ -2,23 +2,27 @@
 import PreviewPostUI from '@/entities/post/ui/PreviewPostUI.vue';
 import TagsList from '@/entities/tag/ui/TagsList.vue';
 import PostPreviewFooterUI from '@/widgets/trends-feed-widget/ui/PostPreviewFooterUI.vue';
+import ProfilePreviewUI from '@/entities/profile/ui/ProfilePreviewUI.vue';
 import type { IPostPreview } from './types';
 
-const {
-	title,
-	content,
-	tags,
-	rating,
-	showFooter = true,
-	showProfile = true
-} = defineProps<IPostPreview>();
+const { title, content, tags, rating, showFooter, showProfile } = withDefaults(
+	defineProps<IPostPreview>(),
+	{
+		showFooter: true,
+		showProfile: true
+	}
+);
 const posts = Object.entries(content);
 </script>
 
 <template>
 	<PreviewPostUI :show-footer="showFooter" :show-profile="showProfile">
 		<template #header>
-			<div :class="$style.postProfile">TODO Здесь будет профиль</div>
+			<ProfilePreviewUI
+				><template #subTitle="{ class: className }"
+					><span name="subTitle" :class="className">30 августа 2022 в 15:36</span></template
+				></ProfilePreviewUI
+			>
 		</template>
 		<template #title>{{ title }}</template>
 		<template #tags>
