@@ -6,7 +6,7 @@ import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 <template>
 	<div :class="$style.container">
 		<ButtonUI>Опубликовать</ButtonUI>
-		<EmptyButtonUI>Предпросмотр</EmptyButtonUI>
+		<EmptyButtonUI>Вернуться к редактированию</EmptyButtonUI>
 	</div>
 </template>
 
