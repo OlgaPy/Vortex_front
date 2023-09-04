@@ -19,7 +19,21 @@ export const useThemeStore = defineStore('themeStore', () => {
 	const animationTime = getComputedStyle(html).getPropertyValue('--transition-default');
 	const animationClass = 'animation-theme-switch';
 	const theme = ref(html.dataset.theme);
-	const themeMode = ref(html.dataset.colorSchema);
+
+	const getThemeMode = () => {
+		if (html.dataset.colorSchema == ThemeModes.AUTO) {
+			const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
+			if (darkThemeMq.matches) {
+				html.setAttribute('data-color-schema', ThemeModes.DARK);
+				return ThemeModes.DARK;
+			} else {
+				html.setAttribute('data-color-schema', ThemeModes.LIGHT);
+				return ThemeModes.LIGHT;
+			}
+		} else return html.dataset.colorSchema;
+	};
+
+	const themeMode = ref(getThemeMode());
 
 	const startAnimation = () => html.classList.add(animationClass);
 	const stopAnimation = () =>
