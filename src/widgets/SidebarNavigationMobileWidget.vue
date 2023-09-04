@@ -175,10 +175,10 @@ const footerLinks = [
 }
 
 .vk {
-	background-image: url('@/shared/ui/icons/SocialVkIcon.svg');
+	background-image: url('@/shared/assets/icons/SocialVkIcon.svg');
 }
 
 .tg {
-	background-image: url('@/shared/ui/icons/SocialTgIcon.svg');
+	background-image: url('@/shared/assets/icons/SocialTgIcon.svg');
 }
 </style>
