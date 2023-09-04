@@ -23,26 +23,26 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue';
 		</section>
 		<section :class="`${$style.section} ${$style.menuSection}`">
 			<div :class="$style.menuItem">
-				<RespondIcon :class="$style.menuIcon" />
+				<RespondIcon :class="[$style.menuIcon, $style.replyIcon]" />
 				<router-link to="/all">Ответы</router-link>
 			</div>
 			<div :class="$style.menuItem">
 				<div :class="$style.notification">
 					<div :class="$style.menuItem">
-						<CommentIcon :class="$style.menuIcon" />
+						<CommentIcon :class="[$style.menuIcon, $style.commentsIcon]" />
 						<router-link to="/all">Комментарии</router-link>
 					</div>
 					<NotificationTextUI :attract="true">10</NotificationTextUI>
 				</div>
 			</div>
 			<div :class="$style.menuItem">
-				<SaveIcon :class="$style.menuIcon" />
+				<SaveIcon :class="[$style.menuIcon, $style.savesIcon]" />
 				<router-link to="/all">Сохранённое</router-link>
 			</div>
 			<div :class="$style.menuItem">
 				<div :class="$style.notification">
 					<div :class="$style.menuItem">
-						<EyeIcon :class="$style.menuIcon" />
+						<EyeIcon :class="[$style.menuIcon, $style.eyeIcon]" />
 						<router-link to="/all">Прочитанное</router-link>
 					</div>
 					<NotificationTextUI>20</NotificationTextUI>
@@ -116,9 +116,25 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue';
 	cursor: pointer;
 }
 .menuIcon {
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
 	color: var(--color-gray-53);
+}
+
+.replyIcon {
+	transform: scaleY(0.9);
+}
+
+.commentsIcon {
+	transform: scale(1.5);
+}
+
+.savesIcon {
+	transform: scale(1.35);
+}
+
+.eyeIcon {
+	transform: scale(1.1);
 }
 
 .notification {
