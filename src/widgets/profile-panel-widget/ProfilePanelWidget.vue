@@ -122,19 +122,19 @@ import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue';
 }
 
 .replyIcon {
-	transform: scaleY(0.9);
+	scale: 1 0.9;
 }
 
 .commentsIcon {
-	transform: scale(1.5);
+	scale: 1.5;
 }
 
 .savesIcon {
-	transform: scale(1.35);
+	scale: 1.35;
 }
 
 .eyeIcon {
-	transform: scale(1.1);
+	scale: 1.1;
 }
 
 .notification {
