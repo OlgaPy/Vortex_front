@@ -1,4 +1,11 @@
-import { IPost } from '@/shared/stores/PostsStore';
-import { IPostPreview as IPostPreviewExtends } from '@/entities/post';
+import type {IPost} from '@/entities/post';
 
-export interface IPostPreview extends IPost, IPostPreviewExtends {}
+export type PreviewPostProps = {
+    post: IPost,
+    showFooter: boolean | true,
+    showProfile: boolean | true,
+};
+
+export type PostPreviewFooterProps = {
+    rating: string
+}

@@ -4,7 +4,7 @@ import IconTextUI from '@/shared/ui/IconTextUI.vue';
 import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg';
 import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg';
 import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore';
-import type { IPost } from '@/shared/stores/PostsStore';
+import type {IPost} from "@/entities/post";
 
 const { rating: initialRating } = defineProps<Pick<IPost, 'rating'>>();
 

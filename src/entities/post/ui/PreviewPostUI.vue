@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { IPostPreview } from './types';
+import type { PreviewPostProps } from './types';
 
-const { showProfile, showFooter } = withDefaults(defineProps<IPostPreview>(), {
-	showProfile: true,
-	showFooter: true
-});
+const {post, showProfile, showFooter} = withDefaults(
+    defineProps<PreviewPostProps>(),
+    { showFooter: true, showProfile: true }
+);
 </script>
 
 <template>
@@ -12,13 +12,27 @@ const { showProfile, showFooter } = withDefaults(defineProps<IPostPreview>(), {
 		<header v-show="showProfile" :class="$style.header">
 			<slot name="header"></slot>
 		</header>
+
 		<main :class="$style.main">
-			<h1 class="font-title"><slot name="title"></slot></h1>
+			<h1 class="font-title">{{ post.title }}</h1>
 			<span class="font-smaller"><slot name="tags"></slot></span>
 			<div :class="[$style.body, 'font-text']">
-				<slot name="body"></slot>
-			</div>
+
+        <!-- TODO check render for different content types -->
+        <div v-for="({ type, value }, index) in post.content" :key="index" :class="$style.contentWrapper">
+          <div v-if="type === 'img'" :class="$style.mediaWrapper">
+            <img :src="value" :class="$style.postImage" alt="Post Image" />
+          </div>
+          <div v-else :class="$style.content">
+					<span>
+						{{ value }}
+					</span>
+          </div>
+        </div>
+
+      </div>
 		</main>
+
 		<footer v-show="showFooter" :class="$style.footer">
 			<slot name="footer"></slot>
 		</footer>
@@ -69,6 +83,36 @@ const { showProfile, showFooter } = withDefaults(defineProps<IPostPreview>(), {
 
 .main .body {
 	padding: 0;
+}
+
+.contentWrapper,
+.mediaWrapper {
+  width: 100%;
+}
+
+.postProfile {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  width: 100%;
+  border: 1px solid var(--color-gray-22);
+  color: var(--color-gray-22);
+  font: var(--font-text);
+}
+
+.postImage {
+  max-width: 100%;
+  width: 100%;
+}
+
+.mediaWrapper {
+  padding: 0;
+}
+
+.content {
+  padding: 0 30px;
 }
 
 .footer {

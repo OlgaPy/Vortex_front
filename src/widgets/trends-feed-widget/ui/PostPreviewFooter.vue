@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import SharePost from '@/features/SharePost.vue';
 import ChangePostRating from '@/features/ChangePostRating.vue';
-import CommentsLinkUI from '@/widgets/trends-feed-widget/ui/CommentsLinkUI.vue';
+import CommentsLinkUI from '@/widgets/trends-feed-widget/ui/CommentsLink.vue';
 import SavePostToFavorites from '@/features/SavePostToFavorites.vue';
 import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore';
-import type { IPost } from '@/shared/stores/PostsStore';
+import type {PostPreviewFooterProps} from "./types";
 
-const { rating } = defineProps<Pick<IPost, 'rating'>>();
+const { rating } = defineProps<PostPreviewFooterProps>();
 const inverted = useInvertedPostActions();
 </script>
 

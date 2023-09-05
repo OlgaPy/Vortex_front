@@ -4,11 +4,20 @@ import TrashIcon from '@/shared/assets/icons/TrashIcon.svg';
 import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
 
 defineEmits<Emits>();
+
+const onInput = (e: Event) => {
+	const field = e.target as HTMLDivElement;
+
+	if (field) {
+		field.style.height = 'auto';
+		field.style.height = `${field.scrollHeight}px`;
+	}
+}
 </script>
 
 <template>
 	<div :class="[$style.container, 'color-gray-53', 'font-smaller']">
-		<slot></slot>
+		<textarea @input="onInput"/>
 		<IconTextButtonUI :class="$style.clearBtn" @click="$emit('remove')">
 			<template #left-icon>
 				<TrashIcon :class="$style.trashIcon" />
@@ -25,17 +34,19 @@ defineEmits<Emits>();
 	justify-content: stretch;
 	align-items: start;
 	border-radius: var(--style-radius-5);
-	border: 1.5px solid var(--color-gray-53);
 	background-color: var(--color-gray-98);
 	gap: 10px;
 }
 
 .container textarea {
+	box-sizing: border-box;
 	font: var(--font-text);
 	color: var(--color-gray-53);
 	border: unset;
 	background-color: var(--color-gray-98);
 	outline: unset;
+	overflow-y: hidden;
+	resize: none;
 	width: 100%;
 	height: 100%;
 }

@@ -1,4 +1,2 @@
-import { getPosts } from './api/post-feed-api';
-import type { IPostPreview } from './ui/types';
-
-export { IPostPreview, getPosts };
+export type { PostStatusEnum, IContentItem, ICorePost, IPost } from './model';
+export type { PreviewPostProps } from './ui/types';

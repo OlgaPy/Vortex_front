@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue';
 import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
+import ImageField from "@/shared/ui/image-field/ImageField.vue";
+import TextareaUI from "@/shared/ui/textarea-ui/TextareaUI.vue";
 </script>
 
 <template>
 	<main :class="$style.container">
 		<section :class="$style.postContent">
-			<span>SOME EDITOR</span>
+			<ImageField/>
+			<TextareaUI :class="$style.textareaField"/>
 		</section>
 		<section :class="$style.contentTypes">
 			<IconButtonUI>
@@ -39,9 +42,18 @@ import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	gap: 20px;
 	font: var(--font-text);
-	height: 200px;
 	width: 100%;
+}
+
+.postContent > * {
+	width: 100%;
+}
+
+.textareaField {
+	min-height: 150px;
 }
 
 .contentTypes {

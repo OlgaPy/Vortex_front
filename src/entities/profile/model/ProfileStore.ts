@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
-//TODO
+//TODO finished store
 export const useProfileStore = defineStore('profileStore', () => {
 	const profile = ref(null);
 

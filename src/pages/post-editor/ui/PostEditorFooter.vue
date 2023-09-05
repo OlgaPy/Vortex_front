@@ -2,8 +2,8 @@
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
-import PostEditorOptionsWidget from '@/widgets/PostEditorOptionsWidget.vue';
-import PostEditorTagManagementWidget from '@/widgets/PostEditorTagManagementWidget.vue';
+import PostEditorOptionsWidget from '@/widgets/post-editor/PostEditorOptionsWidget.vue';
+import PostEditorTagManagementWidget from '@/widgets/post-editor/PostEditorTagManagementWidget.vue';
 </script>
 
 <template>

@@ -7,16 +7,19 @@
 				</router-link>
 			</slot>
 		</div>
+
 		<div :class="[$style.profileInfo, $slots.subTitle && $style.profileInfoWithSubTitle]">
-			<slot name="nickname" :class="$style.nickname"
-				><router-link to="/all">
-					<span name="nickname" :class="$style.nickname">Username</span>
-				</router-link></slot
-			>
+			<slot name="nickname" :class="$style.nickname">
+        <router-link to="/all">
+					<span :class="$style.nickname">Username</span>
+				</router-link>
+      </slot>
+
 			<div v-if="$slots.subTitle" :class="$style.subTitleWrapper">
 				<slot name="subTitle" :class="$style.subTitle"> </slot>
 			</div>
 		</div>
+
 		<div :class="$style.action">
 			<slot name="action"></slot>
 		</div>
