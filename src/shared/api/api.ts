@@ -1,12 +1,11 @@
 import type { Delete, Get, Post, Put, Request } from './types';
-
-export const API_URL = '/v1';
+import { API_URL, authorizationHeader, tokenRefreshPath } from '@/shared/config/apiConfig'
 
 const refreshTokens = async () => {
 	const refreshToken = localStorage.getItem('refresh');
 
 	if (refreshToken) {
-		const response: Response = await post('/token/refresh', {
+		const response: Response = await post(tokenRefreshPath, {
 			refresh: localStorage.getItem('refresh')
 		});
 
@@ -29,7 +28,7 @@ const request: Request = async (url, params, method) => {
 		// credentials: "include",
 		headers: {
 			'Content-Type': 'application/json',
-			Authorization: `Bearer ${accessToken}`
+			Authorization: accessToken ? authorizationHeader(accessToken) : ''
 		}
 	};
 
