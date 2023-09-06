@@ -2,7 +2,6 @@
 import ShortLogoIcon from '@/shared/assets/icons/ShortLogoIcon.svg';
 import MenuIcon from '@/shared/assets/icons/MenuIcon.svg';
 import CloseMenu from '@/shared/assets/icons/CloseMenu.svg';
-import AuthWidget from '@/widgets/AuthWidget.vue';
 import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
 import MegaphoneIcon from '@/shared/assets/icons/MegaphoneIcon.svg';
 import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
@@ -39,7 +38,9 @@ const MobileNavigationStore = useMobileNavigationStore();
 				<OnlyIconButtonUI>
 					<PlusIcon :class="$style.plusIcon" />
 				</OnlyIconButtonUI>
-				<AuthWidget />
+				<router-link to="/auth">
+					<span :class="[$style.authText, 'font-text color-gray-22']">Войти</span>
+				</router-link>
 			</div>
 		</slot>
 	</div>

@@ -24,7 +24,6 @@ const profileStore = useProfileStore();
 		<DesktopAsideBlockUI>
 			<ProfilePanelWidget v-if="profileStore.isAuth()" />
 			<LoginWidget v-else />
-
 			<SiteInfoPanel />
 			<AdInfoPanelWidget />
 		</DesktopAsideBlockUI>

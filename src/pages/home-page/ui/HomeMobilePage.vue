@@ -16,7 +16,9 @@ const MobileNavigationStore = useMobileNavigationStore();
 			<HeaderWidget />
 			<TapeLinksWidget />
 		</HeaderHorizontalPanelUI>
+
 		<SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
+
 		<TrendsFeedWidget />
 	</MobilePageUI>
 </template>
