@@ -5,13 +5,17 @@ import ImageField from "@/shared/ui/image-field/ImageField.vue";
 import TextareaUI from "@/shared/ui/input-ui/TextareaUI.vue";
 import {ref} from "vue";
 
+const showImageField = ref(true);
 const value = ref('');
+const removeComponent = () => {
+  showImageField.value = false;
+};
 </script>
 
 <template>
 	<main :class="$style.container">
 		<section :class="$style.postContent">
-			<ImageField/>
+			<ImageField @image-removed="removeComponent" v-if="showImageField"/>
 			<TextareaUI :class="$style.textareaField" v-model="value"/>
 		</section>
 		<section :class="$style.contentTypes">
