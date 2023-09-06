@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import type { Emits } from './types';
 import TrashIcon from '@/shared/assets/icons/TrashIcon.svg';
 import IconTextButtonUI from '@/shared/ui/icon-button-ui/IconTextButtonUI.vue';
+import type {Emits, TextAreaProps} from "@/shared/ui/input-ui/types";
+import {ref} from "vue";
 
-defineEmits<Emits>();
+const emit = defineEmits<Emits>();
+const { modelValue } = defineProps<TextAreaProps>();
+const textAreaValue = ref(modelValue || null);
 
 const onInput = (e: Event) => {
 	const field = e.target as HTMLDivElement;
@@ -12,15 +15,25 @@ const onInput = (e: Event) => {
 		field.style.height = 'auto';
 		field.style.height = `${field.scrollHeight}px`;
 	}
+};
+
+const onChange = (value: string | null) => {
+	textAreaValue.value = value;
+	emit('update:modelValue', value);
+};
+
+const onRemove = () => {
+	textAreaValue.value = '';
+	emit('update:modelValue', textAreaValue.value);
 }
 </script>
 
 <template>
 	<div :class="[$style.container, 'color-gray-53', 'font-smaller']">
-		<textarea @input="onInput"/>
-		<IconTextButtonUI :class="$style.clearBtn" @click="$emit('remove')">
+		<textarea v-model="textAreaValue" @input="onInput" @change="onChange(textAreaValue)"/>
+		<IconTextButtonUI :class="$style.clearBtn" @click="onRemove">
 			<template #left-icon>
-				<TrashIcon :class="$style.trashIcon" />
+				<TrashIcon :class="$style.trashIcon"/>
 			</template>
 		</IconTextButtonUI>
 	</div>

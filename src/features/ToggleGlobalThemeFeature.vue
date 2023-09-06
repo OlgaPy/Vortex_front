@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ThemeModes, useThemeStore } from '@/shared/stores/ThemeStore';
-import { storeToRefs } from 'pinia';
+import {ThemeModes, useThemeStore} from '@/shared/stores/ThemeStore';
+import {storeToRefs} from 'pinia';
 import SunIcon from '@/shared/assets/icons/SunIcon.svg';
 import MoonIcon from '@/shared/assets/icons/MoonIcon.svg';
 

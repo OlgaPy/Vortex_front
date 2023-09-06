@@ -2,12 +2,12 @@
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
+import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
 import PostEditorHeader from '@/pages/post-editor/ui/PostEditorHeader.vue';
 import PostEditor from '@/widgets/post-editor/PostContenEditorWidget.vue';
 import PostEditorFooter from '@/pages/post-editor/ui/PostEditorFooter.vue';
 import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
-import HeaderHorizontalPanelUI from '@/shared/ui/HeaderHorizontalPanelUI.vue';
+import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
 import GoToPrevPage from '@/features/GoToPrevPage.vue';
 
 const MobileNavigationStore = useMobileNavigationStore();

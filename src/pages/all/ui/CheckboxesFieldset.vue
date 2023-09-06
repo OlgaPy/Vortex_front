@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CheckboxUI from '@/shared/ui/checkbox-ui/CheckboxUI.vue';
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 let checked = ref(true),
 	unchecked = ref(false);

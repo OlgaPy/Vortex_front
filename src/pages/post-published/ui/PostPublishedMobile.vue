@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
+import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
 import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue';
-import HeaderHorizontalPanelUI from '@/shared/ui/HeaderHorizontalPanelUI.vue';
+import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';

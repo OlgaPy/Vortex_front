@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PreviewPostProps } from './types';
+import type {PreviewPostProps} from './types';
 
 const {post, showProfile, showFooter} = withDefaults(
     defineProps<PreviewPostProps>(),

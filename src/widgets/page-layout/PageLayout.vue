@@ -10,8 +10,8 @@ import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import GoToPrevPage from '@/features/GoToPrevPage.vue';
 import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue';
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
-import HeaderHorizontalPanelUI from '@/shared/ui/HeaderHorizontalPanelUI.vue';
+import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
+import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
 import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
 
 const MobileNavigationStore = useMobileNavigationStore();

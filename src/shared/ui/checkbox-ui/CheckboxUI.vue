@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CheckIcon from '@/shared/assets/icons/CheckIcon.svg';
-import type { Emits, Props } from './types';
+import type {Emits, Props} from './types';
 
 const { modelValue } = defineProps<Props>();
 const emit = defineEmits<Emits>();

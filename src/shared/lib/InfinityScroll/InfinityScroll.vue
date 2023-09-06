@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useIntersectionObserver } from '@vueuse/core';
-import type { IInfinityScrollProps } from './types';
+import {ref} from 'vue';
+import {useIntersectionObserver} from '@vueuse/core';
+import type {IInfinityScrollProps} from './types';
 
 const { getData, updateData } = defineProps<IInfinityScrollProps>();
 

@@ -1,90 +1,39 @@
 <script setup lang="ts">
-import type { Emits, Props } from './types';
-import { InputFocusStates, InputStates } from './types';
-import WarningCircle from '@/shared/assets/icons/WarningCircleIcon.svg';
-import CloseIcon from '@/shared/assets/icons/CloseIcon.svg';
-import { ref } from 'vue';
-import { autoUpdate, flip, shift, useFloating } from '@floating-ui/vue';
-
-const reference = ref(null);
-const floating = ref(null);
-const { floatingStyles } = useFloating(reference, floating, {
-	middleware: [shift(), flip()],
-	whileElementsMounted: autoUpdate
-});
+import type {Emits, InputProps} from './types';
+import {InputFocusStates} from './types';
+import {ref} from 'vue';
+import HintPopupUI from "@/shared/ui/input-ui/ui/HintPopupUI.vue";
+import {useValidation} from "@/shared/ui/input-ui/lib/use-validation";
+import {useFieldStatus} from "@/shared/ui/input-ui/lib/use-field-status";
+import {useFieldFocusStatus} from "@/shared/ui/input-ui/lib/use-field-focus-status";
 
 const emit = defineEmits<Emits>();
 
-const { modelValue, label, hideText, showHint, validators, errors, placeholder } =
-	defineProps<Props>();
-const localErrors = ref<string[]>(errors || []);
+const { modelValue, label, hideText, showHint, validators, errors, placeholder } = defineProps<InputProps>();
 const inputValue = ref(modelValue || null);
-const inputStatus = ref<InputStates>();
-const inputFocusStatus = ref<InputFocusStates>();
-const showHintPopup = ref(false);
 
-const openHintPopup = () => {
-	showHintPopup.value = true;
-};
-
-const closeHintPopup = () => {
-	if (showHintPopup.value) {
-		showHintPopup.value = false;
-	}
-};
-
-const validate = (value: string | null) => {
-	localErrors.value = errors || [];
-
-	if (!validators) return;
-
-	for (let validator of validators) {
-		const validationResults = validator(value);
-
-		if (!validationResults) continue;
-
-		if (validationResults.errors) {
-			for (let error of validationResults.errors) {
-				localErrors.value.push(error);
-			}
-		}
-	}
-};
-
-const changeInputStatus = () => {
-	if (inputValue.value) {
-		if (inputValue.value && localErrors.value.length > 0) {
-			inputStatus.value = InputStates.ERROR;
-		} else {
-			inputStatus.value = InputStates.SUCCESSFUL;
-		}
-	} else {
-		inputStatus.value = InputStates.NONE;
-	}
-};
-
-const setInputFocusStatus = (state: InputFocusStates) => {
-	inputFocusStatus.value = state;
-};
+const validation = useValidation(validators, errors);
+const fieldStatus = useFieldStatus();
+const fieldFocusStatus = useFieldFocusStatus();
 
 const onChange = (value: string | null) => {
 	inputValue.value = value;
-	validate(value);
+	validation.validate(value);
 	emit('update:modelValue', value);
-	changeInputStatus();
+	fieldStatus.changeFieldStatus(value, validation.errors.value);
 };
 
 const onFocusOut = (value: string | null) => {
-	validate(value);
-	setInputFocusStatus(InputFocusStates.NONE);
+	validation.validate(value);
+	fieldFocusStatus.setFieldFocusStatus(InputFocusStates.NONE);
 };
 
 const onFocusIn = () => {
-	setInputFocusStatus(InputFocusStates.FOCUS);
+	fieldFocusStatus.setFieldFocusStatus(InputFocusStates.FOCUS);
 };
 
-validate(modelValue);
-changeInputStatus();
+validation.validate(modelValue);
+fieldStatus.changeFieldStatus(inputValue.value, validation.errors.value);
 </script>
 
 <template>
@@ -95,8 +44,8 @@ changeInputStatus();
 
 		<section
 			:class="$style.inputSection"
-			:data-status="inputStatus"
-			:data-focus-status="inputFocusStatus"
+			:data-status="fieldStatus.status"
+			:data-focus-status="fieldFocusStatus.status"
 		>
 			<input
 				:class="$style.input"
@@ -109,28 +58,12 @@ changeInputStatus();
 			/>
 
 			<div :class="$style.actionIcons">
-				<WarningCircle
-					:class="$style.hintIcon"
-					v-show="showHint"
-					ref="reference"
-					@click="openHintPopup"
-					v-outside-click="closeHintPopup"
-				/>
-				<CloseIcon :class="$style.clearIcon" @click="onChange('')" v-show="inputValue" />
-
-				<div
-					:class="$style.hintWrapper"
-					ref="floating"
-					:style="floatingStyles"
-					v-show="showHintPopup"
-				>
-					<slot name="hint"></slot>
-				</div>
+				<HintPopupUI v-show="showHint"/>
 			</div>
 		</section>
 
 		<section :class="$style.infoSection">
-			<span :class="$style.errorText" v-for="(error, index) in localErrors" :key="index">
+			<span :class="$style.errorText" v-for="(error, index) in validation.errors" :key="index">
 				{{ error }}
 			</span>
 		</section>
@@ -206,35 +139,6 @@ changeInputStatus();
 	justify-content: center;
 	align-items: center;
 	gap: 8px;
-}
-
-.hintIcon {
-	width: 16px;
-	height: 16px;
-	cursor: pointer;
-}
-.clearIcon {
-	width: 14px;
-	height: 14px;
-	cursor: pointer;
-}
-
-.hintWrapper {
-	margin: 4px;
-	padding: 12px;
-	display: flex;
-	justify-content: center;
-	align-items: start;
-	flex-direction: column;
-	width: 264px;
-	height: auto;
-	font: var(--font-small);
-	border-radius: var(--style-radius-10);
-	background-color: var(--color-gray-98);
-	border: 1px solid var(--color-gray-92);
-	color: var(--color-gray-22);
-	overflow: hidden;
-	z-index: 1000;
 }
 
 .actionsSection,

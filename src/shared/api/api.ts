@@ -1,4 +1,4 @@
-import type { ApiConfig, Delete, Get, Post, Put, Request } from './types';
+import type {ApiConfig, Delete, Get, Post, Put, Request} from './types';
 
 let apiConfig: ApiConfig | null = null;
 

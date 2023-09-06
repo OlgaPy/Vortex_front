@@ -9,22 +9,28 @@ export enum InputFocusStates {
 	FOCUS = 'focus'
 }
 
+export type FieldValueError = string;
+
 export type ValidationResult = {
-	errors: string[] | null;
-} | null;
+	errors: FieldValueError[] | null;
+};
 
 export type Validator = (value: string | null) => ValidationResult;
 
-export type Props = {
+export type Emits = {
+	(e: 'update:modelValue', value: string | null): void;
+};
+
+export type InputProps = {
 	modelValue: string;
 	label: string;
 	placeholder?: string;
 	hideText?: boolean;
 	showHint?: boolean;
 	validators?: Validator[];
-	errors?: string[];
+	errors?: FieldValueError[];
 };
 
-export type Emits = {
-	(e: 'update:modelValue', value: string | null): void;
+export type TextAreaProps = {
+	modelValue: string;
 };

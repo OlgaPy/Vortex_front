@@ -2,14 +2,17 @@
 import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue';
 import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
 import ImageField from "@/shared/ui/image-field/ImageField.vue";
-import TextareaUI from "@/shared/ui/textarea-ui/TextareaUI.vue";
+import TextareaUI from "@/shared/ui/input-ui/TextareaUI.vue";
+import {ref} from "vue";
+
+const value = ref('');
 </script>
 
 <template>
 	<main :class="$style.container">
 		<section :class="$style.postContent">
 			<ImageField/>
-			<TextareaUI :class="$style.textareaField"/>
+			<TextareaUI :class="$style.textareaField" v-model="value"/>
 		</section>
 		<section :class="$style.contentTypes">
 			<IconButtonUI>

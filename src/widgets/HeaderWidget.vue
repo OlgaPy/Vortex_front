@@ -4,7 +4,7 @@ import MenuIcon from '@/shared/assets/icons/MenuIcon.svg';
 import CloseMenu from '@/shared/assets/icons/CloseMenu.svg';
 import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
 import MegaphoneIcon from '@/shared/assets/icons/MegaphoneIcon.svg';
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
+import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
 import OnlyIconButtonUI from '@/shared/ui/icon-button-ui/OnlyIconButtonUI.vue';
 import OnlyIconEmptyButtonUI from '@/shared/ui/icon-button-ui/OnlyIconEmptyButtonUI.vue';
 

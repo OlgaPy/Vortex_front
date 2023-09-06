@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import InputUI from '@/shared/ui/input-ui/InputUI.vue';
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 const exampleValue = ref('exampleValue');
 const exampleEmptyValue = ref('');

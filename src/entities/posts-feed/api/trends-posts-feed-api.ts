@@ -1,5 +1,5 @@
 import {getLoremPost, getRandomNumber} from "../lib/get-lorem-post";
-import {MIN_POSTS_FETCH_DELAY, MAX_POSTS_FETCH_DELAY, POSTS_TO_LOAD} from "../config";
+import {MAX_POSTS_FETCH_DELAY, MIN_POSTS_FETCH_DELAY, POSTS_TO_LOAD} from "../config";
 import type {IPost} from "@/entities/post";
 
 export const getPosts = (): Promise<IPost[]> => {

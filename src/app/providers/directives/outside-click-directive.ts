@@ -1,4 +1,4 @@
-import type { Directive } from 'vue';
+import type {Directive} from 'vue';
 
 export default <Directive>{
 	mounted: function (el, binding) {

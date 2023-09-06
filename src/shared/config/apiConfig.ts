@@ -1,4 +1,4 @@
-import type { ApiConfig } from "../api/types";
+import type {ApiConfig} from "../api/types";
 
 export const apiConfig: ApiConfig = {
 	API_URL: '/v1',

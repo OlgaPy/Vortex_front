@@ -3,9 +3,9 @@ import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue'
 import TapeLinksWidget from '@/widgets/TapeLinksWidget.vue';
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
-import { useMobileNavigationStore } from '@/shared/stores/MobileNavigationStore';
+import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
 import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue';
-import HeaderHorizontalPanelUI from '@/shared/ui/HeaderHorizontalPanelUI.vue';
+import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
 
 const MobileNavigationStore = useMobileNavigationStore();
 </script>

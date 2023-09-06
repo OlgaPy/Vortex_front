@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import TextareaUI from '@/shared/ui/textarea-ui/TextareaUI.vue';
+import TextareaUI from '@/shared/ui/input-ui/TextareaUI.vue';
+import {ref} from "vue";
+
+const value = ref('');
 </script>
 
 <template>
@@ -7,9 +10,7 @@ import TextareaUI from '@/shared/ui/textarea-ui/TextareaUI.vue';
 		<label>Textarea</label>
 
 		<span>//TODO Textarea auto-sizing</span>
-		<TextareaUI>
-			<textarea></textarea>
-		</TextareaUI>
+		<TextareaUI v-model="value"/>
 	</fieldset>
 </template>
 

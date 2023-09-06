@@ -1,5 +1,5 @@
 import {defineStore} from 'pinia';
-import { ref } from 'vue';
+import {ref} from 'vue';
 import * as api from '../../api/trends-posts-feed-api';
 import type {IPost} from "@/entities/post";
 import type {AddPostsAction, GetNextPostsAction} from "@/entities/posts-feed/model/posts-feed-store/types";

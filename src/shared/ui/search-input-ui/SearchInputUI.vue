@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
-import type { ISearchInputUI } from './types';
+import type {ISearchInputUI} from './types';
 
 defineProps<ISearchInputUI>();
 const emit = defineEmits(['update:modelValue']);

@@ -1,12 +1,12 @@
-import { v4 as uuid } from 'uuid';
-import type { IPost } from '@/entities/posts-feed/model/posts-feed-store';
+import {v4 as uuid} from 'uuid';
+import type {IPost} from '@/entities/posts-feed/model/posts-feed-store';
 import {
     CUT_OFF_LOREM_MAX,
     CUT_OFF_LOREM_MIN,
     LOREM_TEXT,
     LOREM_TITLE,
-    MIN_POST_RATING,
-    MAX_POST_RATING
+    MAX_POST_RATING,
+    MIN_POST_RATING
 } from '../config';
 
 export const getRandomNumber = (min: number, max: number) => {
