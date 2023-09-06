@@ -7,5 +7,5 @@ export type PreviewPostProps = {
 };
 
 export type PostPreviewFooterProps = {
-    rating: string
+    rating: number
 }

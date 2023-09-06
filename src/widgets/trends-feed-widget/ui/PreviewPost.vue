@@ -17,7 +17,7 @@ const { post, showFooter, showProfile } = defineProps<PreviewPostProps>();
     <template #header>
       <ProfilePreviewUI>
         <template #subTitle="{ class: className }">
-          <span :class="className">30 августа 2022 в 15:36</span>
+          <span :class="className">{{ post.created_at }}</span>
         </template>
       </ProfilePreviewUI>
     </template>
