@@ -5,16 +5,18 @@ import { SearchInputUI } from '@/shared/ui/search-input-ui';
 <template>
 	<div :class="$style.container">
 		<section :class="`${$style.section} ${$style.logoSection}`">
-			<img
-				:class="[$style.logo, $style.darkLogo]"
-				src="./img/dark-color-logo.svg"
-				alt="Капибара лого"
-			/>
-			<img
-				:class="[$style.logo, $style.lightLogo]"
-				src="./img/white-color-logo.svg"
-				alt="Капибара лого"
-			/>
+			<router-link to="/">
+				<img
+					:class="[$style.logo, $style.darkLogo]"
+					src="./img/dark-color-logo.svg"
+					alt="Капибара лого"
+				/>
+				<img
+					:class="[$style.logo, $style.lightLogo]"
+					src="./img/white-color-logo.svg"
+					alt="Капибара лого"
+				/>
+			</router-link>
 		</section>
 		<section :class="`${$style.section} ${$style.menuSection}`">
 			<router-link to="/" :active-class="$style.activeLink">Тренды</router-link>
