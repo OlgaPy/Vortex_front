@@ -8,12 +8,14 @@ enum PostStatusEnum {
 
 export interface IContentItem {
     type: 'text' | 'img' | 'video';
-    value: string;
+    value: string | null;
 }
+
+export type PostContent = Record<number, IContentItem>;
 
 export interface ICorePost {
     title: string;
-    content: Record<number, IContentItem>;
+    content: PostContent;
     tags: string[];
 }
 

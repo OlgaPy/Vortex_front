@@ -21,4 +21,8 @@
 	border: 1px solid var(--color-gray-92);
 	border-radius: var(--style-radius-5);
 }
+.container:hover {
+  border-color: var(--color-primary-1);
+  background-color: unset;
+}
 </style>

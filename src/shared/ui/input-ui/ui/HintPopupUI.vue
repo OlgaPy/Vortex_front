@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import WarningCircle from "@/shared/assets/icons/WarningCircleIcon.svg";
-import CloseIcon from "@/shared/assets/icons/CloseIcon.svg";
-import {ref} from "vue/dist/vue";
+import {ref} from "vue";
 import {autoUpdate, flip, shift, useFloating} from "@floating-ui/vue";
 
 const reference = ref(null);
@@ -32,7 +31,6 @@ const closeHintPopup = () => {
 			@click="openHintPopup"
 			v-outside-click="closeHintPopup"
 		/>
-		<CloseIcon :class="$style.clearIcon" @click="onChange('')" v-show="inputValue" />
 
 		<div
 			:class="$style.hintWrapper"

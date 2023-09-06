@@ -1,10 +1,10 @@
 import {ref} from "vue";
-import {InputFocusStates} from "../types";
+import type {FieldFocusStates} from "../types";
 
 export const useFieldFocusStatus = () => {
-	const status = ref<InputFocusStates>();
+	const status = ref<FieldFocusStates>();
 
-	const setFieldFocusStatus = (newStatus: InputFocusStates) => {
+	const setFieldFocusStatus = (newStatus: FieldFocusStates) => {
 		status.value = newStatus;
 	};
 

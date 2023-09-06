@@ -1,43 +1,64 @@
 <script setup lang="ts">
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import TrashIcon from "@/shared/assets/icons/TrashIcon.svg";
 import ReloadIcon from "@/shared/assets/icons/ReloadIcon.svg";
 import IconTextButtonUI from "@/shared/ui/icon-button-ui/IconTextButtonUI.vue";
-import type {ImageFieldEmits} from "./types";
+import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
+import type {ImageFieldEmits, ImageFieldProps} from "@/shared/ui/image-field/types";
 
 const emits = defineEmits<ImageFieldEmits>();
+const props = defineProps<ImageFieldProps>();
 
 const fileInput = ref();
-const previewImage = ref(null);
+const previewImage = ref(props.src || undefined);
 
 const uploadImage = (e: Event) => {
-	const field = e.target as HTMLInputElement;
+  //TODO Fuck HTML Types
+  const field = e.target as HTMLInputElement;
+
+  if (!field.files) {
+    return;
+  }
+
 	const image = field.files[0];
 	const reader = new FileReader();
 
 	reader.readAsDataURL(image);
-	reader.onload = e => {
-		previewImage.value = e.target.result;
+	reader.onload = () => {
+		previewImage.value = reader.result;
 	};
 }
 
 const removeImage = () => {
-  previewImage.value = null;
+  previewImage.value = undefined;
   emits('imageRemoved');
 };
+
+onMounted(() => {
+  if (props.openImmediately && !previewImage.value) {
+    fileInput.value.click();
+  }
+});
 </script>
 
 <template>
-	<div :class="$style.container">
-		<input type="file" accept="image/jpeg" @change=uploadImage ref="fileInput">
-		<img v-show="previewImage" :src="previewImage" alt="Загруженное изображение" />
+	<div :class="$style.container" v-show="!(props.openImmediately && !previewImage)">
+		<input :class="$style.input" type="file" accept="image/jpeg" @change=uploadImage ref="fileInput">
+		<img v-if="previewImage" :src="previewImage" alt="Загруженное изображение" />
+    <ButtonUI
+        :class="$style.loadImageButton"
+        v-if="!previewImage"
+        @click="fileInput.click()"
+    >
+      Загрузить изображение
+    </ButtonUI>
     <div :class="$style.actions">
       <IconTextButtonUI :class="$style.actionButton" @click="removeImage">
         <template #left-icon>
           <TrashIcon :class="$style.actionIcon"/>
         </template>
       </IconTextButtonUI>
-      <IconTextButtonUI :class="$style.actionButton" @click="fileInput.click()">
+      <IconTextButtonUI :class="$style.actionButton" @click="fileInput.click()" v-show="previewImage">
         <template #left-icon>
           <ReloadIcon :class="$style.actionIcon"/>
         </template>
@@ -53,11 +74,21 @@ const removeImage = () => {
 	justify-content: center;
 	width: 100%;
 	max-width: 100%;
-  height: 150px;
+  border-radius: var(--style-radius-5);
+  background-color: var(--color-gray-98);
 }
+
+.input {
+  display: none;
+}
+
 .container img {
 	width: 100%;
 	max-width: 100%;
+}
+
+.loadImageButton {
+  margin: 16px;
 }
 
 .actions {
@@ -76,6 +107,7 @@ const removeImage = () => {
   opacity: 0.6;
   background-color: var(--color-gray-89);
   border: var(--style-radius-10);
+  border-radius: var(--style-radius-10);
 }
 .actionButton:hover {
   opacity: 1;

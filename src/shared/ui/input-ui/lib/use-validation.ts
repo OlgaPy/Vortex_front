@@ -1,8 +1,12 @@
-import {ref} from "vue/dist/vue";
-import {FieldValueError, Validator} from "../types";
+import {ref} from "vue";
+import type {FieldValueError, Validator} from "../types";
 
 export const useValidation = (validators?: Validator[], startErrors?: FieldValueError[]) => {
 	const errors = ref<FieldValueError[]>(startErrors || []);
+
+	const hasErrors = () => {
+		return errors.value.length > 0;
+	};
 
 	const validate = (value: string | null) => {
 		errors.value = startErrors || [];
@@ -24,5 +28,5 @@ export const useValidation = (validators?: Validator[], startErrors?: FieldValue
 		}
 	};
 
-	return {errors, validate};
+	return {errors, validate, hasErrors};
 };

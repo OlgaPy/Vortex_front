@@ -1,10 +1,10 @@
-export enum InputStates {
+export enum FieldStates {
 	NONE = '',
 	ERROR = 'error',
 	SUCCESSFUL = 'successful'
 }
 
-export enum InputFocusStates {
+export enum FieldFocusStates {
 	NONE = '',
 	FOCUS = 'focus'
 }
@@ -19,6 +19,7 @@ export type Validator = (value: string | null) => ValidationResult;
 
 export type Emits = {
 	(e: 'update:modelValue', value: string | null): void;
+	(e: 'removeValue'): void;
 };
 
 export type InputProps = {
@@ -32,5 +33,5 @@ export type InputProps = {
 };
 
 export type TextAreaProps = {
-	modelValue: string;
+	modelValue: string | null;
 };

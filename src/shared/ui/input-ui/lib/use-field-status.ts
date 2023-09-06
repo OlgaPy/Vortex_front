@@ -1,20 +1,21 @@
 import {ref} from "vue";
-import {FieldValueError, InputStates} from "../types";
+import type {FieldValueError} from "../types";
+import {FieldStates} from "../types";
 
 export const useFieldStatus = () => {
-	const fieldStatus = ref<InputStates>();
+	const status = ref<FieldStates>();
 
 	const changeFieldStatus = (value: string | null, errors: FieldValueError[]) => {
 		if (value) {
 			if (errors.length > 0) {
-				fieldStatus.value = InputStates.ERROR;
+				status.value = FieldStates.ERROR;
 			} else {
-				fieldStatus.value = InputStates.SUCCESSFUL;
+				status.value = FieldStates.SUCCESSFUL;
 			}
 		} else {
-			fieldStatus.value = InputStates.NONE;
+			status.value = FieldStates.NONE;
 		}
 	};
 
-	return { fieldStatus, changeFieldStatus };
+	return { status, changeFieldStatus };
 };

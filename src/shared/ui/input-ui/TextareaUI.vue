@@ -25,6 +25,7 @@ const onChange = (value: string | null) => {
 const onRemove = () => {
 	textAreaValue.value = '';
 	emit('update:modelValue', textAreaValue.value);
+	emit('removeValue');
 }
 </script>
 
@@ -66,16 +67,20 @@ const onRemove = () => {
 
 .clearBtn {
 	position: absolute;
-	top: 8px;
-	right: 8px;
+	top: 12px;
+	right: 12px;
 	width: 32px;
 	height: 32px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: var(--style-radius-10);
-	background-color: #e4e4e488;
+	background-color: var(--color-gray-89);
+  opacity: 0.6;
 	z-index: 1;
+}
+.clearBtn:hover {
+  opacity: 1;
 }
 
 .trashIcon {

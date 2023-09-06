@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import type {Emits, InputProps} from './types';
-import {InputFocusStates} from './types';
+import {FieldFocusStates} from './types';
 import {ref} from 'vue';
 import HintPopupUI from "@/shared/ui/input-ui/ui/HintPopupUI.vue";
 import {useValidation} from "@/shared/ui/input-ui/lib/use-validation";
 import {useFieldStatus} from "@/shared/ui/input-ui/lib/use-field-status";
 import {useFieldFocusStatus} from "@/shared/ui/input-ui/lib/use-field-focus-status";
+import CloseIcon from "@/shared/assets/icons/CloseIcon.svg";
 
 const emit = defineEmits<Emits>();
 
@@ -25,15 +26,15 @@ const onChange = (value: string | null) => {
 
 const onFocusOut = (value: string | null) => {
 	validation.validate(value);
-	fieldFocusStatus.setFieldFocusStatus(InputFocusStates.NONE);
+	fieldFocusStatus.setFieldFocusStatus(FieldFocusStates.NONE);
 };
 
 const onFocusIn = () => {
-	fieldFocusStatus.setFieldFocusStatus(InputFocusStates.FOCUS);
+	fieldFocusStatus.setFieldFocusStatus(FieldFocusStates.FOCUS);
 };
 
 validation.validate(modelValue);
-fieldStatus.changeFieldStatus(inputValue.value, validation.errors.value);
+fieldStatus.changeFieldStatus(modelValue, validation.errors.value);
 </script>
 
 <template>
@@ -58,11 +59,14 @@ fieldStatus.changeFieldStatus(inputValue.value, validation.errors.value);
 			/>
 
 			<div :class="$style.actionIcons">
-				<HintPopupUI v-show="showHint"/>
+        <HintPopupUI v-show="showHint">
+          <template #hint><slot name="hint"></slot></template>
+        </HintPopupUI>
+        <CloseIcon :class="$style.clearIcon" @click="onChange('')" v-show="inputValue" />
 			</div>
 		</section>
 
-		<section :class="$style.infoSection">
+		<section :class="$style.infoSection" v-show="validation.hasErrors()">
 			<span :class="$style.errorText" v-for="(error, index) in validation.errors" :key="index">
 				{{ error }}
 			</span>

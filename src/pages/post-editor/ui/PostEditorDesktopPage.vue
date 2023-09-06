@@ -7,7 +7,7 @@ import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
 import PostEditorFooter from '@/pages/post-editor/ui/PostEditorFooter.vue';
 import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue';
 import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
-import PostEditor from '@/widgets/post-editor/PostContenEditorWidget.vue';
+import PostEditor from '@/widgets/post-editor/PostContentEditorWidget.vue';
 import PostEditorHeader from '@/pages/post-editor/ui/PostEditorHeader.vue';
 </script>
 
