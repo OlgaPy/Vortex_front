@@ -4,40 +4,19 @@ import ChangePostRating from '@/features/ChangePostRating.vue';
 import CommentsLinkUI from '@/widgets/trends-feed-widget/ui/CommentsLink.vue';
 import SavePostToFavorites from '@/features/SavePostToFavorites.vue';
 import { useInvertedPostActions } from '@/shared/stores/UserSettingsStore';
-import type {PostPreviewFooterProps} from "./types";
+import type {PostPreviewActionsFeatureProps} from "@/features/post-preview-actions-feature/types";
 
-const { rating } = defineProps<PostPreviewFooterProps>();
+const { rating } = defineProps<PostPreviewActionsFeatureProps>();
 const inverted = useInvertedPostActions();
 </script>
 
 <template>
-	<div
-		:class="[
-			$style.container,
-			{
-				[$style.actionsInverted]: inverted
-			}
-		]"
-	>
-		<div
-			:class="[
-				$style.leftSection,
-				{
-					[$style.actionsInverted]: inverted
-				}
-			]"
-		>
+	<div :class="[$style.container, {[$style.actionsInverted]: inverted }]">
+		<div :class="[$style.leftSection, { [$style.actionsInverted]: inverted }]">
 			<ChangePostRating :rating="rating" :class="$style.ratingChanger" />
 			<CommentsLinkUI />
 		</div>
-		<div
-			:class="[
-				$style.rightSection,
-				{
-					[$style.actionsInverted]: inverted
-				}
-			]"
-		>
+		<div :class="[$style.rightSection, { [$style.actionsInverted]: inverted }]">
 			<SavePostToFavorites />
 			<SharePost />
 		</div>

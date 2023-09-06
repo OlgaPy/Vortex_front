@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import PostsFeed from '@/entities/posts-feed/ui/PostsFeed.vue';
 import ShowViewedPosts from '@/features/ShowViewedPosts.vue';
 import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
-import { PostsContainer } from '@/widgets/trends-feed-widget';
+import {PostPreviewActionsFeature} from "@/features/post-preview-actions-feature";
+import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
+import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
+import TagsList from "@/entities/tag/ui/TagsList.vue";
+import {usePostsFeedStore} from "@/entities/posts-feed/model/posts-feed-store";
+
+const postsStore = usePostsFeedStore();
+const {addPosts, getNextPosts} = postsStore;
 </script>
 
 <template>
@@ -10,7 +18,27 @@ import { PostsContainer } from '@/widgets/trends-feed-widget';
 			<ShowViewedPosts :class="$style.showViewedPosts" />
 		</header>
 		<main :class="[$style.feed, 'color-bg-base-bg']">
-			<PostsContainer />
+			<PostsFeed :posts="postsStore.posts" :addPosts="addPosts" :getNextPosts="getNextPosts">
+				<template #post="{post}">
+					<PreviewPostUI :key="post.uuid" :post="post" :show-profile="true" :show-footer="true">
+						<template #header>
+							<ProfilePreviewUI>
+								<template #subTitle="{ class: className }">
+									<span :class="className">{{ post.created_at }}</span>
+								</template>
+							</ProfilePreviewUI>
+						</template>
+
+						<template #tags>
+							<TagsList :tags="post.tags"/>
+						</template>
+
+						<template #footer>
+							<PostPreviewActionsFeature :rating="post.rating"/>
+						</template>
+					</PreviewPostUI>
+				</template>
+			</PostsFeed>
 		</main>
 	</MobileMainBlockUI>
 </template>

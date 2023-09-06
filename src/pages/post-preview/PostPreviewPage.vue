@@ -5,7 +5,7 @@ import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import BlockUI from "@/shared/ui/block-ui/BlockUI.vue";
-import { PostPreviewFooter } from '@/widgets/trends-feed-widget';
+import PostPreviewActionsFeature from "@/features/post-preview-actions-feature/PostPreviewActionsFeature.vue";
 
 //TODO
 const mockPost: ICorePost = {
@@ -25,9 +25,7 @@ const mockPost: ICorePost = {
         <p>Так будет выглядеть ваш пост, внимательно проверьте его.</p>
       </BlockUI>
 
-      <PreviewPostUI
-          :post="mockPost"
-      >
+      <PreviewPostUI :post="mockPost">
         <template #header>
           <ProfilePreviewUI>
             <template #subTitle="{ class: className }">
@@ -41,7 +39,7 @@ const mockPost: ICorePost = {
         </template>
 
         <template #footer>
-          <PostPreviewFooter :rating="0"/>
+          <PostPreviewActionsFeature rating="0"/>
         </template>
       </PreviewPostUI>
 		</template>

@@ -5,7 +5,3 @@ export type PreviewPostProps = {
     showFooter: boolean | true,
     showProfile: boolean | true,
 };
-
-export type PostPreviewFooterProps = {
-    rating: number
-}

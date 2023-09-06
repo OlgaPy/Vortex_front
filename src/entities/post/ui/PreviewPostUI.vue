@@ -87,32 +87,32 @@ const {post, showProfile, showFooter} = withDefaults(
 
 .contentWrapper,
 .mediaWrapper {
-  width: 100%;
+	width: 100%;
 }
 
 .postProfile {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 8px;
-  height: 36px;
-  width: 100%;
-  border: 1px solid var(--color-gray-22);
-  color: var(--color-gray-22);
-  font: var(--font-text);
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 8px;
+	height: 36px;
+	width: 100%;
+	border: 1px solid var(--color-gray-22);
+	color: var(--color-gray-22);
+	font: var(--font-text);
 }
 
 .postImage {
-  max-width: 100%;
-  width: 100%;
+	max-width: 100%;
+	width: 100%;
 }
 
 .mediaWrapper {
-  padding: 0;
+	padding: 0;
 }
 
 .content {
-  padding: 0 30px;
+	padding: 0 30px;
 }
 
 .footer {
@@ -138,6 +138,11 @@ const {post, showProfile, showFooter} = withDefaults(
 	.header,
 	.footer {
 		padding: 0 30px;
+	}
+
+	.mediaWrapper,
+	.content {
+		padding: 0 12px;
 	}
 }
 </style>
