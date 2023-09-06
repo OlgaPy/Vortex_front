@@ -1,12 +1,18 @@
-import type { Delete, Get, Post, Put, Request } from './types';
+import type { ApiConfig, Delete, Get, Post, Put, Request } from './types';
 
-export const API_URL = '/v1';
+let apiConfig: ApiConfig | null = null;
+
+export const setApiConfig = (config: ApiConfig) => {
+	apiConfig = config;
+}
 
 const refreshTokens = async () => {
+	if (!apiConfig) throw new Error('Api config not provided')
+
 	const refreshToken = localStorage.getItem('refresh');
 
 	if (refreshToken) {
-		const response: Response = await post('/token/refresh', {
+		const response: Response = await post(apiConfig.TOKEN_REFRESH_PATH, {
 			refresh: localStorage.getItem('refresh')
 		});
 
@@ -23,13 +29,15 @@ const refreshTokens = async () => {
 };
 
 const request: Request = async (url, params, method) => {
+	if (!apiConfig) throw new Error('Api config not provided')
+
 	const accessToken = localStorage.getItem('access');
 	const options: RequestInit = {
 		method,
 		// credentials: "include",
 		headers: {
 			'Content-Type': 'application/json',
-			Authorization: `Bearer ${accessToken}`
+			Authorization: accessToken ? apiConfig.authHeader(accessToken) : ''
 		}
 	};
 
@@ -41,7 +49,7 @@ const request: Request = async (url, params, method) => {
 		}
 	}
 
-	const response = await fetch(API_URL + url, options);
+	const response = await fetch(apiConfig.API_URL + url, options);
 
 	if (response.status === 401) {
 		await refreshTokens();
