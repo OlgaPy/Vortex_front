@@ -45,8 +45,8 @@ fieldStatus.changeFieldStatus(modelValue, validation.errors.value);
 
 		<section
 			:class="$style.inputSection"
-			:data-status="fieldStatus.status"
-			:data-focus-status="fieldFocusStatus.status"
+			:data-status="fieldStatus.status.value"
+			:data-focus-status="fieldFocusStatus.status.value"
 		>
 			<input
 				:class="$style.input"
@@ -66,8 +66,8 @@ fieldStatus.changeFieldStatus(modelValue, validation.errors.value);
 			</div>
 		</section>
 
-		<section :class="$style.infoSection" v-show="validation.hasErrors()">
-			<span :class="$style.errorText" v-for="(error, index) in validation.errors" :key="index">
+		<section :class="$style.infoSection">
+			<span :class="$style.errorText" v-for="(error, index) in validation.errors.value" :key="index">
 				{{ error }}
 			</span>
 		</section>
