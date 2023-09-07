@@ -5,7 +5,6 @@ import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import BlockUI from "@/shared/ui/block-ui/BlockUI.vue";
-import PostPreviewActionsFeature from "@/widgets/trends-feed-widget/ui/PostPreviewFooter.vue";
 
 //TODO
 const mockPost: ICorePost = {
@@ -36,10 +35,6 @@ const mockPost: ICorePost = {
 
         <template #tags>
           <TagsList :tags="mockPost.tags"/>
-        </template>
-
-        <template #footer>
-          <PostPreviewActionsFeature rating="0"/>
         </template>
       </PreviewPostUI>
 		</template>

@@ -32,6 +32,7 @@ export const getLoremPost = (): IPost => {
     return {
         uuid: uuid(),
         title: getLoremTitle(),
+		created_at: '30 августа 2022 в 15:36',
         content: {
             0: {
                 type: 'text',
@@ -39,6 +40,6 @@ export const getLoremPost = (): IPost => {
             }
         },
         tags: getLoremTags(),
-        rating: getRandomNumber(MIN_POST_RATING, MAX_POST_RATING)
+        rating: getRandomNumber(MIN_POST_RATING, MAX_POST_RATING),
     };
 };

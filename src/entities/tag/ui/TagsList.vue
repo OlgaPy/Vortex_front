@@ -15,5 +15,6 @@ const { tags } = defineProps<{ tags: String[] }>();
 	align-items: center;
 	gap: 10px;
 	width: 100%;
+	font: var(--font-small);
 }
 </style>

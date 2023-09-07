@@ -35,17 +35,21 @@ const {getNextPosts, addPosts} = props;
 .container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 32px;
 }
 
 .loader {
   padding: 10px;
   color: var(--color-gray-14);
+	border-radius: var(--style-radius-10);
 }
 
-@media screen and (min-width: $screen-lg) {
+@media screen and (max-width: $screen-md) {
+	.container {
+		gap: 10px;
+	}
   .loader {
-    border-radius: var(--style-radius-10);
+    border-radius: unset;
   }
 }
 </style>

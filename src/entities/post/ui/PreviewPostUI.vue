@@ -2,8 +2,8 @@
 import type {PreviewPostProps} from './types';
 
 const {post, showProfile, showFooter} = withDefaults(
-    defineProps<PreviewPostProps>(),
-    { showFooter: true, showProfile: true }
+	defineProps<PreviewPostProps>(),
+	{showFooter: true, showProfile: true}
 );
 </script>
 
@@ -14,23 +14,26 @@ const {post, showProfile, showFooter} = withDefaults(
 		</header>
 
 		<main :class="$style.main">
-			<h1 class="font-title">{{ post.title }}</h1>
-			<span class="font-smaller"><slot name="tags"></slot></span>
-			<div :class="[$style.body, 'font-text']">
+			<div :class="$style.title">
+				<h1 class="font-title">{{ post.title }}</h1>
+				<span class="font-smaller"><slot name="tags"></slot></span>
+			</div>
 
-        <!-- TODO check render for different content types -->
-        <div v-for="({ type, value }, index) in post.content" :key="index" :class="$style.contentWrapper">
-          <div v-if="type === 'img'" :class="$style.mediaWrapper">
-            <img :src="value" :class="$style.postImage" alt="Post Image" />
-          </div>
-          <div v-else :class="$style.content">
-					<span>
-						{{ value }}
-					</span>
-          </div>
-        </div>
+			<!-- TODO check render for different content types -->
+			<div
+				:class="[$style.content, 'font-text']"
+				v-for="({ type, value }, index) in post.content"
+				:key="index"
+			>
 
-      </div>
+				<div v-if="type === 'img'" :class="$style.imageItem">
+					<img :src="value? value : ''" alt="Post Image"/>
+				</div>
+				<p v-else :class="$style.textItem">
+					{{ value }}
+				</p>
+
+			</div>
 		</main>
 
 		<footer v-show="showFooter" :class="$style.footer">
@@ -46,11 +49,13 @@ const {post, showProfile, showFooter} = withDefaults(
 	align-items: start;
 	flex-direction: column;
 	width: 100%;
-	gap: 20px;
-	padding: 20px 0;
+	gap: 16px;
+	padding: 32px 0;
+	border-radius: var(--style-radius-10);
 }
 
 .header {
+	padding: 0 24px;
 	display: flex;
 	justify-content: center;
 	align-items: start;
@@ -63,59 +68,39 @@ const {post, showProfile, showFooter} = withDefaults(
 	justify-content: center;
 	align-items: start;
 	flex-direction: column;
-	gap: 12px;
+	gap: 16px;
 	color: var(--color-gray-14);
 }
 
-.body {
+.title {
+	padding: 0 24px;
 	display: flex;
 	justify-content: center;
 	align-items: start;
 	flex-direction: column;
-	gap: 10px;
+	gap: 12px;
 }
 
-.main > *,
-.header,
-.footer {
-	padding: 0 12px;
-}
-
-.main .body {
-	padding: 0;
-}
-
-.contentWrapper,
-.mediaWrapper {
-	width: 100%;
-}
-
-.postProfile {
+.content {
 	display: flex;
-	justify-content: start;
-	align-items: center;
-	gap: 8px;
-	height: 36px;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
 	width: 100%;
-	border: 1px solid var(--color-gray-22);
-	color: var(--color-gray-22);
-	font: var(--font-text);
+	gap: 16px;
 }
 
-.postImage {
+.imageItem {
 	max-width: 100%;
 	width: 100%;
 }
 
-.mediaWrapper {
-	padding: 0;
-}
-
-.content {
-	padding: 0 30px;
+.textItem {
+	padding: 0 24px;
 }
 
 .footer {
+	padding: 24px 24px 0 24px;
 	display: flex;
 	justify-content: center;
 	align-items: start;
@@ -124,25 +109,17 @@ const {post, showProfile, showFooter} = withDefaults(
 	border-top: 1px solid var(--color-base-bg);
 	color: var(--color-gray-53);
 }
-.footer > * {
-	padding: 16px 12px;
-}
 
-@media screen and (min-width: $screen-lg) {
+@media screen and (max-width: $screen-sm) {
 	.container {
-		border-radius: var(--style-radius-10);
-		padding: 30px 0;
+		padding: 20px 0 0 0;
+		border-radius: 0;
 	}
-
-	.main > *,
-	.header,
+	.main {
+		gap: 12px;
+	}
 	.footer {
-		padding: 0 30px;
-	}
-
-	.mediaWrapper,
-	.content {
-		padding: 0 12px;
+		padding: 16px 20px;
 	}
 }
 </style>

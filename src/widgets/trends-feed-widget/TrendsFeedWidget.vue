@@ -1,57 +1,61 @@
 <script setup lang="ts">
 import PostsFeed from '@/entities/posts-feed/ui/PostsFeed.vue';
 import ShowViewedPosts from '@/features/ShowViewedPosts.vue';
+import PostPreviewFooter from "@/widgets/trends-feed-widget/ui/PostPreviewFooter.vue";
 import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
-import {PostPreviewActionsFeature} from "@/features/post-preview-actions-feature";
 import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
 import {usePostsFeedStore} from "@/entities/posts-feed/model/posts-feed-store";
+import {storeToRefs} from "pinia";
 
 const postsStore = usePostsFeedStore();
 const {addPosts, getNextPosts} = postsStore;
+const {posts} = storeToRefs(postsStore);
 </script>
 
 <template>
-	<MobileMainBlockUI>
-		<header :class="$style.header">
-			<ShowViewedPosts :class="$style.showViewedPosts" />
-		</header>
-		<main :class="[$style.feed, 'color-bg-base-bg']">
-			<PostsFeed :posts="postsStore.posts" :addPosts="addPosts" :getNextPosts="getNextPosts">
-				<template #post="{post}">
-					<PreviewPostUI :key="post.uuid" :post="post" :show-profile="true" :show-footer="true">
-						<template #header>
-							<ProfilePreviewUI>
-								<template #subTitle="{ class: className }">
-									<span :class="className">{{ post.created_at }}</span>
-								</template>
-							</ProfilePreviewUI>
-						</template>
+	<MobileMainBlockUI :class="$style.container">
+		<ShowViewedPosts :class="$style.showViewedPosts" />
+		<PostsFeed :posts="posts" :addPosts="addPosts" :getNextPosts="getNextPosts">
+			<template #post="{post}">
+				<PreviewPostUI :key="post.uuid" :post="post" :show-profile="true" :show-footer="true">
+					<template #header>
+						<ProfilePreviewUI>
+							<template #subTitle="{ class: className }">
+								<span :class="className">{{ post.created_at }}</span>
+							</template>
+						</ProfilePreviewUI>
+					</template>
 
-						<template #tags>
-							<TagsList :tags="post.tags"/>
-						</template>
+					<template #tags>
+						<TagsList :tags="post.tags"/>
+					</template>
 
-						<template #footer>
-							<PostPreviewActionsFeature :rating="post.rating"/>
-						</template>
-					</PreviewPostUI>
-				</template>
-			</PostsFeed>
-		</main>
+					<template #footer>
+						<PostPreviewFooter :rating="post.rating"/>
+					</template>
+				</PreviewPostUI>
+			</template>
+		</PostsFeed>
 	</MobileMainBlockUI>
 </template>
 
 <style module lang="scss">
+.container {
+	padding-top: 32px;
+	align-items: start;
+	gap: 32px;
+}
+
 .header {
 	display: flex;
 	justify-content: start;
 	width: 100%;
-	padding: 16px 0;
 }
+
 .showViewedPosts {
-	padding: 4px 12px;
+	padding: 0 12px;
 	font: var(--font-small);
 }
 
@@ -64,9 +68,11 @@ const {addPosts, getNextPosts} = postsStore;
 	gap: 10px;
 }
 
-@media screen and (min-width: $screen-lg) {
-	.showViewedPosts {
-		padding: 4px 0;
+@media screen and (max-width: $screen-md) {
+	.container {
+		padding-top: 12px;
+		align-items: start;
+		gap: 12px;
 	}
 }
 </style>

@@ -28,7 +28,7 @@ useIntersectionObserver(loadingEl, async ([{ isIntersecting }]) => {
 
 <template>
 	<div :class="$style.container">
-		<slot name="content" />
+		<slot name="content"/>
 		<div :class="$style.loaderContainer">
 			<div v-if="!loadingEnded" ref="loadingEl">
 				<slot name="loader" />
@@ -42,12 +42,16 @@ useIntersectionObserver(loadingEl, async ([{ isIntersecting }]) => {
 
 <style module>
 .container {
-	font: var(--font-text);
-	padding: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
 }
 .loaderContainer {
 	padding: 10px;
 	text-align: center;
 	margin-top: 20px;
+	font: var(--font-text);
 }
 </style>

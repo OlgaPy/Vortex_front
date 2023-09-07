@@ -10,6 +10,7 @@
 .container {
 	position: sticky;
 	display: flex;
+	flex-wrap: wrap;
 	top: 0;
 	left: 0;
 	width: 100%;

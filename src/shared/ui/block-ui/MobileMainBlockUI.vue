@@ -21,4 +21,10 @@
 		padding: 12px;
 	}
 }
+
+@media screen and (max-width: $screen-sm) {
+	.container {
+		padding: 0;
+	}
+}
 </style>
