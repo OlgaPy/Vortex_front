@@ -5,7 +5,7 @@ import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import BlockUI from "@/shared/ui/block-ui/BlockUI.vue";
-import PostPreviewActionsFeature from "@/features/post-preview-actions-feature/PostPreviewActionsFeature.vue";
+import PostPreviewActionsFeature from "@/widgets/trends-feed-widget/ui/PostPreviewFooter.vue";
 
 //TODO
 const mockPost: ICorePost = {

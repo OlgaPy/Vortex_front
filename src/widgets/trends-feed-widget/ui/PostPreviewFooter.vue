@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import SharePost from '@/features/SharePost.vue';
-import ChangePostRating from '@/features/ChangePostRating.vue';
-import CommentsLinkUI from '@/widgets/trends-feed-widget/ui/CommentsLink.vue';
-import SavePostToFavorites from '@/features/SavePostToFavorites.vue';
-import {useInvertedPostActions} from '@/shared/stores/UserSettingsStore';
-import type {PostPreviewActionsFeatureProps} from "@/features/post-preview-actions-feature/types";
+import ChangePostRating from "@/features/ChangePostRating.vue";
+import {useInvertedPostActions} from "@/shared/stores/UserSettingsStore";
+import CommentsLink from "@/widgets/trends-feed-widget/ui/CommentsLink.vue";
+import SavePostToFavorites from "@/features/SavePostToFavorites.vue";
+import SharePost from "@/features/SharePost.vue";
+import type {PostPreviewFooterProps} from "@/widgets/trends-feed-widget/ui/types";
 
-const { rating } = defineProps<PostPreviewActionsFeatureProps>();
+const { rating } = defineProps<PostPreviewFooterProps>();
 const inverted = useInvertedPostActions();
 </script>
 
@@ -14,7 +14,7 @@ const inverted = useInvertedPostActions();
 	<div :class="[$style.container, {[$style.actionsInverted]: inverted }]">
 		<div :class="[$style.leftSection, { [$style.actionsInverted]: inverted }]">
 			<ChangePostRating :rating="rating" :class="$style.ratingChanger" />
-			<CommentsLinkUI />
+			<CommentsLink />
 		</div>
 		<div :class="[$style.rightSection, { [$style.actionsInverted]: inverted }]">
 			<SavePostToFavorites />
