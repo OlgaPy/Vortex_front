@@ -22,6 +22,11 @@ export const routes = [
 		component: () => import('@/pages/auth/AuthPage.vue')
 	},
 	{
+		path: '/signup',
+		name: 'Регистрация',
+		component: () => import('@/pages/signup/SignupPage.vue')
+	},
+	{
 		path: '/post-published',
 		name: 'Пост опубликован',
 		component: () => import('@/pages/post-published/PostPublishedPage.vue')
