@@ -5,7 +5,7 @@ import PostsFeed from '@/entities/posts-feed/ui/PostsFeed.vue';
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
 import ShowViewedPosts from '@/features/ShowViewedPosts.vue';
-import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
+import MobileCentralColumn from '@/shared/ui/block-ui/columns/MobileCentralColumn.vue';
 import PostPreviewFooter from "@/widgets/posts-feed-widget/ui/PostPreviewFooter.vue";
 import {storeToRefs} from "pinia";
 
@@ -15,7 +15,7 @@ const {posts} = storeToRefs(postsStore);
 </script>
 
 <template>
-	<MobileMainBlockUI :class="$style.container">
+	<MobileCentralColumn :class="$style.container">
 		<ShowViewedPosts :class="$style.showViewedPosts" />
 		<PostsFeed :posts="posts" :addPosts="addPosts" :getNextPosts="getNextPosts">
 			<template #post="{post}">
@@ -38,7 +38,7 @@ const {posts} = storeToRefs(postsStore);
 				</PreviewPostUI>
 			</template>
 		</PostsFeed>
-	</MobileMainBlockUI>
+	</MobileCentralColumn>
 </template>
 
 <style module lang="scss">

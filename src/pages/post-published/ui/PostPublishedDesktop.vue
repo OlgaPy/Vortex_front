@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue';
-import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
+import DesktopAsideColumnUI from '@/shared/ui/block-ui/columns/DesktopAsideColumnUI.vue';
+import DesktopCentralColumnUI from '@/shared/ui/block-ui/columns/DesktopCentralColumnUI.vue';
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
@@ -13,10 +13,10 @@ import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
 
 <template>
 	<DesktopPageUI>
-		<DesktopAsideBlockUI>
+		<DesktopAsideColumnUI>
 			<SiteNavigationPanelWidget />
-		</DesktopAsideBlockUI>
-		<DesktopMainBlockUI>
+		</DesktopAsideColumnUI>
+		<DesktopCentralColumnUI>
 			<div :class="$style.postPublished">
 				<h3 :class="$style.title">Пост успешно опубликован!</h3>
 				<span :class="$style.checkPost"> Он уже появился в Новом, хотите просмотреть?</span>
@@ -26,12 +26,12 @@ import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
 				<EmptyButtonUI :class="$style.link">В Тренды</EmptyButtonUI>
 				<TextButtonUI :class="$style.link">В мой профиль</TextButtonUI>
 			</section>
-		</DesktopMainBlockUI>
-		<DesktopAsideBlockUI>
+		</DesktopCentralColumnUI>
+		<DesktopAsideColumnUI>
 			<ProfilePanelWidget />
 			<SiteInfoPanel />
 			<AdInfoPanelWidget />
-		</DesktopAsideBlockUI>
+		</DesktopAsideColumnUI>
 	</DesktopPageUI>
 </template>
 

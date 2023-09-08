@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
+import ElongatedBlockUI from "@/shared/ui/block-ui/blocks/ElongatedBlockUI.vue";
 import {SearchInputUI} from '@/shared/ui/search-input-ui';
 </script>
 
 <template>
-	<div :class="$style.container">
+	<ElongatedBlockUI>
 		<section :class="`${$style.section} ${$style.logoSection}`">
 			<router-link to="/">
 				<img
@@ -32,20 +33,10 @@ import {SearchInputUI} from '@/shared/ui/search-input-ui';
 		<section :class="`${$style.section} ${$style.searchSection}`">
 			<SearchInputUI model-value="" placeholder="Найти пост..." />
 		</section>
-	</div>
+  </ElongatedBlockUI>
 </template>
 
 <style lang="scss" module>
-.container {
-	padding: 32px 0;
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	flex-direction: column;
-	background: var(--color-gray-98);
-	border-radius: var(--style-radius-10);
-	width: 100%;
-}
 .section {
 	display: flex;
 	justify-content: center;

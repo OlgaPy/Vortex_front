@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {useProfileStore} from "@/entities/profile/model/ProfileStore";
 import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
-import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue';
-import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
-import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
-import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
+import DesktopAsideColumnUI from '@/shared/ui/block-ui/columns/DesktopAsideColumnUI.vue';
+import DesktopCentralColumnUI from '@/shared/ui/block-ui/columns/DesktopCentralColumnUI.vue';
+import StickyPanelUI from '@/shared/ui/block-ui/panels/StickyPanelUI.vue';
+import MobileCentralColumn from '@/shared/ui/block-ui/columns/MobileCentralColumn.vue';
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
 import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
@@ -24,42 +24,42 @@ const profileStore = useProfileStore();
 	<div>
 		<div :class="$style.desktopPage">
 			<DesktopPageUI>
-				<DesktopAsideBlockUI>
+				<DesktopAsideColumnUI>
 					<SiteNavigationPanelWidget />
-				</DesktopAsideBlockUI>
+				</DesktopAsideColumnUI>
 
-				<DesktopMainBlockUI>
+				<DesktopCentralColumnUI>
           <slot name="content"></slot>
 					<slot name="content-desktop"></slot>
-				</DesktopMainBlockUI>
+				</DesktopCentralColumnUI>
 
-				<DesktopAsideBlockUI>
+				<DesktopAsideColumnUI>
           <ProfilePanelWidget v-if="profileStore.isAuth()" />
           <AuthWidget v-else />
 					<SiteInfoPanel />
 					<AdInfoPanelWidget />
-				</DesktopAsideBlockUI>
+				</DesktopAsideColumnUI>
 			</DesktopPageUI>
 		</div>
 
     <div :class="[$style.tablePage, $style.mobilePage]">
       <MobilePageUI>
-        <HeaderHorizontalPanelUI>
+        <StickyPanelUI>
           <slot name="header-mobile">
             <HeaderWidget />
           </slot>
           <SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
-        </HeaderHorizontalPanelUI>
+        </StickyPanelUI>
 
-        <MobileMainBlockUI :class="$style.tableBlock">
+        <MobileCentralColumn :class="$style.tableBlock">
           <slot name="content"></slot>
           <slot name="content-table"></slot>
-        </MobileMainBlockUI>
+        </MobileCentralColumn>
 
-        <MobileMainBlockUI :class="$style.mobileBlock">
+        <MobileCentralColumn :class="$style.mobileBlock">
           <slot name="content"></slot>
           <slot name="content-mobile"></slot>
-        </MobileMainBlockUI>
+        </MobileCentralColumn>
       </MobilePageUI>
     </div>
 	</div>

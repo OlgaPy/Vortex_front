@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
-import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
+import StickyPanelUI from '@/shared/ui/block-ui/panels/StickyPanelUI.vue';
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
@@ -13,9 +13,9 @@ const MobileNavigationStore = useMobileNavigationStore();
 
 <template>
 	<MobilePageUI>
-		<HeaderHorizontalPanelUI>
+		<StickyPanelUI>
 			<HeaderWidget />
-		</HeaderHorizontalPanelUI>
+		</StickyPanelUI>
 		<SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
 		<div :class="$style.content">
 			<h3 :class="$style.title">Пост успешно опубликован!</h3>

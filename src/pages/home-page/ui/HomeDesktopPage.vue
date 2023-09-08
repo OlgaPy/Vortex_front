@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useProfileStore} from '@/entities/profile/model/ProfileStore';
-import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue';
-import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
+import DesktopAsideColumnUI from '@/shared/ui/block-ui/columns/DesktopAsideColumnUI.vue';
+import DesktopCentralColumnUI from '@/shared/ui/block-ui/columns/DesktopCentralColumnUI.vue';
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
 import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
 import AuthWidget from "@/widgets/auth-widget/AuthWidget.vue";
@@ -15,18 +15,18 @@ const profileStore = useProfileStore();
 
 <template>
 	<DesktopPageUI>
-		<DesktopAsideBlockUI>
+		<DesktopAsideColumnUI>
 			<SiteNavigationPanelWidget />
-		</DesktopAsideBlockUI>
-		<DesktopMainBlockUI>
+		</DesktopAsideColumnUI>
+		<DesktopCentralColumnUI>
 			<TrendsFeedWidget />
-		</DesktopMainBlockUI>
-		<DesktopAsideBlockUI>
+		</DesktopCentralColumnUI>
+		<DesktopAsideColumnUI>
 			<ProfilePanelWidget v-if="profileStore.isAuth()" />
 			<AuthWidget v-else />
 			<SiteInfoPanel />
 			<AdInfoPanelWidget />
-		</DesktopAsideBlockUI>
+		</DesktopAsideColumnUI>
 	</DesktopPageUI>
 </template>
 

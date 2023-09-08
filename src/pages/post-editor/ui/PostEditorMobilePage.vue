@@ -3,8 +3,8 @@ import GoToPrevPage from '@/features/GoToPrevPage.vue';
 import PostEditorFooter from '@/pages/post-editor/ui/PostEditorFooter.vue';
 import PostEditorHeader from '@/pages/post-editor/ui/PostEditorHeader.vue';
 import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
-import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
-import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
+import StickyPanelUI from '@/shared/ui/block-ui/panels/StickyPanelUI.vue';
+import MobileCentralColumn from '@/shared/ui/block-ui/columns/MobileCentralColumn.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import PostEditor from '@/widgets/post-editor/PostContentEditorWidget.vue';
@@ -15,20 +15,20 @@ const MobileNavigationStore = useMobileNavigationStore();
 
 <template>
 	<MobilePageUI>
-		<HeaderHorizontalPanelUI>
+		<StickyPanelUI>
 			<HeaderWidget>
 				<template #left-content>
 					<GoToPrevPage>Создать пост</GoToPrevPage>
 				</template>
 			</HeaderWidget>
 			<SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
-		</HeaderHorizontalPanelUI>
+		</StickyPanelUI>
 
-		<MobileMainBlockUI :class="$style.postEditor">
+		<MobileCentralColumn :class="$style.postEditor">
 			<PostEditorHeader />
 			<PostEditor />
 			<PostEditorFooter />
-		</MobileMainBlockUI>
+		</MobileCentralColumn>
 	</MobilePageUI>
 </template>
 

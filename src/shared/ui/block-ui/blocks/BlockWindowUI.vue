@@ -13,9 +13,11 @@ const emits = defineEmits<BlockWindowUIEmits>();
       <header :class="$style.header">
         <slot name="header-left"></slot>
         <slot name="header-right">
-          <Icon :size="IconSizes.TWENTY_FOUR" clickable @click="emits('close')">
-            <CloseIcon/>
-          </Icon>
+          <div :class="$style.closeIcon">
+            <Icon :size="IconSizes.TWELVE" clickable @click="emits('close')">
+              <CloseIcon/>
+            </Icon>
+          </div>
         </slot>
       </header>
     </slot>
@@ -50,5 +52,13 @@ const emits = defineEmits<BlockWindowUIEmits>();
 
 .main {
   width: 100%;
+}
+
+.closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
 }
 </style>

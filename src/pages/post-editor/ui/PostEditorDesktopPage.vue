@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import PostEditorFooter from '@/pages/post-editor/ui/PostEditorFooter.vue';
 import PostEditorHeader from '@/pages/post-editor/ui/PostEditorHeader.vue';
-import DesktopAsideBlockUI from '@/shared/ui/block-ui/DesktopAsideBlockUI.vue';
-import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
+import DesktopAsideColumnUI from '@/shared/ui/block-ui/columns/DesktopAsideColumnUI.vue';
+import DesktopCentralColumnUI from '@/shared/ui/block-ui/columns/DesktopCentralColumnUI.vue';
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
 import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
 import PostEditor from '@/widgets/post-editor/PostContentEditorWidget.vue';
@@ -13,21 +13,21 @@ import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
 
 <template>
 	<DesktopPageUI>
-		<DesktopAsideBlockUI>
+		<DesktopAsideColumnUI>
 			<SiteNavigationPanelWidget :class="$style.siteNavigationPanel" />
-		</DesktopAsideBlockUI>
+		</DesktopAsideColumnUI>
 
-		<DesktopMainBlockUI :class="$style.main">
+		<DesktopCentralColumnUI :class="$style.main">
 			<PostEditorHeader />
 			<PostEditor />
 			<PostEditorFooter />
-		</DesktopMainBlockUI>
+		</DesktopCentralColumnUI>
 
-		<DesktopAsideBlockUI>
+		<DesktopAsideColumnUI>
 			<ProfilePanelWidget :class="$style.profilePanelWidget" />
 			<SiteInfoPanel :class="$style.siteInfoPanel" />
 			<AdInfoPanelWidget :class="$style.adInfoPanel" />
-		</DesktopAsideBlockUI>
+		</DesktopAsideColumnUI>
 	</DesktopPageUI>
 </template>
 

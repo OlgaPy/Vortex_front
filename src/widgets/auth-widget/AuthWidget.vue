@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
-import BlockWindow from "@/shared/ui/block-ui/BlockWindowUI.vue";
+import BlockWindow from "@/shared/ui/block-ui/blocks/BlockWindowUI.vue";
 import EmptyButtonUI from "@/shared/ui/button-ui/EmptyButtonUI.vue";
 import LoginForm from "@/widgets/auth-widget/forms/login-form/LoginForm.vue";
 import PasswordRecoveryForm from "@/widgets/auth-widget/forms/password-recovery-form/PasswordRecoveryForm.vue";

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
-import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
+import StickyPanelUI from '@/shared/ui/block-ui/panels/StickyPanelUI.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import TrendsFeedWidget from '@/widgets/posts-feed-widget/PostsFeedWidget.vue';
@@ -12,11 +12,11 @@ const MobileNavigationStore = useMobileNavigationStore();
 
 <template>
 	<MobilePageUI>
-		<HeaderHorizontalPanelUI>
+		<StickyPanelUI>
 			<HeaderWidget />
 			<TapeLinksWidget />
       <SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
-    </HeaderHorizontalPanelUI>
+    </StickyPanelUI>
 		<TrendsFeedWidget />
 	</MobilePageUI>
 </template>

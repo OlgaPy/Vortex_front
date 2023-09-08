@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import GoToPrevPage from '@/features/GoToPrevPage.vue';
-import HeaderHorizontalPanelUI from '@/shared/ui/block-ui/HorizontalPanelUI.vue';
+import StickyPanelUI from '@/shared/ui/block-ui/panels/StickyPanelUI.vue';
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
@@ -11,7 +11,7 @@ import HeaderWidget from '@/widgets/HeaderWidget.vue';
 
 <template>
 	<MobilePageUI>
-		<HeaderHorizontalPanelUI>
+		<StickyPanelUI>
 			<HeaderWidget>
 				<template #left-content>
 					<GoToPrevPage>
@@ -19,7 +19,7 @@ import HeaderWidget from '@/widgets/HeaderWidget.vue';
 					</GoToPrevPage>
 				</template>
 			</HeaderWidget>
-		</HeaderHorizontalPanelUI>
+		</StickyPanelUI>
 		<div :class="$style.content">
 			<span :class="$style.checkPost"> Он уже появился в Новом, хотите просмотреть?</span>
 			<section :class="$style.links">

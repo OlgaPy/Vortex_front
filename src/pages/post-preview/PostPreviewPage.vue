@@ -5,7 +5,7 @@ import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
 import GoToPrevPage from "@/features/GoToPrevPage.vue";
 import PageLayout from '@/pages/PageLayout.vue';
-import BlockUI from "@/shared/ui/block-ui/BlockUI.vue";
+import UniformBlockUI from "@/shared/ui/block-ui/blocks/UniformBlockUI.vue";
 import HeaderWidget from "@/widgets/HeaderWidget.vue";
 
 //TODO
@@ -29,11 +29,12 @@ const mockPost: ICorePost = {
         </template>
       </HeaderWidget>
     </template>
+
 		<template #content>
-      <BlockUI :class="$style.info">
+      <UniformBlockUI :class="$style.info">
         <h2>Предпросмотр поста</h2>
         <p>Так будет выглядеть ваш пост, внимательно проверьте его.</p>
-      </BlockUI>
+      </UniformBlockUI>
 
       <PreviewPostUI :post="mockPost">
         <template #header>
