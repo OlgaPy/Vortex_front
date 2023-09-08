@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import CommentsLink from "@/entities/comment/ui/CommentsLink.vue";
 import ChangePostRating from "@/features/ChangePostRating.vue";
 import SavePostToFavorites from "@/features/SavePostToFavorites.vue";
 import SharePost from "@/features/SharePost.vue";
 import {useInvertedPostActions} from "@/shared/stores/UserSettingsStore";
-import CommentsLink from "@/widgets/posts-feed-widget/ui/CommentsLink.vue";
 import type {PostPreviewFooterProps} from "@/widgets/posts-feed-widget/ui/types";
 
 const { rating } = defineProps<PostPreviewFooterProps>();
@@ -12,7 +12,7 @@ const inverted = useInvertedPostActions();
 
 <template>
 	<div :class="[$style.container, {[$style.actionsInverted]: inverted }]">
-		<div :class="[$style.leftSection, { [$style.actionsInverted]: inverted }]">
+		<div :class="[$style.leftSection, {[$style.actionsInverted]: inverted }]">
 			<ChangePostRating :rating="rating" :class="$style.ratingChanger" />
 			<CommentsLink />
 		</div>

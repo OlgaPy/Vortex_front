@@ -5,10 +5,10 @@ import DesktopMainBlockUI from '@/shared/ui/block-ui/DesktopMainBlockUI.vue';
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
 import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
 import AuthWidget from "@/widgets/auth-widget/AuthWidget.vue";
+import TrendsFeedWidget from '@/widgets/posts-feed-widget/PostsFeedWidget.vue';
 import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
 import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
 import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
-import TrendsFeedWidget from '@/widgets/posts-feed-widget/TrendsFeedWidget.vue';
 
 const profileStore = useProfileStore();
 </script>

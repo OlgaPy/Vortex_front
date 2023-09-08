@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import PageLayout from "@/pages/PageLayout.vue";
-import TrendsFeedWidget from "@/widgets/posts-feed-widget/TrendsFeedWidget.vue";
+import TrendsFeedWidget from "@/widgets/posts-feed-widget/PostsFeedWidget.vue";
 </script>
 
 <template>

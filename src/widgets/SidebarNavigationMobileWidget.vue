@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
+import BugIcon from '@/shared/assets/icons/BugIcon.svg';
 import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
 import {useThemeStore} from '@/shared/stores/ThemeStore';
-import BugIcon from '@/shared/assets/icons/BugIcon.svg';
 import Icon from "@/shared/ui/icon/Icon.vue";
 import {IconSizes} from "@/shared/ui/icon/types";
 import {SearchInputUI} from '@/shared/ui/search-input-ui';

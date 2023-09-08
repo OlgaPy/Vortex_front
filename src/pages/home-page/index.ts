@@ -27,4 +27,4 @@ export const HOME_ROUTES = [
         name: 'Подписки',
         component: () => import('@/pages/home-page/HomePage.vue')
     },
-]
+];

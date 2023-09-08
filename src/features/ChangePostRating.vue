@@ -3,7 +3,6 @@ import type {IPost} from "@/entities/post";
 import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg';
 import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg';
 import {useInvertedPostActions} from '@/shared/stores/UserSettingsStore';
-import IconTextUI from '@/shared/ui/IconTextUI.vue';
 import {ref} from 'vue';
 
 const { rating: initialRating } = defineProps<Pick<IPost, 'rating'>>();
@@ -46,42 +45,32 @@ const handleRatingDecreaseClick = () => {
 </script>
 
 <template>
-	<IconTextUI
-		:class="[
-			$style.container,
-			{
-				[$style.inverted]: inverted
-			}
-		]"
-	>
-		<template #left-icon>
-			<button
-				:class="$style.ratingButton"
-				@click="handleRatingRaiseClick"
-				data-type="plus"
-				:data-active="ratingIncreased"
-			>
-				<RateUpIcon :class="$style.icon" />
-			</button>
-		</template>
-		<template #text>
-			<span :class="[$style.ratingCount, 'font-text-small']">{{ rating }}</span>
-		</template>
-		<template #right-icon>
-			<button
-				:class="$style.ratingButton"
-				@click="handleRatingDecreaseClick"
-				data-type="minus"
-				:data-active="ratingDecreased"
-			>
-				<RateDownIcon :class="$style.icon" />
-			</button>
-		</template>
-	</IconTextUI>
+  <div :class="[$style.container, {[$style.inverted]: inverted }]">
+    <button
+      :class="$style.ratingButton"
+      @click="handleRatingRaiseClick"
+      data-type="plus"
+      :data-active="ratingIncreased"
+    >
+      <RateUpIcon :class="$style.icon"/>
+    </button>
+    <span :class="[$style.ratingCount, 'font-text-small']">{{ rating }}</span>
+    <button
+      :class="$style.ratingButton"
+      @click="handleRatingDecreaseClick"
+      data-type="minus"
+      :data-active="ratingDecreased"
+    >
+      <RateDownIcon :class="$style.icon"/>
+    </button>
+  </div>
 </template>
 
 <style module>
 .container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
 	gap: 8px;
 }
 
