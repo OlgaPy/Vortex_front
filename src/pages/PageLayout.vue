@@ -7,17 +7,27 @@ import StickyPanelUI from '@/shared/ui/block-ui/panels/StickyPanelUI.vue';
 import MobileCentralColumn from '@/shared/ui/block-ui/columns/MobileCentralColumn.vue';
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
-import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
+import AdBlockWidget from '@/widgets/AdBlockWidget.vue';
 import AuthWidget from "@/widgets/auth-widget/AuthWidget.vue";
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
+import ModerationBlockWidget from "@/widgets/ModerationBlockWidget.vue";
 import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
 import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue';
 import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
-import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
+import LinksBlockWidget from '@/widgets/LinksBlockWidget.vue';
+
+//TODO move component to right place
 
 const MobileNavigationStore = useMobileNavigationStore();
 const profileStore = useProfileStore();
-//TODO move component to right place
+
+const siteNavigationLinks = [
+  { name: 'Помощь и поддержка', path: '/404' },
+  { name: 'О проекте', path: '/404' },
+  { name: 'Новости проекта', path: '/404' },
+  { name: 'Правила сообщества', path: '/404' },
+  { name: 'Контакты', path: '/404' }
+];
 </script>
 
 <template>
@@ -36,8 +46,9 @@ const profileStore = useProfileStore();
 				<DesktopAsideColumnUI>
           <ProfilePanelWidget v-if="profileStore.isAuth()" />
           <AuthWidget v-else />
-					<SiteInfoPanel />
-					<AdInfoPanelWidget />
+					<LinksBlockWidget :routes="siteNavigationLinks" />
+					<AdBlockWidget />
+					<ModerationBlockWidget />
 				</DesktopAsideColumnUI>
 			</DesktopPageUI>
 		</div>

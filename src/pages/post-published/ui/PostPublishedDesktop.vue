@@ -5,10 +5,10 @@ import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
 import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
-import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
+import AdInfoPanelWidget from '@/widgets/AdBlockWidget.vue';
 import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
 import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
-import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
+import SiteInfoPanel from '@/widgets/LinksBlockWidget.vue';
 </script>
 
 <template>

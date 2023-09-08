@@ -9,8 +9,8 @@
 <style module lang="scss">
 .container {
 	display: flex;
-	justify-items: start;
-	align-items: center;
+	justify-items: center;
+	align-items: start;
 	flex-direction: column;
 	width: 100%;
 	max-width: 786px;

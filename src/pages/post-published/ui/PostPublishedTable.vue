@@ -5,7 +5,7 @@ import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 import TextButtonUI from '@/shared/ui/button-ui/TextButtonUI.vue';
 import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
-import AdInfoPanelWidget from '@/widgets/AdInfoPanelWidget.vue';
+import AdInfoPanelWidget from '@/widgets/AdBlockWidget.vue';
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 </script>
 
