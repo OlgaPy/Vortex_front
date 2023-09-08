@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
-import TrashIcon from "@/shared/assets/icons/TrashIcon.svg";
 import ReloadIcon from "@/shared/assets/icons/ReloadIcon.svg";
-import IconTextButtonUI from "@/shared/ui/icon-button-ui/IconTextButtonUI.vue";
+import TrashIcon from "@/shared/assets/icons/TrashIcon.svg";
 import ButtonUI from "@/shared/ui/button-ui/ButtonUI.vue";
+import IconTextButtonUI from "@/shared/ui/icon-button-ui/IconTextButtonUI.vue";
 import type {ImageFieldEmits, ImageFieldProps} from "@/shared/ui/image-field/types";
+import {onMounted, ref} from "vue";
 
 const emits = defineEmits<ImageFieldEmits>();
 const props = defineProps<ImageFieldProps>();

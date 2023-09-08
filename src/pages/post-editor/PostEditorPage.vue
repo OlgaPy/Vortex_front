@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import PostEditorMobilePage from '@/pages/post-editor/ui/PostEditorMobilePage.vue';
-import PostEditorDesktopPage from '@/pages/post-editor/ui/PostEditorDesktopPage.vue';
+import PageLayout from "@/pages/PageLayout.vue";
+import PostEditorFooter from "@/pages/post-editor/ui/PostEditorFooter.vue";
+import PostEditorHeader from "@/pages/post-editor/ui/PostEditorHeader.vue";
+import PostEditor from "@/widgets/post-editor/PostContentEditorWidget.vue";
 </script>
 
 <template>
-	<div>
-		<div :class="$style.homeDesktopPage">
-			<PostEditorDesktopPage />
-		</div>
-		<div :class="$style.homeMobilePage">
-			<PostEditorMobilePage />
-		</div>
-	</div>
+  <PageLayout>
+    <template #content>
+      <PostEditorHeader />
+      <PostEditor />
+      <PostEditorFooter />
+    </template>
+  </PageLayout>
 </template>
 
 <style module lang="scss">

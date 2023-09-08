@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {ref} from "vue";
-import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue';
+import type {IContentItem} from "@/entities/post";
 import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
+import IconButtonUI from '@/shared/ui/icon-button-ui/IconButtonUI.vue';
 import ImageField from "@/shared/ui/image-field/ImageField.vue";
 import TextareaUI from "@/shared/ui/input-ui/TextareaUI.vue";
-import type {IContentItem} from "@/entities/post";
 import {img_value} from "@/widgets/post-editor/tmp_img";
+import {ref} from "vue";
 
 const content = ref<IContentItem[]>([]);
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {ref} from 'vue';
-import IconTextUI from '@/shared/ui/IconTextUI.vue';
-import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg';
-import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg';
-import {useInvertedPostActions} from '@/shared/stores/UserSettingsStore';
 import type {IPost} from "@/entities/post";
+import RateDownIcon from '@/shared/assets/icons/RateDownIcon.svg';
+import RateUpIcon from '@/shared/assets/icons/RateUpIcon.svg';
+import {useInvertedPostActions} from '@/shared/stores/UserSettingsStore';
+import IconTextUI from '@/shared/ui/IconTextUI.vue';
+import {ref} from 'vue';
 
 const { rating: initialRating } = defineProps<Pick<IPost, 'rating'>>();
 

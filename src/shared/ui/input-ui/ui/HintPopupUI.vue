@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import WarningCircle from "@/shared/assets/icons/WarningCircleIcon.svg";
-import {ref} from "vue";
 import {autoUpdate, flip, shift, useFloating} from "@floating-ui/vue";
+import {ref} from "vue";
 
 const reference = ref(null);
 const floating = ref(null);

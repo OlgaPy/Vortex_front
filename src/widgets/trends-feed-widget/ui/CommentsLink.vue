@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import IconTextUI from '@/shared/ui/IconTextUI.vue';
 import CommentIcon from '@/shared/assets/icons/CommentIcon.svg';
+import IconTextUI from '@/shared/ui/IconTextUI.vue';
 
 //TODO move to feature?
 </script>

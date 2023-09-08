@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import PageLayout from '@/widgets/page-layout/PageLayout.vue';
 import type {ICorePost} from "@/entities/post/model/types";
 import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
-import TagsList from "@/entities/tag/ui/TagsList.vue";
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
+import TagsList from "@/entities/tag/ui/TagsList.vue";
+import GoToPrevPage from "@/features/GoToPrevPage.vue";
+import PageLayout from '@/pages/PageLayout.vue';
 import BlockUI from "@/shared/ui/block-ui/BlockUI.vue";
+import HeaderWidget from "@/widgets/HeaderWidget.vue";
 
 //TODO
 const mockPost: ICorePost = {
@@ -18,6 +20,15 @@ const mockPost: ICorePost = {
 
 <template>
 	<PageLayout>
+    <template #header-mobile>
+      <HeaderWidget>
+        <template #left-content>
+          <GoToPrevPage>
+            <slot name="prevPageTitle"></slot>
+          </GoToPrevPage>
+        </template>
+      </HeaderWidget>
+    </template>
 		<template #content>
       <BlockUI :class="$style.info">
         <h2>Предпросмотр поста</h2>

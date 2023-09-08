@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import HomeDesktopPage from './ui/HomeDesktopPage.vue';
-import HomeMobilePage from './ui/HomeMobilePage.vue';
+import PageLayout from "@/pages/PageLayout.vue";
+import TrendsFeedWidget from "@/widgets/trends-feed-widget/TrendsFeedWidget.vue";
 </script>
 
 <template>
-	<div>
-		<div :class="$style.homeDesktopPage">
-			<HomeDesktopPage />
-		</div>
-		<div :class="$style.homeMobilePage">
-			<HomeMobilePage />
-		</div>
-	</div>
+  <PageLayout>
+    <template #content>
+      <TrendsFeedWidget />
+    </template>
+  </PageLayout>
 </template>
 
 <style lang="scss" module>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import InfinityScroll from "@/shared/lib/InfinityScroll/InfinityScroll.vue";
 import type {PostsFeedProps} from "@/entities/posts-feed/ui/types";
+import InfinityScroll from "@/shared/lib/InfinityScroll/InfinityScroll.vue";
 
 const props = defineProps<PostsFeedProps>();
 const {getNextPosts, addPosts} = props;

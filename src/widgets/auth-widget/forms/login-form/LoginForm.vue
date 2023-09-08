@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
 import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import InputUI from '@/shared/ui/input-ui/InputUI.vue';
-import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
 import type {LoginFormEmits} from "@/widgets/auth-widget/forms/login-form/types";
 import {ref} from 'vue';
 

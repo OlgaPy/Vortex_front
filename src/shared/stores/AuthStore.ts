@@ -1,6 +1,6 @@
-import {ref} from 'vue';
-import {defineStore} from 'pinia';
 import api from '@/shared/api/api';
+import {defineStore} from 'pinia';
+import {ref} from 'vue';
 
 export type TokenData = { access: string; refresh: string };
 

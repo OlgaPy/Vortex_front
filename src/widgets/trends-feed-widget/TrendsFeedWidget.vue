@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import PostsFeed from '@/entities/posts-feed/ui/PostsFeed.vue';
-import ShowViewedPosts from '@/features/ShowViewedPosts.vue';
-import PostPreviewFooter from "@/widgets/trends-feed-widget/ui/PostPreviewFooter.vue";
-import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
 import PreviewPostUI from "@/entities/post/ui/PreviewPostUI.vue";
+import {usePostsFeedStore} from "@/entities/posts-feed/model/posts-feed-store";
+import PostsFeed from '@/entities/posts-feed/ui/PostsFeed.vue';
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
-import {usePostsFeedStore} from "@/entities/posts-feed/model/posts-feed-store";
+import ShowViewedPosts from '@/features/ShowViewedPosts.vue';
+import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
+import PostPreviewFooter from "@/widgets/trends-feed-widget/ui/PostPreviewFooter.vue";
 import {storeToRefs} from "pinia";
 
 const postsStore = usePostsFeedStore();

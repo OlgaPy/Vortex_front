@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import ButtonUI from '@/shared/ui/button-ui/ButtonUI.vue';
 import EmptyButtonUI from '@/shared/ui/button-ui/EmptyButtonUI.vue';
 import CheckboxUI from "@/shared/ui/checkbox-ui/CheckboxUI.vue";
 import InputUI from '@/shared/ui/input-ui/InputUI.vue';
-import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue';
-import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
 import {ref} from 'vue';
 
 const username = ref('kapibarin');

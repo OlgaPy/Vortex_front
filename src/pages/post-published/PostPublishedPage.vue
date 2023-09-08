@@ -1,45 +1,20 @@
 <script setup lang="ts">
+import PageLayout from "@/pages/PageLayout.vue";
 import PostPublishedDesktop from './ui/PostPublishedDesktop.vue';
 import PostPublishedMobile from './ui/PostPublishedMobile.vue';
 import PostPublishedTable from './ui/PostPublishedTable.vue';
 </script>
 
 <template>
-	<div>
-		<div :class="$style.homeDesktopPage">
-			<PostPublishedDesktop />
-		</div>
-		<div :class="$style.homeTablePage">
-			<PostPublishedTable />
-		</div>
-		<div :class="$style.homeMobilePage">
-			<PostPublishedMobile />
-		</div>
-	</div>
+  <PageLayout>
+    <template #content-desktop>
+      <PostPublishedDesktop />
+    </template>
+    <template #content-table>
+      <PostPublishedTable />
+    </template>
+    <template #content-mobile>
+      <PostPublishedMobile />
+    </template>
+  </PageLayout>
 </template>
-
-<style lang="scss" module>
-.homeDesktopPage,
-.homeTablePage,
-.homeMobilePage {
-	display: none;
-}
-
-@media screen and (min-width: $screen-xs) and (max-width: $screen-lg) {
-	.homeMobilePage {
-		display: flex;
-	}
-}
-
-@media screen and (min-width: $screen-lg) and (max-width: $screen-xl) {
-	.homeTablePage {
-		display: flex;
-	}
-}
-
-@media screen and (min-width: $screen-xl) {
-	.homeDesktopPage {
-		display: flex;
-	}
-}
-</style>

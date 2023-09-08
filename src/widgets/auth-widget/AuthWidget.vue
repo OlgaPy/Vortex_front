@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import ToggleGlobalThemeFeature from "@/features/ToggleGlobalThemeFeature.vue";
-import CloseIcon from '@/shared/assets/icons/CloseIcon.svg';
-import EmptyButtonUI from "@/shared/ui/button-ui/EmptyButtonUI.vue";
-import Icon from "@/shared/ui/icon/Icon.vue";
-import {IconSizes} from "@/shared/ui/icon/types";
 import BlockWindow from "@/shared/ui/block-ui/BlockWindowUI.vue";
+import EmptyButtonUI from "@/shared/ui/button-ui/EmptyButtonUI.vue";
 import LoginForm from "@/widgets/auth-widget/forms/login-form/LoginForm.vue";
 import PasswordRecoveryForm from "@/widgets/auth-widget/forms/password-recovery-form/PasswordRecoveryForm.vue";
 import PasswordRecoverySent from "@/widgets/auth-widget/forms/password-recovery-form/PasswordRecoverySent.vue";

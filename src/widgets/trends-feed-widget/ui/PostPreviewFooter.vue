@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import ChangePostRating from "@/features/ChangePostRating.vue";
-import {useInvertedPostActions} from "@/shared/stores/UserSettingsStore";
-import CommentsLink from "@/widgets/trends-feed-widget/ui/CommentsLink.vue";
 import SavePostToFavorites from "@/features/SavePostToFavorites.vue";
 import SharePost from "@/features/SharePost.vue";
+import {useInvertedPostActions} from "@/shared/stores/UserSettingsStore";
+import CommentsLink from "@/widgets/trends-feed-widget/ui/CommentsLink.vue";
 import type {PostPreviewFooterProps} from "@/widgets/trends-feed-widget/ui/types";
 
 const { rating } = defineProps<PostPreviewFooterProps>();

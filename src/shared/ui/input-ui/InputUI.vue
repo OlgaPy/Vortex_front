@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import CloseIcon from "@/shared/assets/icons/CloseIcon.svg";
+import {useFieldFocusStatus} from "@/shared/ui/input-ui/lib/use-field-focus-status";
+import {useFieldStatus} from "@/shared/ui/input-ui/lib/use-field-status";
+import {useValidation} from "@/shared/ui/input-ui/lib/use-validation";
+import HintPopupUI from "@/shared/ui/input-ui/ui/HintPopupUI.vue";
+import {ref} from 'vue';
 import type {Emits, InputProps} from './types';
 import {FieldFocusStates} from './types';
-import {ref} from 'vue';
-import HintPopupUI from "@/shared/ui/input-ui/ui/HintPopupUI.vue";
-import {useValidation} from "@/shared/ui/input-ui/lib/use-validation";
-import {useFieldStatus} from "@/shared/ui/input-ui/lib/use-field-status";
-import {useFieldFocusStatus} from "@/shared/ui/input-ui/lib/use-field-focus-status";
-import CloseIcon from "@/shared/assets/icons/CloseIcon.svg";
 
 const emit = defineEmits<Emits>();
 

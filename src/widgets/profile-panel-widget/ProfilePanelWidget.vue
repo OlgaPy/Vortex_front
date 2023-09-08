@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
 import ProfilePreviewUI from '@/entities/profile/ui/ProfilePreviewUI.vue';
-import NotificationTextUI from '@/shared/ui/notification-text-ui/NotificationTextUI.vue';
-import RespondIcon from '@/shared/assets/icons/RespondIcon.svg';
+import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue';
 import CommentIcon from '@/shared/assets/icons/CommentIcon.svg';
-import SaveIcon from '@/shared/assets/icons/SaveIcon.svg';
-import EyeIcon from '@/shared/assets/icons/EyeIcon.svg';
-import IgnoreIcon from '@/shared/assets/icons/IgnoreIcon.svg';
 import ConfigurationIcon from '@/shared/assets/icons/ConfigurationIcon.svg';
 import ExitIcon from '@/shared/assets/icons/ExitIcon.svg';
-import ToggleGlobalThemeFeature from '@/features/ToggleGlobalThemeFeature.vue';
+import EyeIcon from '@/shared/assets/icons/EyeIcon.svg';
+import IgnoreIcon from '@/shared/assets/icons/IgnoreIcon.svg';
+import PlusIcon from '@/shared/assets/icons/PlusIcon.svg';
+import RespondIcon from '@/shared/assets/icons/RespondIcon.svg';
+import SaveIcon from '@/shared/assets/icons/SaveIcon.svg';
+import NotificationTextUI from '@/shared/ui/notification-text-ui/NotificationTextUI.vue';
 </script>
 
 <template>

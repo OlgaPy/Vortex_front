@@ -1,5 +1,5 @@
-import {v4 as uuid} from 'uuid';
 import type {IPost} from '@/entities/posts-feed/model/posts-feed-store';
+import {v4 as uuid} from 'uuid';
 import {
     CUT_OFF_LOREM_MAX,
     CUT_OFF_LOREM_MIN,

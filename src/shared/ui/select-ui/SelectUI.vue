@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type {Emits, Option, Props} from './types';
 import ArrowIcon from '@/shared/assets/icons/ArrowIcon.svg';
 import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
-import {ref} from 'vue';
 import {autoUpdate, flip, shift, useFloating} from '@floating-ui/vue';
+import {ref} from 'vue';
+import type {Emits, Option, Props} from './types';
 
 const reference = ref(null);
 const floating = ref(null);
