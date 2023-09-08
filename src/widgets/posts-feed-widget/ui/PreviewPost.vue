@@ -2,8 +2,8 @@
 import PreviewPostUI from '@/entities/post/ui/PreviewPostUI.vue';
 import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import TagsList from '@/entities/tag/ui/TagsList.vue';
-import PostPreviewFooter from '@/widgets/trends-feed-widget/ui/PostPreviewFooter.vue';
-import type {PreviewPostProps} from "@/widgets/trends-feed-widget/ui/types";
+import PostPreviewFooter from '@/widgets/posts-feed-widget/ui/PostPreviewFooter.vue';
+import type {PreviewPostProps} from "@/widgets/posts-feed-widget/ui/types";
 
 const props = defineProps<PreviewPostProps>();
 </script>

@@ -24,49 +24,49 @@ import NotificationTextUI from '@/shared/ui/notification-text-ui/NotificationTex
 		<section :class="`${$style.section} ${$style.menuSection}`">
 			<div :class="$style.menuItem">
 				<RespondIcon :class="[$style.menuIcon, $style.replyIcon]" />
-				<router-link to="/all">Ответы</router-link>
+				<router-link to="/404">Ответы</router-link>
 			</div>
 			<div :class="$style.menuItem">
 				<div :class="$style.notification">
 					<div :class="$style.menuItem">
 						<CommentIcon :class="[$style.menuIcon, $style.commentsIcon]" />
-						<router-link to="/all">Комментарии</router-link>
+						<router-link to="/404">Комментарии</router-link>
 					</div>
 					<NotificationTextUI :attract="true">10</NotificationTextUI>
 				</div>
 			</div>
 			<div :class="$style.menuItem">
 				<SaveIcon :class="[$style.menuIcon, $style.savesIcon]" />
-				<router-link to="/all">Сохранённое</router-link>
+				<router-link to="/404">Сохранённое</router-link>
 			</div>
 			<div :class="$style.menuItem">
 				<div :class="$style.notification">
 					<div :class="$style.menuItem">
 						<EyeIcon :class="[$style.menuIcon, $style.eyeIcon]" />
-						<router-link to="/all">Прочитанное</router-link>
+						<router-link to="/404">Прочитанное</router-link>
 					</div>
 					<NotificationTextUI>20</NotificationTextUI>
 				</div>
 			</div>
 			<div :class="$style.menuItem">
 				<IgnoreIcon :class="$style.menuIcon" />
-				<router-link to="/all">Чёрный список</router-link>
+				<router-link to="/404">Чёрный список</router-link>
 			</div>
 			<div :class="$style.menuItem">
 				<ConfigurationIcon :class="$style.menuIcon" />
-				<router-link to="/all">Настройки</router-link>
+				<router-link to="/404">Настройки</router-link>
 			</div>
 			<div :class="$style.menuItem">
 				<ExitIcon :class="$style.menuIcon" />
-				<router-link to="/all">Выход</router-link>
+				<router-link to="/404">Выход</router-link>
 			</div>
 		</section>
 		<section :class="[$style.section, $style.createPostSection]">
 			<div :class="[$style.createPostButton]">
 				<PlusIcon :class="$style.createPostIcon" />
-				<router-link to="/all">Создать пост</router-link>
+				<router-link to="/404">Создать пост</router-link>
 			</div>
-			<router-link class="font-small color-primary-1" to="/all">Мои черновики</router-link>
+			<router-link class="font-small color-primary-1" to="/404">Мои черновики</router-link>
 		</section>
 	</div>
 </template>

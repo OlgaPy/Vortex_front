@@ -8,7 +8,7 @@ import AuthWidget from "@/widgets/auth-widget/AuthWidget.vue";
 import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
 import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
 import SiteInfoPanel from '@/widgets/SiteInfoPanel.vue';
-import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue';
+import TrendsFeedWidget from '@/widgets/posts-feed-widget/TrendsFeedWidget.vue';
 
 const profileStore = useProfileStore();
 </script>

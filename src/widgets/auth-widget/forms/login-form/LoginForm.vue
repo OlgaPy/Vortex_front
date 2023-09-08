@@ -87,7 +87,7 @@ const password = ref('ficYP5MV');
   align-items: center;
   flex-direction: column;
   width: 100%;
-  gap: 32px;
+  gap: 24px;
 }
 
 .buttons > * {

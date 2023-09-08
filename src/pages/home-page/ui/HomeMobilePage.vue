@@ -5,7 +5,7 @@ import MobilePageUI from '@/shared/ui/page-ui/MobilePageUI.vue';
 import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue';
 import TapeLinksWidget from '@/widgets/TapeLinksWidget.vue';
-import TrendsFeedWidget from '@/widgets/trends-feed-widget/TrendsFeedWidget.vue';
+import TrendsFeedWidget from '@/widgets/posts-feed-widget/TrendsFeedWidget.vue';
 
 const MobileNavigationStore = useMobileNavigationStore();
 </script>
@@ -15,10 +15,8 @@ const MobileNavigationStore = useMobileNavigationStore();
 		<HeaderHorizontalPanelUI>
 			<HeaderWidget />
 			<TapeLinksWidget />
-		</HeaderHorizontalPanelUI>
-
-		<SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
-
+      <SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
+    </HeaderHorizontalPanelUI>
 		<TrendsFeedWidget />
 	</MobilePageUI>
 </template>

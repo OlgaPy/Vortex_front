@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.container">
-		<router-link to="/">Реклама / инструменты модератора</router-link>
+		<router-link to="404">Реклама / инструменты модератора</router-link>
 	</div>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
 	<div :class="$style.container">
-		<router-link to="/">Помощь и поддержка</router-link>
-		<router-link to="/">О проекте</router-link>
-		<router-link to="/">Новости проекта</router-link>
-		<router-link to="/">Правила сообщества</router-link>
-		<router-link to="/">Контакты</router-link>
+		<router-link to="404">Помощь и поддержка</router-link>
+		<router-link to="404">О проекте</router-link>
+		<router-link to="404">Новости проекта</router-link>
+		<router-link to="404">Правила сообщества</router-link>
+		<router-link to="404">Контакты</router-link>
 	</div>
 </template>
 

@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
+
 const items = [
-	{ name: 'Тренды', path: '/' },
-	{ name: 'Новое', path: '/all' },
-	{ name: 'Топ', path: '/all' },
-	{ name: 'Обсуждаемое', path: '/all' },
-	{ name: 'Подписки', path: '/all' },
-	{ name: 'Группы', path: '/all' }
+	{ name: 'Тренды', path: FeedTypes.TRENDS },
+	{ name: 'Новое', path: FeedTypes.NEW },
+	{ name: 'Топ', path: FeedTypes.TOP },
+	{ name: 'Обсуждаемое', path: FeedTypes.SUBSCRIPTIONS },
+	{ name: 'Подписки', path: '404' },
+	{ name: 'Группы', path: '404' }
 ];
 </script>
 

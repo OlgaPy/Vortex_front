@@ -1,4 +1,6 @@
 export enum IconSizes {
+    TEN = 'ten',
+    TWELVE = 'twelve',
     SIXTEEN = 'sixteen',
     EIGHTEEN = 'eighteen',
     TWENTY_FOUR = 'twentyFour',

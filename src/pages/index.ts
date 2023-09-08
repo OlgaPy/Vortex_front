@@ -1,16 +1,8 @@
-import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
+import {HOME_ROUTES} from "@/pages/home-page";
 import {PostPreviewPage} from '@/pages/post-preview';
 
 export const routes = [
-	{
-		path: '/',
-		redirect: '/' + FeedTypes.TRENDS,
-	},
-	{
-		path: '/:feed',
-		name: 'Тренды',
-		component: () => import('@/pages/home-page/HomePage.vue')
-	},
+	...HOME_ROUTES,
 	{
 		path: '/all',
 		name: 'Все компоненты',
@@ -40,5 +32,5 @@ export const routes = [
 		path: '/:pathMatch(.*)*',
 		name: 'Не найдено',
 		component: () => import('@/pages/not-found/NotFoundPage.vue')
-	}
+	},
 ];

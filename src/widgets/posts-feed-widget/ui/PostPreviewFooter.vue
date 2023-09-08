@@ -3,8 +3,8 @@ import ChangePostRating from "@/features/ChangePostRating.vue";
 import SavePostToFavorites from "@/features/SavePostToFavorites.vue";
 import SharePost from "@/features/SharePost.vue";
 import {useInvertedPostActions} from "@/shared/stores/UserSettingsStore";
-import CommentsLink from "@/widgets/trends-feed-widget/ui/CommentsLink.vue";
-import type {PostPreviewFooterProps} from "@/widgets/trends-feed-widget/ui/types";
+import CommentsLink from "@/widgets/posts-feed-widget/ui/CommentsLink.vue";
+import type {PostPreviewFooterProps} from "@/widgets/posts-feed-widget/ui/types";
 
 const { rating } = defineProps<PostPreviewFooterProps>();
 const inverted = useInvertedPostActions();

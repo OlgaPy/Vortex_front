@@ -6,7 +6,7 @@ import ProfilePreviewUI from "@/entities/profile/ui/ProfilePreviewUI.vue";
 import TagsList from "@/entities/tag/ui/TagsList.vue";
 import ShowViewedPosts from '@/features/ShowViewedPosts.vue';
 import MobileMainBlockUI from '@/shared/ui/block-ui/MobileMainBlockUI.vue';
-import PostPreviewFooter from "@/widgets/trends-feed-widget/ui/PostPreviewFooter.vue";
+import PostPreviewFooter from "@/widgets/posts-feed-widget/ui/PostPreviewFooter.vue";
 import {storeToRefs} from "pinia";
 
 const postsStore = usePostsFeedStore();

@@ -1,27 +1,31 @@
 <script setup lang="ts">
+import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
 import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
 import {useThemeStore} from '@/shared/stores/ThemeStore';
+import BugIcon from '@/shared/assets/icons/BugIcon.svg';
+import Icon from "@/shared/ui/icon/Icon.vue";
+import {IconSizes} from "@/shared/ui/icon/types";
 import {SearchInputUI} from '@/shared/ui/search-input-ui';
 
 const MobileNavigationStore = useMobileNavigationStore();
 const ThemeStore = useThemeStore();
 
 const navigationLinks = [
-	{ name: 'Тренды', path: '/' },
-	{ name: 'Новое', path: '/all' },
-	{ name: 'Топ', path: '/all' },
-	{ name: 'Обсуждаемое', path: '/all' },
-	{ name: 'Подписки', path: '/all' },
-	{ name: 'Группы', path: '/all' },
-	{ name: 'Теги', path: '/all' }
+	{ name: 'Тренды', path: FeedTypes.TRENDS },
+	{ name: 'Новое', path: FeedTypes.NEW },
+	{ name: 'Топ', path: FeedTypes.TRENDS },
+	{ name: 'Обсуждаемое', path: FeedTypes.DISCUSSED },
+	{ name: 'Подписки', path: FeedTypes.SUBSCRIPTIONS },
+	{ name: 'Группы', path: '/404' },
+	{ name: 'Теги', path: '/404' }
 ];
 
 const footerLinks = [
-	{ name: 'Помощь и поддержка', path: '/all' },
-	{ name: 'О проекте', path: '/all' },
-	{ name: 'Новости проекта', path: '/all' },
-	{ name: 'Правила сообщества', path: '/all' },
-	{ name: 'Контакты', path: '/all' }
+	{ name: 'Помощь и поддержка', path: '/404' },
+	{ name: 'О проекте', path: '/404' },
+	{ name: 'Новости проекта', path: '/404' },
+	{ name: 'Правила сообщества', path: '/404' },
+	{ name: 'Контакты', path: '/404' }
 ];
 </script>
 
@@ -50,6 +54,12 @@ const footerLinks = [
 		</div>
 		<div :class="$style.footer">
 			<div :class="$style.footerLinks">
+        <router-link to="/404" :class="$style.footerLink">
+          <Icon :size="IconSizes.SIXTEEN">
+            <BugIcon/>
+          </Icon>
+          <span>Сообщить о багах</span>
+        </router-link>
 				<router-link
 					v-for="(item, index) in footerLinks"
 					:class="$style.footerLink"
@@ -100,7 +110,7 @@ const footerLinks = [
 
 .navigationPanel {
 	flex-grow: 1;
-	padding: 20px 12px;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -116,7 +126,7 @@ const footerLinks = [
 }
 
 .link {
-	padding: 8px;
+	padding: 8px 0;
 	cursor: pointer;
 }
 
@@ -133,13 +143,12 @@ const footerLinks = [
 .searchBlock {
 	height: fit-content;
 	position: relative;
-	padding: 0px 8px;
 }
 
 .footer {
 	display: flex;
 	gap: 20px;
-	padding: 32px 12px;
+  padding: 20px;
 	flex-direction: column;
 	background-color: var(--color-gray-95);
 }
@@ -147,16 +156,17 @@ const footerLinks = [
 .footerLinks {
 	display: flex;
 	gap: 20px;
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 400;
-	flex-direction: column;
-	font-family: var(--font-family-default);
+  flex-direction: column;
+  font: var(--font-text);
 	color: var(--color-gray-53);
 }
 
 .footerLink {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 	cursor: pointer;
+  gap: 8px;
 }
 
 .socialLinks {

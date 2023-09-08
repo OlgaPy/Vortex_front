@@ -12,14 +12,30 @@ if (clickable) {
 </script>
 
 <template>
-  <i :class="iconClass">
+  <i :class="[$style.icon, iconClass]">
     <slot/>
   </i>
 </template>
 
 <style module lang="scss">
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .clickable {
   cursor: pointer;
+}
+
+.ten {
+  width: 10px;
+  height: 10px;
+}
+
+.twelve {
+  width: 12px;
+  height: 12px;
 }
 
 .sixteen {

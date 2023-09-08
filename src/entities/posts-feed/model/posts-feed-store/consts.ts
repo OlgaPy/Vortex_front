@@ -1,8 +1,8 @@
 import type {IPost} from "@/entities/post";
-import pic1 from '@/widgets/trends-feed-widget/img/Comments dark.jpg';
-import pic2 from '@/widgets/trends-feed-widget/img/home dark 1.1 (2).jpg';
-import pic4 from '@/widgets/trends-feed-widget/img/Pictures.png';
-import pic3 from '@/widgets/trends-feed-widget/img/upscale_4.png';
+import pic1 from '@/widgets/posts-feed-widget/img/Comments dark.jpg';
+import pic2 from '@/widgets/posts-feed-widget/img/home dark 1.1 (2).jpg';
+import pic4 from '@/widgets/posts-feed-widget/img/Pictures.png';
+import pic3 from '@/widgets/posts-feed-widget/img/upscale_4.png';
 
 //TODO Do not forget to remove this file.
 

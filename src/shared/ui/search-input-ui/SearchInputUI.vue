@@ -32,12 +32,12 @@ const onChangeInput = (event: Event) => {
 	border-width: 1.5px;
 	border-style: solid;
 	font: var(--font-text);
-	border-color: var(--color-gray-89);
-	background-color: var(--color-gray-89);
+	border-color: var(--color-gray-95);
+	background-color: var(--color-gray-95);
 }
 
 .container input {
-	background-color: var(--color-gray-89);
+	background-color: var(--color-gray-95);
 	border: unset;
 	outline: none;
 	cursor: pointer;
