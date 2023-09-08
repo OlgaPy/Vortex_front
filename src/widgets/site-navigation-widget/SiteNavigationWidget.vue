@@ -2,6 +2,13 @@
 import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
 import ElongatedBlockUI from "@/shared/ui/block-ui/blocks/ElongatedBlockUI.vue";
 import {SearchInputUI} from '@/shared/ui/search-input-ui';
+import {RouteRecordRaw} from "vue-router";
+
+export type SiteNavigationWidgetProps = {
+  links: RouteRecordRaw[],
+};
+
+const {links} = defineProps<SiteNavigationWidgetProps>();
 </script>
 
 <template>
@@ -21,14 +28,14 @@ import {SearchInputUI} from '@/shared/ui/search-input-ui';
 			</router-link>
 		</section>
 		<section :class="`${$style.section} ${$style.menuSection}`">
-			<router-link :to="FeedTypes.TRENDS" :exact-active-class="$style.activeLink">Тренды</router-link>
-			<router-link :to="FeedTypes.NEW" :exact-active-class="$style.activeLink">Новое</router-link>
-			<router-link :to="FeedTypes.TOP" :exact-active-class="$style.activeLink">Топ</router-link>
-			<router-link :to="FeedTypes.DISCUSSED" :exact-active-class="$style.activeLink">Обсуждаемое</router-link>
-			<router-link :to="FeedTypes.SUBSCRIPTIONS" :exact-active-class="$style.activeLink">Подписки</router-link>
-			<router-link to="/404" :active-class="$style.activeLink">Группы</router-link>
-			<router-link to="/404" :active-class="$style.activeLink">Авторское</router-link>
-			<router-link to="/404" :active-class="$style.activeLink">Теги</router-link>
+      <router-link
+          v-for="(route, index) in links"
+          :key="index"
+          :to="route.path"
+          :active-class="$style.activeLink"
+      >
+        {{ route.name }}
+      </router-link>
 		</section>
 		<section :class="`${$style.section} ${$style.searchSection}`">
 			<SearchInputUI model-value="" placeholder="Найти пост..." />

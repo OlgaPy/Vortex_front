@@ -7,7 +7,7 @@ import DesktopPageUI from '@/shared/ui/page-ui/DesktopPageUI.vue';
 import AdInfoPanelWidget from '@/widgets/AdBlockWidget.vue';
 import PostEditor from '@/widgets/post-editor/PostContentEditorWidget.vue';
 import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
-import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
+import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationWidget.vue';
 import SiteInfoPanel from '@/widgets/LinksBlockWidget.vue';
 </script>
 

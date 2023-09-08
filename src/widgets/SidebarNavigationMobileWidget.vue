@@ -6,27 +6,16 @@ import {useThemeStore} from '@/shared/stores/ThemeStore';
 import Icon from "@/shared/ui/icon/Icon.vue";
 import {IconSizes} from "@/shared/ui/icon/types";
 import {SearchInputUI} from '@/shared/ui/search-input-ui';
+import {RouteRecordRaw} from "vue-router";
+
+export type SidebarNavigationMobileWidgetProps = {
+  navigationLinks: RouteRecordRaw[],
+  footerLinks: RouteRecordRaw[],
+};
 
 const MobileNavigationStore = useMobileNavigationStore();
 const ThemeStore = useThemeStore();
-
-const navigationLinks = [
-	{ name: 'Тренды', path: FeedTypes.TRENDS },
-	{ name: 'Новое', path: FeedTypes.NEW },
-	{ name: 'Топ', path: FeedTypes.TRENDS },
-	{ name: 'Обсуждаемое', path: FeedTypes.DISCUSSED },
-	{ name: 'Подписки', path: FeedTypes.SUBSCRIPTIONS },
-	{ name: 'Группы', path: '/404' },
-	{ name: 'Теги', path: '/404' }
-];
-
-const footerLinks = [
-	{ name: 'Помощь и поддержка', path: '/404' },
-	{ name: 'О проекте', path: '/404' },
-	{ name: 'Новости проекта', path: '/404' },
-	{ name: 'Правила сообщества', path: '/404' },
-	{ name: 'Контакты', path: '/404' }
-];
+const {navigationLinks, footerLinks} = defineProps<SidebarNavigationMobileWidgetProps>();
 </script>
 
 <template>

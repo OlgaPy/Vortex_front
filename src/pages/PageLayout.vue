@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
 import {useProfileStore} from "@/entities/profile/model/ProfileStore";
 import {useMobileNavigationStore} from '@/shared/stores/MobileNavigationStore';
 import DesktopAsideColumnUI from '@/shared/ui/block-ui/columns/DesktopAsideColumnUI.vue';
@@ -13,7 +14,7 @@ import HeaderWidget from '@/widgets/HeaderWidget.vue';
 import ModerationBlockWidget from "@/widgets/ModerationBlockWidget.vue";
 import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
 import SidebarNavigationMobileWidget from '@/widgets/SidebarNavigationMobileWidget.vue';
-import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
+import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationWidget.vue';
 import LinksBlockWidget from '@/widgets/LinksBlockWidget.vue';
 
 //TODO move component to right place
@@ -21,7 +22,17 @@ import LinksBlockWidget from '@/widgets/LinksBlockWidget.vue';
 const MobileNavigationStore = useMobileNavigationStore();
 const profileStore = useProfileStore();
 
-const siteNavigationLinks = [
+const mainLinks = [
+  { name: 'Тренды', path: FeedTypes.TRENDS },
+  { name: 'Новое', path: FeedTypes.NEW },
+  { name: 'Топ', path: FeedTypes.TOP },
+  { name: 'Обсуждаемое', path: FeedTypes.DISCUSSED },
+  { name: 'Подписки', path: FeedTypes.SUBSCRIPTIONS },
+  { name: 'Группы', path: '/404' },
+  { name: 'Теги', path: '/404' }
+];
+
+const secondaryLinks = [
   { name: 'Помощь и поддержка', path: '/404' },
   { name: 'О проекте', path: '/404' },
   { name: 'Новости проекта', path: '/404' },
@@ -35,7 +46,7 @@ const siteNavigationLinks = [
 		<div :class="$style.desktopPage">
 			<DesktopPageUI>
 				<DesktopAsideColumnUI>
-					<SiteNavigationPanelWidget />
+					<SiteNavigationPanelWidget :links="mainLinks"/>
 				</DesktopAsideColumnUI>
 
 				<DesktopCentralColumnUI>
@@ -46,7 +57,7 @@ const siteNavigationLinks = [
 				<DesktopAsideColumnUI>
           <ProfilePanelWidget v-if="profileStore.isAuth()" />
           <AuthWidget v-else />
-					<LinksBlockWidget :routes="siteNavigationLinks" />
+					<LinksBlockWidget :routes="secondaryLinks" />
 					<AdBlockWidget />
 					<ModerationBlockWidget />
 				</DesktopAsideColumnUI>
@@ -59,7 +70,11 @@ const siteNavigationLinks = [
           <slot name="header-mobile">
             <HeaderWidget />
           </slot>
-          <SidebarNavigationMobileWidget v-if="MobileNavigationStore.showNavigationPage" />
+          <SidebarNavigationMobileWidget
+              :navigation-links="mainLinks"
+              :footer-links="secondaryLinks"
+              v-if="MobileNavigationStore.showNavigationPage"
+          />
         </StickyPanelUI>
 
         <MobileCentralColumn :class="$style.tableBlock">

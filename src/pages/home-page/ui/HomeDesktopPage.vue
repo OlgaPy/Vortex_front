@@ -7,7 +7,7 @@ import AdInfoPanelWidget from '@/widgets/AdBlockWidget.vue';
 import AuthWidget from "@/widgets/auth-widget/AuthWidget.vue";
 import TrendsFeedWidget from '@/widgets/posts-feed-widget/PostsFeedWidget.vue';
 import ProfilePanelWidget from '@/widgets/profile-panel-widget/ProfilePanelWidget.vue';
-import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationPanelWidget.vue';
+import SiteNavigationPanelWidget from '@/widgets/site-navigation-widget/SiteNavigationWidget.vue';
 import SiteInfoPanel from '@/widgets/LinksBlockWidget.vue';
 
 const profileStore = useProfileStore();
