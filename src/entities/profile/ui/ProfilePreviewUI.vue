@@ -3,7 +3,7 @@
 		<div :class="[$style.avatarWrapper, $slots.subTitle && $style.avatarWrapperWithSubTitle]">
 			<slot :class="$style.avatar" name="avatar">
 				<router-link to="/all">
-					<img :class="$style.avatar" src="./icons/userpic.svg" alt="Аватар" />
+					<img :class="$style.avatar" src="../../../shared/assets/icons/UserIcon.svg" alt="Аватар" />
 				</router-link>
 			</slot>
 		</div>

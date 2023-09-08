@@ -12,7 +12,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	min-width: 328px;
+	width: 328px;
 	gap: 32px;
 }
 </style>

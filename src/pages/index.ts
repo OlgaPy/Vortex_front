@@ -1,8 +1,13 @@
+import {FeedTypes} from "@/entities/posts-feed/config/feed-types";
 import {PostPreviewPage} from '@/pages/post-preview';
 
 export const routes = [
 	{
 		path: '/',
+		redirect: '/' + FeedTypes.TRENDS,
+	},
+	{
+		path: '/:feed',
 		name: 'Тренды',
 		component: () => import('@/pages/home-page/HomePage.vue')
 	},
